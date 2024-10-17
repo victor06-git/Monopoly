@@ -101,11 +101,11 @@ def banca():#Funció diners banca
     valor = 500000
     if valor_inicial <= valor:
         valor_banca = valor_inicial + 1000000
-        return f"--- Banc:\nDiners: {valor_banca}\n---"
+        return valor_banca
     else:
         valor_banca = valor_inicial
     # Imprimimos el tablero
-    return f"--- Banc:\nDiners: {valor_banca}\n---"
+    return valor_banca
 
 
 
