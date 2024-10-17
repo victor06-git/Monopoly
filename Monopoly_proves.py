@@ -265,7 +265,7 @@ def vermell():
     return Carrers,Diners,Caselles
 Diners = [banca]
 # Imprimimos el tablero
-print("--- Banc: ---\nPl.Cat Anr pró | Diners: 10000000\n---")
+print("--- Banc:\nDiners: 10000000\n---")
 
 # Imprimimos la información de cada jugador
 jugadores = [groc, taronja, blau, vermell]
