@@ -144,25 +144,25 @@ ordre()
 JUGADORS
 """
 def groc():
-    Carrers = []
-    Diners = []
-    Caselles = []
-    return Carrers,Diners,Caselles
+    Carrers_g = []
+    Diners_g = []
+    Caselles_g = []
+    return Carrers_g,Diners_g,Caselles_g
 def taronja():
-    Carrers = []
-    Diners = []
-    Caselles = []
-    return Carrers,Diners,Caselles
+    Carrers_t = []
+    Diners_t = []
+    Caselles_t = []
+    return Carrers_t,Diners_t,Caselles_t
 def blau():
-    Carrers = []
-    Diners = []
-    Caselles = []
-    return Carrers,Diners,Caselles
+    Carrers_b = []
+    Diners_b = []
+    Caselles_b = []
+    return Carrers_b,Diners_b,Caselles_b
 def vermell():
-    Carrers = []
-    Diners = []
-    Caselles = []
-    return Carrers,Diners,Caselles
+    Carrers_v = []
+    Diners_v = []
+    Caselles_v = []
+    return Carrers_v,Diners_v,Caselles_v
 
 
 
@@ -176,8 +176,8 @@ jugadores = [groc, taronja, blau, vermell]
 CARRERS(CASELLES)
 """
 
-def carrers():
-    
+def street():
+    print(carrers)
     pass
 
 """
