@@ -165,8 +165,7 @@ CARRERS(CASELLES)
 """
 
 def streets():
-    for street in carrers:
-        print(f"{street:<9}")
+    
 
     return 
 
