@@ -109,12 +109,6 @@ def banca():#Funció diners banca
     return valor_banca
 
 
-
-
-
-
-
-
 """
 ORDRE TIRADA
                 -Aleatoriament selecciona al principi de cada partida
@@ -132,26 +126,31 @@ ordre()
 """
 JUGADORS
 """
+
 def groc():
+    diners_groc= 2000
     Carrers_g = []
     Diners_g = []
     Caselles_g = []
-    return Carrers_g,Diners_g,Caselles_g
+    return Carrers_g,Diners_g,Caselles_g, diners_groc
 def taronja():
+    diners_taronja= 2000
     Carrers_t = []
     Diners_t = []
     Caselles_t = []
-    return Carrers_t,Diners_t,Caselles_t
+    return Carrers_t,Diners_t,Caselles_t, diners_taronja
 def blau():
+    diners_blau= 2000
     Carrers_b = []
     Diners_b = []
     Caselles_b = []
-    return Carrers_b,Diners_b,Caselles_b
+    return Carrers_b,Diners_b,Caselles_b, diners_blau
 def vermell():
+    diners_vermell = 2000
     Carrers_v = []
     Diners_v = []
     Caselles_v = []
-    return Carrers_v,Diners_v,Caselles_v
+    return Carrers_v,Diners_v,Caselles_v, diners_vermell
 
 
 
