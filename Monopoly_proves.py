@@ -128,6 +128,7 @@ def dau_2():#Funció dau 2
 
 """
 ORDRE TIRADA
+                -Aleatoriament selecciona al principi de cada partida
 """
 def ordre():#Funció mostra els jugadors a l'atzar
     players = ["V","T","G","B"]
