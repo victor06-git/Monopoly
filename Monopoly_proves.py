@@ -205,6 +205,10 @@ def banca():#Funció diners banca
         valor_banca = valor_inicial
         pass
 
+    Diners = [banca]
+    # Imprimimos el tablero
+    print("--- Banc:\nDiners: {}\n---")
+
 
 
 
@@ -263,9 +267,8 @@ def vermell():
     Diners = []
     Caselles = []
     return Carrers,Diners,Caselles
-Diners = [banca]
-# Imprimimos el tablero
-print("--- Banc:\nDiners: 10000000\n---")
+
+
 
 # Imprimimos la información de cada jugador
 jugadores = [groc, taronja, blau, vermell]
@@ -278,7 +281,9 @@ CARRERS(CASELLES)
 """
 Carrers = ["Lauria", "Rosselló", "Marina", "Consell de Cent", "Muntaner", "Aribau", "Sant Joan", "Aragó","Urquinaona","Fontana","Les Rambles","Plaça Catalunya","Portal de l'Àngel","Via Augusta","Balmes","Passeig de Gràcia"]
 
-
+def carrers():
+    
+    pass
 
 """
 CASELLES ESPECIALS
