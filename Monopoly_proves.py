@@ -155,10 +155,7 @@ def main():#Funció principal (main)
     add_piece(board, 6, 6, f"{caselles[23]:<9}")
     print_board(board)
 
-def monopoly_board():
-    line()
-    
-    pass
+main()
 
 
 """
@@ -242,8 +239,8 @@ print("--- Banc: ---\nPl.Cat Anr pró | Diners: 10000000\n---")
 
 # Imprimimos la información de cada jugador
 jugadores = [groc, taronja, blau, vermell]
-for jugador in jugadores:
-    print(f"Jugador: {jugador} / Carrers: {jugadores[jugador]['Carrers']} / Diners: {jugadores[jugador]['Diners']} / Especial: {jugadores[jugador]['Especial']}\n---")
+#for jugador in jugadores:
+    #print(f"Jugador: {jugador} \nCarrers: {jugadores[jugador]['Carrers']} \nDiners: {jugadores[jugador]['Diners']} \n Especial: {jugadores[jugador]['Especial']}\n---")
 
 """
 CARRERS(CASELLES)
