@@ -106,6 +106,7 @@ def print_board(board): #Imprimeix el tauler
         for cell in row:#Per cada cel·la en la fila
             print(cell, end="|")#Afegeix la cel·la i acaba amb "|"
         print()#Imprimeix un espai de línea
+        line()
 
 
 def add_piece(board, row, col, piece):#Funció afegir nom
@@ -154,7 +155,10 @@ def main():#Funció principal (main)
     add_piece(board, 6, 6, f"{caselles[23]:<9}")
     print_board(board)
 
-main()
+def monopoly_board():
+    line()
+    
+    pass
 
 
 """
@@ -237,6 +241,7 @@ Diners = [banca]
 print("--- Banc: ---\nPl.Cat Anr pró | Diners: 10000000\n---")
 
 # Imprimimos la información de cada jugador
+jugadores = [groc, taronja, blau, vermell]
 for jugador in jugadores:
     print(f"Jugador: {jugador} / Carrers: {jugadores[jugador]['Carrers']} / Diners: {jugadores[jugador]['Diners']} / Especial: {jugadores[jugador]['Especial']}\n---")
 
