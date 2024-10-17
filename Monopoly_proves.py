@@ -164,9 +164,11 @@ jugadores = [groc, taronja, blau, vermell]
 CARRERS(CASELLES)
 """
 
-def street():
-    
-    pass
+def streets():
+    for street in carrers:
+        print(f"{street:<9}")
+
+    return 
 
 """
 CASELLES ESPECIALS
