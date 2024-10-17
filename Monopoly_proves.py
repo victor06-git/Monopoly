@@ -82,11 +82,8 @@ daus \/
 """
 
 
-
-
 from tauler import *
 from llistes import *
-
 
 
 """
@@ -95,20 +92,15 @@ BANCA
 valor_banca = None
 
 def banca():#Funció diners banca
-
-    global valor_banca
     valor_inicial = 1000000
     valor = 500000
     if valor_inicial <= valor:
         valor_banca = valor_inicial + 1000000
-        print(valor_banca)
+        return f"--- Banc:\nDiners: {valor_banca}\n---"
     else:
         valor_banca = valor_inicial
-        pass
-
-    Diners = [banca]
     # Imprimimos el tablero
-    print("--- Banc:\nDiners: {}\n---")
+    return f"--- Banc:\nDiners: {valor_banca}\n---"
 
 
 
