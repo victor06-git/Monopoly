@@ -177,14 +177,14 @@ CARRERS(CASELLES)
 """
 
 def street():
-    print(carrers)
+    
     pass
 
 """
 CASELLES ESPECIALS
 """
 
-Caselles = ["Sortida","Anr pró","Caixa","Sort","Presó"]
+
 def Sortida ():
     sortida = Caselles[0]
     return sortida
