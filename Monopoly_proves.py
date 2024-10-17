@@ -289,6 +289,24 @@ CASELLES ESPECIALS
 """
 
 Caselles = ["Sortida","Anr pró","Caixa","Sort","Presó"]
+def Sortida ():
+    sortida = Caselles[0]
+    return sortida
+def Anr_pro  ():
+    pro = Caselles[1]
+    return pro
+def Caixa ():
+    caixa = Caselles[2]
+    return caixa
+def Sort  ():
+    sort =  Caselles[3]
+    return sort
+def Preso ():
+    preso = Caselles[4]
+    return preso
+
+
+
 
 
 
