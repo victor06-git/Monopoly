@@ -86,6 +86,7 @@ IMPORTS
 """
 from tauler import *
 from llistes import *
+from daus import *
 import random
 
 

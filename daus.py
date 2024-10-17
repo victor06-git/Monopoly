@@ -1,7 +1,7 @@
 """
 DADOS
 """
-
+import random
 def daus(): #Funció daus: mostra el resultat aleatori dels dos daus
     global resultat
     dau_1()
