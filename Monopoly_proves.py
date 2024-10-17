@@ -91,12 +91,6 @@ def line(): #Funció linea (+--------+--...)
     for _ in range(7):
         print("+--------", end="")
     print("+")
-def dibuixar_tauler():#Funció dibuixar el taulell
-    line()
-    casillas1_7()
-    casillas("Hola, como estás?")
-    line()
-    casillas_finals()
 
     
 def create_board(rows, cols):#Funció que crear el tauler
@@ -112,6 +106,7 @@ def print_board(board): #Imprimeix el tauler
         for cell in row:#Per cada cel·la en la fila
             print(cell, end="|")#Afegeix la cel·la i acaba amb "|"
         print()#Imprimeix un espai de línea
+        line()
 
 
 def add_piece(board, row, col, piece):#Funció afegir nom
@@ -134,30 +129,30 @@ def main():#Funció principal (main)
     caselles = ["Parking","Urqinoa", "Fontan", "Sort", "Rambles", "Pl. Cat", "Anr pró", "Aragó", "S.Joan","Caixa","Aribau","Muntan","Angel","Augusta","Caixa","Balmes","Gracia","Presó","Consell","Marina","Sort","Rosell","Lauria","Sortida"]
     
     #Afegeix els noms de les caselles
-    add_piece(board, 0, 0, f"{caselles[0]:<7}")
-    add_piece(board, 0, 1, f"{caselles[1]:<7}")
-    add_piece(board, 0, 2, f"{caselles[2]:<7}")
-    add_piece(board, 0, 3, f"{caselles[3]:<7}")
-    add_piece(board, 0, 4, f"{caselles[4]:<7}")
-    add_piece(board, 0, 5, f"{caselles[5]:<7}")
-    add_piece(board, 0, 6, f"{caselles[6]:<7}")
-    add_piece(board, 1, 0, f"{caselles[7]:<7}")
-    add_piece(board, 2, 0, f"{caselles[8]:<7}")
-    add_piece(board, 3, 0, f"{caselles[9]:<7}")
-    add_piece(board, 4, 0, f"{caselles[10]:<7}")
-    add_piece(board, 5, 0, f"{caselles[11]:<7}")
-    add_piece(board, 1, 6, f"{caselles[12]:<7}")
-    add_piece(board, 2, 6, f"{caselles[13]:<7}")
-    add_piece(board, 3, 6, f"{caselles[14]:<7}")
-    add_piece(board, 4, 6, f"{caselles[15]:<7}")
-    add_piece(board, 5, 6, f"{caselles[16]:<7}")
-    add_piece(board, 6, 0, f"{caselles[17]:<7}")
-    add_piece(board, 6, 1, f"{caselles[18]:<7}")
-    add_piece(board, 6, 2, f"{caselles[19]:<7}")
-    add_piece(board, 6, 3, f"{caselles[20]:<7}")
-    add_piece(board, 6, 4, f"{caselles[21]:<7}")
-    add_piece(board, 6, 5, f"{caselles[22]:<7}")
-    add_piece(board, 6, 6, f"{caselles[23]:<7}")
+    add_piece(board, 0, 0, f"{caselles[0]:<9}")
+    add_piece(board, 0, 1, f"{caselles[1]:<9}")
+    add_piece(board, 0, 2, f"{caselles[2]:<9}")
+    add_piece(board, 0, 3, f"{caselles[3]:<9}")
+    add_piece(board, 0, 4, f"{caselles[4]:<9}")
+    add_piece(board, 0, 5, f"{caselles[5]:<9}")
+    add_piece(board, 0, 6, f"{caselles[6]:<9}")
+    add_piece(board, 1, 0, f"{caselles[7]:<9}")
+    add_piece(board, 2, 0, f"{caselles[8]:<9}")
+    add_piece(board, 3, 0, f"{caselles[9]:<9}")
+    add_piece(board, 4, 0, f"{caselles[10]:<9}")
+    add_piece(board, 5, 0, f"{caselles[11]:<9}")
+    add_piece(board, 1, 6, f"{caselles[12]:<9}")
+    add_piece(board, 2, 6, f"{caselles[13]:<9}")
+    add_piece(board, 3, 6, f"{caselles[14]:<9}")
+    add_piece(board, 4, 6, f"{caselles[15]:<9}")
+    add_piece(board, 5, 6, f"{caselles[16]:<9}")
+    add_piece(board, 6, 0, f"{caselles[17]:<9}")
+    add_piece(board, 6, 1, f"{caselles[18]:<9}")
+    add_piece(board, 6, 2, f"{caselles[19]:<9}")
+    add_piece(board, 6, 3, f"{caselles[20]:<9}")
+    add_piece(board, 6, 4, f"{caselles[21]:<9}")
+    add_piece(board, 6, 5, f"{caselles[22]:<9}")
+    add_piece(board, 6, 6, f"{caselles[23]:<9}")
     print_board(board)
 
 main()
@@ -243,8 +238,9 @@ Diners = [banca]
 print("--- Banc: ---\nPl.Cat Anr pró | Diners: 10000000\n---")
 
 # Imprimimos la información de cada jugador
-for jugador in jugadores:
-    print(f"Jugador: {jugador} / Carrers: {jugadores[jugador]['Carrers']} / Diners: {jugadores[jugador]['Diners']} / Especial: {jugadores[jugador]['Especial']}\n---")
+jugadores = [groc, taronja, blau, vermell]
+#for jugador in jugadores:
+    #print(f"Jugador: {jugador} \nCarrers: {jugadores[jugador]['Carrers']} \nDiners: {jugadores[jugador]['Diners']} \n Especial: {jugadores[jugador]['Especial']}\n---")
 
 
 """
