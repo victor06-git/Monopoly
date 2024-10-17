@@ -196,14 +196,32 @@ ordre()
 JUGADORS
 """
 def groc():
-    pass
+    Carrers = []
+    Diners = []
+    Caselles = []
+    return Carrers,Diners,Caselles
 def taronja():
-    pass
+    Carrers = []
+    Diners = []
+    Caselles = []
+    return Carrers,Diners,Caselles
 def blau():
-    pass
+    Carrers = []
+    Diners = []
+    Caselles = []
+    return Carrers,Diners,Caselles
 def vermell():
-    pass
+    Carrers = []
+    Diners = []
+    Caselles = []
+    return Carrers,Diners,Caselles
+Diners = [banca]
+# Imprimimos el tablero
+print("--- Banc: ---\nPl.Cat Anr pró | Diners: 10000000\n---")
 
+# Imprimimos la información de cada jugador
+for jugador in jugadores:
+    print(f"Jugador: {jugador} / Carrers: {jugadores[jugador]['Carrers']} / Diners: {jugadores[jugador]['Diners']} / Especial: {jugadores[jugador]['Especial']}\n---")
 
 """
 CARRERS(CASELLES)
@@ -232,7 +250,6 @@ INFORMACIÓ PARTIDA (DRETA)
 """
 def informacio_usuari():
     pass
-
 
 """
 INFORMACIÓ PARTIDA (SOTA)
