@@ -88,6 +88,8 @@ from llistes import *
 
 """
 BANCA
+        -Si el valor de la banca es menor que 500.000 euros suma a la banca 1M
+        -Retorna el valor de la banca
 """
 valor_banca = None
 
