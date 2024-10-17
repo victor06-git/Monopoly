@@ -1,5 +1,6 @@
 """
 TABLERO
+        -Modificar una parte para que en el centro no se impriman "|" y solo espacio.
 """
 def line(): #Funció linea (+--------+--...)
     for _ in range(7):
