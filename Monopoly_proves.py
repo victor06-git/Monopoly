@@ -246,6 +246,7 @@ print("--- Banc: ---\nPl.Cat Anr pró | Diners: 10000000\n---")
 for jugador in jugadores:
     print(f"Jugador: {jugador} / Carrers: {jugadores[jugador]['Carrers']} / Diners: {jugadores[jugador]['Diners']} / Especial: {jugadores[jugador]['Especial']}\n---")
 
+
 """
 CARRERS(CASELLES)
 """
@@ -284,4 +285,19 @@ def accio_usuari():
 """
 INICI PARTIDA
 """
+def inici_partida():
+  """Inicia la partida amb els jugadors tenint 2000 euros."""
+  # Definir els jugadors
+  jugadors = {
+      "T": 2000,
+      "V": 2000,
+      "G": 2000,
+      "B": 2000,
+  }
+  return jugadors
+
+# Inici de la partida
+jugadors = inici_partida()
+print(f"Jugadors: {jugadors}")
+
 
