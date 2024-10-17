@@ -89,7 +89,7 @@ TABLERO
 """
 def line(): #Funció linea (+--------+--...)
     for _ in range(7):
-        print("+--------", end="")
+        print("+---------", end="")
     print("+")
 
     
@@ -120,6 +120,7 @@ def add_text(text):
 
 
 def main():#Funció principal (main)
+    global board
     rows = 7#Filas
     cols = 7#Columnas
     board = create_board(rows, cols)#Crida la funció crear tauler
@@ -127,8 +128,9 @@ def main():#Funció principal (main)
     
     
     caselles = ["Parking","Urqinoa", "Fontan", "Sort", "Rambles", "Pl. Cat", "Anr pró", "Aragó", "S.Joan","Caixa","Aribau","Muntan","Angel","Augusta","Caixa","Balmes","Gracia","Presó","Consell","Marina","Sort","Rosell","Lauria","Sortida"]
-    
+    text = "Hola"
     #Afegeix els noms de les caselles
+    line()
     add_piece(board, 0, 0, f"{caselles[0]:<9}")
     add_piece(board, 0, 1, f"{caselles[1]:<9}")
     add_piece(board, 0, 2, f"{caselles[2]:<9}")
@@ -153,10 +155,37 @@ def main():#Funció principal (main)
     add_piece(board, 6, 4, f"{caselles[21]:<9}")
     add_piece(board, 6, 5, f"{caselles[22]:<9}")
     add_piece(board, 6, 6, f"{caselles[23]:<9}")
+
     print_board(board)
 
 main()
 
+def text():
+    add_piece(board, 1, 1, f"{text:<9}")
+    add_piece(board, 1, 2, f"{text:<9}")
+    add_piece(board, 1, 3, f"{text:<9}")
+    add_piece(board, 1, 4, f"{text:<9}")
+    add_piece(board, 1, 5, f"{text:<9}")
+    add_piece(board, 2, 1, f"{text:<9}")
+    add_piece(board, 2, 2, f"{text:<9}")
+    add_piece(board, 2, 3, f"{text:<9}")
+    add_piece(board, 2, 4, f"{text:<9}")
+    add_piece(board, 2, 5, f"{text:<9}")
+    add_piece(board, 3, 1, f"{text:<9}")
+    add_piece(board, 3, 2, f"{text:<9}")
+    add_piece(board, 3, 3, f"{text:<9}")
+    add_piece(board, 3, 4, f"{text:<9}")
+    add_piece(board, 3, 5, f"{text:<9}")
+    add_piece(board, 4, 1, f"{text:<9}")
+    add_piece(board, 4, 2, f"{text:<9}")
+    add_piece(board, 4, 3, f"{text:<9}")
+    add_piece(board, 4, 4, f"{text:<9}")
+    add_piece(board, 4, 5, f"{text:<9}")
+    add_piece(board, 5, 1, f"{text:<9}")
+    add_piece(board, 5, 2, f"{text:<9}")
+    add_piece(board, 5, 3, f"{text:<9}")
+    add_piece(board, 5, 4, f"{text:<9}")
+    add_piece(board, 5, 5, f"{text:<9}")
 
 """
 BANCA
