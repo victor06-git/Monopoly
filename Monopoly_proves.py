@@ -153,16 +153,16 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         print(eleccio, end="")
         players.remove(eleccio)
     print()
-
+    global jugador_v, jugador_t, jugador_g, jugador_b
 #Defineixo per variables els jugadors
     if orden[0] == "V":#Si vermell es troba al primer lloc de la llista orden
-        vermell = 0 #Defineixo el jugador amb una variable
+        jugador_v = 0 #Defineixo el jugador amb una variable
         if orden[1] == "T":##
-            print("taronja juga segon")
+            jugador_t = 1
             if orden[2] == "B":
-                print("blau juga tercer")
+                jugador_b = 2
             elif orden[2] == "G":
-                print("groc juga tercer")
+                jugador_g = 2
         elif orden[1] == "G":##
             print("groc juga segon")
             if orden[2] == "B":
@@ -244,7 +244,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
     else:
         print("blau juga últim")
 
-
+ordre()
 
 
 # Imprimimos la información de cada jugador
