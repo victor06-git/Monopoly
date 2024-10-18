@@ -105,7 +105,7 @@ def banca():#Funció diners banca
         return valor_banca
     else:
         valor_banca = valor_inicial
-    # Imprimimos el tablero
+    # Retorna el valor en diners que te la banca en aquell moment
     return valor_banca
 
 
@@ -233,12 +233,7 @@ INICI PARTIDA
 def inici_partida():
   """Inicia la partida amb els jugadors tenint 2000 euros."""
   # Definir els jugadors
-  jugadors = {
-      "T": 2000,
-      "V": 2000,
-      "G": 2000,
-      "B": 2000,
-  }
+  ordre()
   return jugadors
 
 # Inici de la partida
