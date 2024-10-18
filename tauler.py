@@ -21,7 +21,7 @@ def print_board(board): #Imprimeix el tauler
     for row in board:#Per cada fila en el tauler
         print("|", end="")#Imprimeix "|" i les va afegint en linea 
         for cell in row:#Per cada cel·la en la fila
-            print(cell, end=" ")#Afegeix la cel·la i acaba amb "|"
+            print(cell, end="|")#Afegeix la cel·la i acaba amb "|"
         print()#Imprimeix un espai de línea
         line()
         
