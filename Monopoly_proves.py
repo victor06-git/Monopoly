@@ -107,7 +107,38 @@ def banca():#Funció diners banca
         valor_banca = valor_inicial
     # Retorna el valor en diners que te la banca en aquell moment
     return valor_banca
+"""
+JUGADORS
+"""
 
+def jugador_groc(): #Funció jugador groc
+    diners_groc= 2000
+    jugador_g = None
+    Carrers_g = []
+    Diners_g = []
+    Caselles_g = []
+    return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador_g
+def jugador_taronja():#Funció jugador taonja
+    diners_taronja= 2000
+    jugador_t = None
+    Carrers_t = []
+    Diners_t = []
+    Caselles_t = []
+    return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador_t
+def jugador_blau():#Funció jugador blau
+    diners_blau= 2000
+    jugador_b = None
+    Carrers_b = []
+    Diners_b = []
+    Caselles_b = []
+    return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador_b
+def jugador_vermell():#Funció jugador vermell
+    diners_vermell = 2000
+    jugador_v = None
+    Carrers_v = []
+    Diners_v = []
+    Caselles_v = []
+    return Carrers_v,Diners_v,Caselles_v, diners_vermell, jugador_v
 
 """
 ORDRE TIRADA
@@ -212,38 +243,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         print("taronja juga últim")
     else:
         print("blau juga últim")
-"""
-JUGADORS
-"""
 
-def jugador_groc(): #Funció jugador groc
-    diners_groc= 2000
-    jugador_g = None
-    Carrers_g = []
-    Diners_g = []
-    Caselles_g = []
-    return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador_g
-def jugador_taronja():#Funció jugador taonja
-    diners_taronja= 2000
-    jugador_t = None
-    Carrers_t = []
-    Diners_t = []
-    Caselles_t = []
-    return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador_t
-def jugador_blau():#Funció jugador blau
-    diners_blau= 2000
-    jugador_b = None
-    Carrers_b = []
-    Diners_b = []
-    Caselles_b = []
-    return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador_b
-def jugador_vermell():#Funció jugador vermell
-    diners_vermell = 2000
-    jugador_v = None
-    Carrers_v = []
-    Diners_v = []
-    Caselles_v = []
-    return Carrers_v,Diners_v,Caselles_v, diners_vermell, jugador_v
 
 
 
