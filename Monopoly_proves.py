@@ -333,7 +333,7 @@ def preu_terreny(casilla):
     desde el array caselles del archivo tauler.py según la posició del tablero empezará 
     desde 0 con la sortida dando la vuelta en sentido de las agujas del reloj
     """
-
+casellas_num = ["Sortida","Lauria","Roselló","Sort","Marina","Consell de Cent","Presó","Muntaner","Aribau","Sant Joan","Aragó","Parking","Urquinaona","Fontana","Sort","Les Rambles","Plaça Catalunya","Anar presó","Portal de l'Àngel", "Via Augusta","Caixa","Balmes","Passeig de Gràcia"]
 """
 INICI PARTIDA
 """
