@@ -134,21 +134,21 @@ def jugador_groc():
     Diners_g = []
     Caselles_g = []
     return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador
-def taronja():
+def jugador_taronja():
     diners_taronja= 2000
     jugador3 = "taronja"
     Carrers_t = []
     Diners_t = []
     Caselles_t = []
     return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador3
-def blau():
+def jugador_blau():
     diners_blau= 2000
     jugador2 = "blau"
     Carrers_b = []
     Diners_b = []
     Caselles_b = []
     return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador2
-def vermell():
+def jugador_vermell():
     diners_vermell = 2000
     jugador4 = "vermell"
     Carrers_v = []
@@ -168,11 +168,6 @@ def vermell():
 CARRERS(CASELLES)
 """
 
-def streets():
-    
-
-    return 
-
 """
 CASELLES ESPECIALS
 """
@@ -189,7 +184,7 @@ def Sortida ():
         diners_blau += 200
     elif jugador3 in "sortida":
         diners_taronja += 200
-    elif jugador4 == "vermell" in "sortida":
+    elif jugador4 in "sortida":
         diners_vermell += 200
     else:
         pass
