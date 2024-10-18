@@ -329,7 +329,9 @@ def preu_terreny(casilla):
     if jugador_b in caselles[0]:
         pass
     """
-    Definir las caselles por números como los jugadores
+    Definir las caselles por números como los jugadores, 
+    desde el array caselles del archivo tauler.py según la posició del tablero empezará 
+    desde 0 con la sortida dando la vuelta en sentido de las agujas del reloj
     """
 
 """
