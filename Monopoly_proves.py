@@ -113,7 +113,7 @@ def banca():#Funció diners banca
 ORDRE TIRADA
                 -Aleatoriament selecciona al principi de cada partida
 """
-def ordre():#Funció mostra els jugadors a l'atzar
+def ordre(): #Funció mostra els jugadors a l'atzar
     players = ["V","T","G","B"]
     for _ in range(4):    
         eleccio = random.choice(players)
@@ -127,28 +127,28 @@ ordre()
 JUGADORS
 """
 
-def jugador_groc():
+def jugador_groc(): #Funció jugador groc
     diners_groc= 2000
     jugador = "groc"
     Carrers_g = []
     Diners_g = []
     Caselles_g = []
     return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador
-def jugador_taronja():
+def jugador_taronja():#Funció jugador taonja
     diners_taronja= 2000
     jugador3 = "taronja"
     Carrers_t = []
     Diners_t = []
     Caselles_t = []
     return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador3
-def jugador_blau():
+def jugador_blau():#Funció jugador blau
     diners_blau= 2000
     jugador2 = "blau"
     Carrers_b = []
     Diners_b = []
     Caselles_b = []
     return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador2
-def jugador_vermell():
+def jugador_vermell():#Funció jugador vermell
     diners_vermell = 2000
     jugador4 = "vermell"
     Carrers_v = []
@@ -178,8 +178,8 @@ def Sortida ():
     diners_blau, jugador2 = jugador_blau()
     diners_vermell, jugador4 = jugador_vermell()
     diners_taronja, jugador3 = jugador_taronja()
-    if jugador  in "sortida":
-        diners_groc += 200
+    if jugador  in "sortida": #Si el jugador groc es troba en la casella sortida
+        diners_groc += 200 #El jugador guanya 200 euros
     elif jugador2 in "sortida":
         diners_blau += 200
     elif jugador3 in "sortida":
