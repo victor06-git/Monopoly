@@ -115,8 +115,10 @@ ORDRE TIRADA
 """
 def ordre(): #Funció mostra els jugadors a l'atzar
     players = ["V","T","G","B"]
+    ordre = []
     for _ in range(4):    
         eleccio = random.choice(players)
+        ordre.append(eleccio)
         print(eleccio, end="")
         players.remove(eleccio)
     print()
@@ -129,28 +131,28 @@ JUGADORS
 
 def jugador_groc(): #Funció jugador groc
     diners_groc= 2000
-    jugador = "groc"
+    jugador = None
     Carrers_g = []
     Diners_g = []
     Caselles_g = []
     return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador
 def jugador_taronja():#Funció jugador taonja
     diners_taronja= 2000
-    jugador3 = "taronja"
+    jugador3 = None
     Carrers_t = []
     Diners_t = []
     Caselles_t = []
     return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador3
 def jugador_blau():#Funció jugador blau
     diners_blau= 2000
-    jugador2 = "blau"
+    jugador2 = None
     Carrers_b = []
     Diners_b = []
     Caselles_b = []
     return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador2
 def jugador_vermell():#Funció jugador vermell
     diners_vermell = 2000
-    jugador4 = "vermell"
+    jugador4 = None
     Carrers_v = []
     Diners_v = []
     Caselles_v = []
@@ -234,10 +236,7 @@ def inici_partida():
   """Inicia la partida amb els jugadors tenint 2000 euros."""
   # Definir els jugadors
   ordre()
-  return jugadors
+  
 
-# Inici de la partida
-jugadors = inici_partida()
-print(f"Jugadors: {jugadors}")
 
 
