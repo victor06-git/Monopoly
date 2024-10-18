@@ -115,16 +115,103 @@ ORDRE TIRADA
 """
 def ordre(): #Funció mostra els jugadors a l'atzar
     players = ["V","T","G","B"]
-    ordre = []
+    orden = []
     for _ in range(4):    
         eleccio = random.choice(players)
-        ordre.append(eleccio)
+        orden.append(eleccio)
         print(eleccio, end="")
         players.remove(eleccio)
     print()
-ordre()
 
-
+#Defineixo per variables els jugadors
+    if orden[0] == "V":#Si vermell es troba al primer lloc de la llista orden
+        print("vermell juga primer")
+        if orden[1] == "T":##
+            print("taronja juga segon")
+            if orden[2] == "B":
+                print("blau juga tercer")
+            elif orden[2] == "G":
+                print("groc juga tercer")
+        elif orden[1] == "G":##
+            print("groc juga segon")
+            if orden[2] == "B":
+                print("blau juga tercer")
+            elif orden[2] == "T":
+                print("taronja juga tercer")
+        elif orden[1] == "B":##
+            print("blau juga segon")
+            if orden[2] == "T":
+                print("taronja juga tercer")
+            elif orden[2] == "G":
+                print("groc juga tercer")
+    elif orden[0] == "T":#Si taronja es troba al primer lloc de la llista orden
+        print("taronja juga primer")
+        if orden[1] == "V":##
+            print("vermell juga segon")
+            if orden[2] == "B":
+                print("blau juga tercer")
+            elif orden[2] == "G":
+                print("groc juga tercer")
+        elif orden[1] == "G":##
+            print("groc juga segon")
+            if orden[2] == "B":
+                print("blau juga tercer")
+            elif orden[2] == "V":
+                print("vermell juga tercer")
+        elif orden[1] == "B":##
+            print("blau juga segon")
+            if orden[2] == "V":
+                print("vermell juga tercer")
+            elif orden[2] == "G":
+                print("groc juga tercer")
+    elif  orden[0] == "G":#Si groc es troba al primer lloc de la llista orden
+        print("groc juga primer")
+        if orden[1] == "T":##
+            print("taronja juga segon")
+            if orden[2] == "B":
+                print("blau juga tercer")
+            elif orden[2] == "V":
+                print("vermell juga tercer")
+        elif orden[1] == "V":##
+            print("vermell juga segon")
+            if orden[2] == "B":
+                print("blau juga tercer")
+            elif orden[2] == "T":
+                print("taronja juga tercer")
+        elif orden[1] == "B":##
+            print("blau juga segon")
+            if orden[2] == "V":
+                print("vermell juga tercer")
+            elif orden[2] == "T":
+                print("taronja juga tercer")
+    elif orden[0] == "B":#Si blau es troba al primer lloc de la llista orden
+        print("blau juga primer")
+        if orden[1] == "T":##
+            print("taronja juga segon")
+            if orden[2] == "V":
+                print("vermell juga tercer")
+            elif orden[2] == "G":
+                print("groc juga tercer")
+        elif orden[1] == "G":##
+            print("groc juga segon")
+            if orden[2] == "T":
+                print("taronja juga tercer")
+            elif orden[2] == "V":
+                print("vermell juga tercer")
+        elif orden[1] == "V":##
+            print("vermell juga segon")
+            if orden[2] == "T":
+                print("taronja juga tercer")
+            elif orden[2] == "G":
+                print("groc juga tercer")
+    if orden[3] == "V":
+        print("vermell juga últim")
+    elif orden[3] == "G":
+        print("groc juga últim")
+    elif orden[3] == "T":
+        print("taronja juga últim")
+    else:
+        print("blau juga últim")
 """
 JUGADORS
 """
