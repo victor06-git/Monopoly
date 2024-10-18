@@ -127,35 +127,39 @@ ordre()
 JUGADORS
 """
 
-def groc():
+def jugador_groc():
     diners_groc= 2000
+    jugador = "groc"
     Carrers_g = []
     Diners_g = []
     Caselles_g = []
-    return Carrers_g,Diners_g,Caselles_g, diners_groc
+    return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador
 def taronja():
     diners_taronja= 2000
+    jugador3 = "taronja"
     Carrers_t = []
     Diners_t = []
     Caselles_t = []
-    return Carrers_t,Diners_t,Caselles_t, diners_taronja
+    return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador3
 def blau():
     diners_blau= 2000
+    jugador2 = "blau"
     Carrers_b = []
     Diners_b = []
     Caselles_b = []
-    return Carrers_b,Diners_b,Caselles_b, diners_blau
+    return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador2
 def vermell():
     diners_vermell = 2000
+    jugador4 = "vermell"
     Carrers_v = []
     Diners_v = []
     Caselles_v = []
-    return Carrers_v,Diners_v,Caselles_v, diners_vermell
+    return Carrers_v,Diners_v,Caselles_v, diners_vermell, jugador4
 
 
 
 # Imprimimos la información de cada jugador
-jugadores = [groc, taronja, blau, vermell]
+#jugadores = ["", taronja, blau, vermell]
 #for jugador in jugadores:
     #print(f"Jugador: {jugador} \nCarrers: {jugadores[jugador]['Carrers']} \nDiners: {jugadores[jugador]['Diners']} \n Especial: {jugadores[jugador]['Especial']}\n---")
 
@@ -175,8 +179,21 @@ CASELLES ESPECIALS
 
 
 def Sortida ():
-    sortida = Caselles[0]
-    return sortida
+    diners_groc, jugador = jugador_groc()
+    diners_blau, jugador2 = blau()
+    diners_vermell, jugador4 = vermell()
+    diners_taronja, jugador3 = taronja()
+    if jugador  in "sortida":
+        diners_groc += 200
+    elif jugador2 in "sortida":
+        diners_blau += 200
+    elif jugador3 in "sortida":
+        diners_taronja += 200
+    elif jugador4 == "vermell" in "sortida":
+        diners_vermell += 200
+    else:
+        pass
+
 def Anr_pro  ():
     pro = Caselles[1]
     return pro
