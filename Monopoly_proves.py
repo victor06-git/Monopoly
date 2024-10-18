@@ -125,7 +125,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
 
 #Defineixo per variables els jugadors
     if orden[0] == "V":#Si vermell es troba al primer lloc de la llista orden
-        print("vermell juga primer")
+        vermell = 0 #Defineixo el jugador amb una variable
         if orden[1] == "T":##
             print("taronja juga segon")
             if orden[2] == "B":
@@ -218,32 +218,32 @@ JUGADORS
 
 def jugador_groc(): #Funció jugador groc
     diners_groc= 2000
-    jugador = None
+    jugador_g = None
     Carrers_g = []
     Diners_g = []
     Caselles_g = []
-    return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador
+    return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador_g
 def jugador_taronja():#Funció jugador taonja
     diners_taronja= 2000
-    jugador3 = None
+    jugador_t = None
     Carrers_t = []
     Diners_t = []
     Caselles_t = []
-    return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador3
+    return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador_t
 def jugador_blau():#Funció jugador blau
     diners_blau= 2000
-    jugador2 = None
+    jugador_b = None
     Carrers_b = []
     Diners_b = []
     Caselles_b = []
-    return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador2
+    return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador_b
 def jugador_vermell():#Funció jugador vermell
     diners_vermell = 2000
-    jugador4 = None
+    jugador_v = None
     Carrers_v = []
     Diners_v = []
     Caselles_v = []
-    return Carrers_v,Diners_v,Caselles_v, diners_vermell, jugador4
+    return Carrers_v,Diners_v,Caselles_v, diners_vermell, jugador_v
 
 
 
@@ -263,17 +263,17 @@ CASELLES ESPECIALS
 
 
 def Sortida ():
-    diners_groc, jugador = jugador_groc()
-    diners_blau, jugador2 = jugador_blau()
-    diners_vermell, jugador4 = jugador_vermell()
-    diners_taronja, jugador3 = jugador_taronja()
-    if jugador  in "sortida": #Si el jugador groc es troba en la casella sortida
+    diners_groc, jugador_g = jugador_groc()
+    diners_blau, jugador_b = jugador_blau()
+    diners_vermell, jugador_v = jugador_vermell()
+    diners_taronja, jugador_t = jugador_taronja()
+    if jugador_g  in "sortida": #Si el jugador groc es troba en la casella sortida
         diners_groc += 200 #El jugador guanya 200 euros
-    elif jugador2 in "sortida":
+    elif jugador_b in "sortida":
         diners_blau += 200
-    elif jugador3 in "sortida":
+    elif jugador_t in "sortida":
         diners_taronja += 200
-    elif jugador4 in "sortida":
+    elif jugador_v in "sortida":
         diners_vermell += 200
     else:
         pass
