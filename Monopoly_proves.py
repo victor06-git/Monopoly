@@ -315,8 +315,22 @@ def informacio_usuari():
 INFORMACIÓ PARTIDA (SOTA)
 """
 def accio_usuari():
+    text = (f"Juga {jugador_b}, opcions: passar, comprar terreny, preus")
+    text2 = (f"Juga {jugador_b}, opcions: passar, comprar casa, comprar hotel, preus")
     pass
-
+def opcions():
+    opcion = ["passar", "comprar terreny", "preus"]
+    if opcion == "comprar terreny" or 1:
+        print("Compres terreny")
+    elif opcion == "preus" or 2:
+        print(preu_terreny)
+def preu_terreny(casilla):
+    precios = [50,60,70,80]
+    if jugador_b in caselles[0]:
+        pass
+    """
+    Definir las caselles por números como los jugadores
+    """
 
 """
 INICI PARTIDA

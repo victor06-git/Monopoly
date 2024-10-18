@@ -65,6 +65,7 @@ def texto():
 
 def main():#Funció principal (main)
     global board
+    global caselles
     rows = 7#Filas
     cols = 7#Columnas
     board = create_board(rows, cols)#Crida la funció crear tauler
