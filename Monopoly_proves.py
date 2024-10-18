@@ -175,9 +175,9 @@ CASELLES ESPECIALS
 
 def Sortida ():
     diners_groc, jugador = jugador_groc()
-    diners_blau, jugador2 = blau()
-    diners_vermell, jugador4 = vermell()
-    diners_taronja, jugador3 = taronja()
+    diners_blau, jugador2 = jugador_blau()
+    diners_vermell, jugador4 = jugador_vermell()
+    diners_taronja, jugador3 = jugador_taronja()
     if jugador  in "sortida":
         diners_groc += 200
     elif jugador2 in "sortida":
