@@ -116,7 +116,7 @@ class Jugador:
         self.color = color
         self.posicio = 0 #Comença a la casella "sortida"
         self.propietats = [] #Lista de les propietats que té l'usuari
-        self.cartes_especials = [] #Lista de les cartes especials (Sortir de la presó)
+        self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
         self.diners = 2000
     def move(self,passos,tauler):
         self.posicio = (self.posicio + passos) % len(board)
@@ -124,8 +124,8 @@ class Jugador:
         return casella_actual
     def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
         self.propietats.append(name_propietat)
-    def add_cartes_especials(self, cartes): #Definir les cartes especials que té el jugador
-        self.cartes_especials.append(cartes)
+    def add_carta_especial(self, cartes): #Definir les cartes especials que té el jugador
+        self.carta_especial.append(cartes)
     def diners_propietat(self, diners_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
         self.money = (self.money - diners_propietat)  
     def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
@@ -134,7 +134,7 @@ class Jugador:
         info = {
             "Propietats": self.propietats,
             "Diners": self.money,
-            "Especial": self.cartes_especials
+            "Especial": self.carta_especial
         }
         salts_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
         return salts_linea
