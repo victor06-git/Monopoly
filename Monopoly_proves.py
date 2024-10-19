@@ -105,6 +105,7 @@ def banca():#Funció diners banca
         return valor_banca
     else:
         valor_banca = valor_inicial
+    
     # Retorna el valor en diners que te la banca en aquell moment
     return valor_banca
 """
@@ -121,9 +122,15 @@ class Jugador:
         self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
         self.diners = 2000
     def move(self,passos,tauler):
-        self.posicio = (self.posicio + passos) % len(board)
+        self.posicio = (self.posicio + passos) % len(tauler)
         casella_actual = tauler[self.posicio]
         return casella_actual
+    def move_to_jail(self, casella, tauler):
+        if 0 <= casella < len(tauler):
+            self.posicio = casella
+            return tauler[self.posicio]
+        else:
+            pass
     def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
         self.propietats.append(name_propietat)
     def add_carta_especial(self, cartes): #Definir les cartes especials que té el jugador
@@ -273,18 +280,21 @@ CASELLES ESPECIALS
 
 
 def Sortida ():
+    diners_sortida = 200
     if jugador_g  in "sortida": #Si el jugador groc es troba en la casella sortida
-        diners_g += 200 #El jugador guanya 200 euros
+        jugador_g.diners_sortida(diners_sortida) #El jugador guanya 200 euros
     elif jugador_b in "sortida":
-        diners_b += 200
+        jugador_b.diners_sortida(diners_sortida)
     elif jugador_t in "sortida":
-        diners_t += 200
+        jugador_t.diners_sortida(diners_sortida)
     elif jugador_v in "sortida":
-        diners_v += 200
+        jugador_v.diners_sortida(diners_sortida)
     else:
         pass
 
 def Anr_pro  ():
+    if jugador_b in "Anr pró":
+        jugador_b
     pass
 def Caixa ():
     pass
@@ -293,6 +303,10 @@ def Sort  ():
 def Preso ():
     pass
 
+"""
+CASES I HOTELS
+                -Afegir número cases i hotels en cada cas (3C2H) camiant (---) o  ("|")
+"""
 
 
 
@@ -309,7 +323,23 @@ def accions_partida():
 INFORMACIÓ PARTIDA (DRETA)
 """
 def informacio_usuari():
-    pass
+    info_groc = jugador_g.jugador_info()
+    info_blau = jugador_b.jugador_info()
+    info_vermell = jugador_v.jugador_info()
+    info_taronja = jugador_t.jugador_info()
+    print(f"""
+        "Banca:"
+        "Diners:" :
+        "Jugador Groc:"
+        {info_groc}
+        "Jugador Taronja:"
+        {info_taronja}
+        "Jugador Vermell:"
+        {info_vermell}
+        "Jugador Blau:"
+        {info_blau}
+    """)
+    
 
 """
 INFORMACIÓ PARTIDA (SOTA)
@@ -336,11 +366,13 @@ def preu_terreny(casilla):
 casellas_num = ["Sortida","Lauria","Roselló","Sort","Marina","Consell de Cent","Presó","Muntaner","Aribau","Sant Joan","Aragó","Parking","Urquinaona","Fontana","Sort","Les Rambles","Plaça Catalunya","Anar presó","Portal de l'Àngel", "Via Augusta","Caixa","Balmes","Passeig de Gràcia"]
 """
 INICI PARTIDA
+                -Cada jugador comença amb 2000 euros
+                -Mostra sempre a cada casella el primer jugador 
 """
 def inici_partida():
   """Inicia la partida amb els jugadors tenint 2000 euros."""
   # Definir els jugadors
-  ordre()
+
   
 
 
