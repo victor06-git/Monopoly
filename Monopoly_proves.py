@@ -126,8 +126,8 @@ class Jugador:
         self.propietats.append(name_propietat)
     def add_cartes_especials(self, cartes): #Definir les cartes especials que té el jugador
         self.cartes_especials.append(cartes)
-    def diners(self): #Definir els diners actuals que té el jugador actualment
-        self.money = (self.diners - diners_propietat)
+    def diners(self, diners_propietat): #Definir els diners actuals que té el jugador actualment
+        self.money = (self.money - diners_propietat)
         diners_actuals = self.money
         return diners_actuals
     def jugador_info(self):#Definir informació que es mostra en la pantalla
@@ -271,18 +271,14 @@ CASELLES ESPECIALS
 
 
 def Sortida ():
-    diners_groc, jugador_g = jugador_groc()
-    diners_blau, jugador_b = jugador_blau()
-    diners_vermell, jugador_v = jugador_vermell()
-    diners_taronja, jugador_t = jugador_taronja()
     if jugador_g  in "sortida": #Si el jugador groc es troba en la casella sortida
-        diners_groc += 200 #El jugador guanya 200 euros
+        diners_g += 200 #El jugador guanya 200 euros
     elif jugador_b in "sortida":
-        diners_blau += 200
+        diners_b += 200
     elif jugador_t in "sortida":
-        diners_taronja += 200
+        diners_t += 200
     elif jugador_v in "sortida":
-        diners_vermell += 200
+        diners_v += 200
     else:
         pass
 
