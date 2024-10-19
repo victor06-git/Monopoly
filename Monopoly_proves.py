@@ -127,52 +127,24 @@ class Jugador:
     def add_cartes_especials(self, cartes): #Definir les cartes especials que té el jugador
         self.cartes_especials.append(cartes)
     def diners(self): #Definir els diners actuals que té el jugador actualment
-        self.diners = (self.diners - diners_propietat)
-        diners_actuals = self.diners
+        self.money = (self.diners - diners_propietat)
+        diners_actuals = self.money
         return diners_actuals
-    def jugador_info(self):#Definir 
+    def jugador_info(self):#Definir informació que es mostra en la pantalla
         info = {
-            "Nom": self.name,
-            "Color": self.color,
-            "Posició": self.posicio,
             "Propietats": self.propietats,
-            "Cartes especials": self.cartes_especials
+            "Diners": self.money,
+            "Especial": self.cartes_especials
         }
         salts_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
         return salts_linea
+
 jugador_v = Jugador("V", "Vermell")
 jugador_b =Jugador("B", "Blau")
 jugador_g = Jugador("G", "Groc")
 jugador_t = Jugador("T","Taronja")
 
-def jugador_groc(): #Funció jugador groc
-    diners_groc= 2000
-    jugador_g = None
-    Carrers_g = []
-    Diners_g = []
-    Caselles_g = []
-    return Carrers_g,Diners_g,Caselles_g, diners_groc,jugador_g
-def jugador_taronja():#Funció jugador taonja
-    diners_taronja= 2000
-    jugador_t = None
-    Carrers_t = []
-    Diners_t = []
-    Caselles_t = []
-    return Carrers_t,Diners_t,Caselles_t, diners_taronja, jugador_t
-def jugador_blau():#Funció jugador blau
-    diners_blau= 2000
-    jugador_b = None
-    Carrers_b = []
-    Diners_b = []
-    Caselles_b = []
-    return Carrers_b,Diners_b,Caselles_b, diners_blau, jugador_b
-def jugador_vermell():#Funció jugador vermell
-    diners_vermell = 2000
-    jugador_v = None
-    Carrers_v = []
-    Diners_v = []
-    Caselles_v = []
-    return Carrers_v,Diners_v,Caselles_v, diners_vermell, jugador_v
+
 
 """
 ORDRE TIRADA
@@ -193,9 +165,9 @@ def ordre(): #Funció mostra els jugadors a l'atzar
 #Defineixo per variables els jugadors
     if orden[0] == "V":#Si vermell es troba al primer lloc de la llista orden
         jugador_v = 0 #Defineixo el jugador amb una variable
-        if orden[1] == "T":##
+        if orden[1] == "T":##Segona posició
             jugador_t = 1
-            if orden[2] == "B":###
+            if orden[2] == "B":###tercera posició
                 jugador_b = 2
             elif orden[2] == "G":###
                 jugador_g = 2
@@ -315,17 +287,13 @@ def Sortida ():
         pass
 
 def Anr_pro  ():
-    pro = Caselles[1]
-    return pro
+    pass
 def Caixa ():
-    caixa = Caselles[2]
-    return caixa
+    pass
 def Sort  ():
-    sort =  Caselles[3]
-    return sort
+    pass
 def Preso ():
-    preso = Caselles[4]
-    return preso
+    pass
 
 
 
