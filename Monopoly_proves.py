@@ -131,18 +131,15 @@ class Jugador:
         diners_actuals = self.diners
         return diners_actuals
     def jugador_info(self):#Definir 
-        return{
+        info = {
             "Nom": self.name,
-            
             "Color": self.color,
-            
             "Posició": self.posicio,
-            
             "Propietats": self.propietats,
-
             "Cartes especials": self.cartes_especials
         }
-    
+        salts_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
+        return salts_linea
 jugador_v = Jugador("V", "Vermell")
 jugador_b =Jugador("B", "Blau")
 jugador_g = Jugador("G", "Groc")
