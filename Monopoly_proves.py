@@ -126,16 +126,20 @@ class Jugador:
         self.propietats.append(name_propietat)
     def add_cartes_especials(self, cartes): #Definir les cartes especials que té el jugador
         self.cartes_especials.append(cartes)
-    def ad_diners(self,diners): #Definir els diners actuals que té el jugador actualment
+    def diners(self): #Definir els diners actuals que té el jugador actualment
         self.diners = (self.diners - diners_propietat)
         diners_actuals = self.diners
         return diners_actuals
-    def display_info(self):
+    def jugador_info(self):#Definir 
         return{
-            "Name": self.name,
+            "Nom": self.name,
+            
             "Color": self.color,
+            
             "Posició": self.posicio,
+            
             "Propietats": self.propietats,
+
             "Cartes especials": self.cartes_especials
         }
     
