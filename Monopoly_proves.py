@@ -110,7 +110,29 @@ def banca():#Funció diners banca
 """
 JUGADORS
 """
-
+class Jugador:
+    def __init__(self,name,color):
+        self.name = name
+        self.color = color
+        self.posicio = 0 #Comença a la casella "sortida"
+        self.propietats = [] #Lista de les propietats que té l'usuari
+        self.cartes_especials = [] #Lista de les cartes especials (Sortir de la presó)
+    def move(self,passos,tauler):
+        self.posicio = (self.posicio + passos) % len(board)
+        casella_actual = tauler[self.posicio]
+        return casella_actual
+    def compra_propietat(self,name_propietat):
+        self.propietats.append(name_propietat)
+    def add_cartes_especials(self, cartes):
+        self.cartes_especials.append(cartes)
+    def display_info(self):
+        return{
+            "Name": self.name,
+            "Color": self.color,
+            "Posició": self.posicio,
+            "Propietats": self.propietats,
+            "Cartes especials": self.cartes_especials
+        }
 def jugador_groc(): #Funció jugador groc
     diners_groc= 2000
     jugador_g = None
