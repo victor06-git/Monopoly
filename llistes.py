@@ -1,2 +1,1 @@
-carrers = ["Lauria", "Rosselló", "Marina", "Consell de Cent", "Muntaner", "Aribau", "Sant Joan", "Aragó","Urquinaona","Fontana","Les Rambles","Plaça Catalunya","Portal de l'Àngel","Via Augusta","Balmes","Passeig de Gràcia"]
-Caselles = ["Sortida","Anr pró","Caixa","Sort","Presó"]
+diners_propietat = [50, 60, 70, 80]

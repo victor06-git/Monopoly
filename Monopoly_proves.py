@@ -117,14 +117,19 @@ class Jugador:
         self.posicio = 0 #Comença a la casella "sortida"
         self.propietats = [] #Lista de les propietats que té l'usuari
         self.cartes_especials = [] #Lista de les cartes especials (Sortir de la presó)
+        self.diners = 2000
     def move(self,passos,tauler):
         self.posicio = (self.posicio + passos) % len(board)
         casella_actual = tauler[self.posicio]
         return casella_actual
-    def compra_propietat(self,name_propietat):
+    def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
         self.propietats.append(name_propietat)
-    def add_cartes_especials(self, cartes):
+    def add_cartes_especials(self, cartes): #Definir les cartes especials que té el jugador
         self.cartes_especials.append(cartes)
+    def ad_diners(self,diners): #Definir els diners actuals que té el jugador actualment
+        self.diners = (self.diners - diners_propietat)
+        diners_actuals = self.diners
+        return diners_actuals
     def display_info(self):
         return{
             "Name": self.name,
