@@ -133,6 +133,12 @@ class Jugador:
             "Propietats": self.propietats,
             "Cartes especials": self.cartes_especials
         }
+    
+jugador_v = Jugador("V", "Vermell")
+jugador_b =Jugador("B", "Blau")
+jugador_g = Jugador("G", "Groc")
+jugador_t = Jugador("T","Taronja")
+
 def jugador_groc(): #Funció jugador groc
     diners_groc= 2000
     jugador_g = None
