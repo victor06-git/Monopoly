@@ -109,6 +109,8 @@ def banca():#Funció diners banca
     return valor_banca
 """
 JUGADORS
+            -Class Jugador
+            -Jugadors definits per color
 """
 class Jugador:
     def __init__(self,name,color):
