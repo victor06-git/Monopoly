@@ -126,10 +126,10 @@ class Jugador:
         self.propietats.append(name_propietat)
     def add_cartes_especials(self, cartes): #Definir les cartes especials que té el jugador
         self.cartes_especials.append(cartes)
-    def diners(self, diners_propietat): #Definir els diners actuals que té el jugador actualment
-        self.money = (self.money - diners_propietat)
-        diners_actuals = self.money
-        return diners_actuals
+    def diners_propietat(self, diners_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
+        self.money = (self.money - diners_propietat)  
+    def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
+        self.money = (self.money + sortida)
     def jugador_info(self):#Definir informació que es mostra en la pantalla
         info = {
             "Propietats": self.propietats,
