@@ -186,7 +186,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         print(eleccio, end="")
         players.remove(eleccio)
     print()
-    global jugador_v, jugador_t, jugador_g, jugador_b
+    global jugador_ve, jugador_tg, jugador_go, jugador_bl
     #Ordre tirada jugadors
     global Jugador_0, Jugador_1, Jugador_2, Jugador_3
     Jugador_0 = None
@@ -195,136 +195,136 @@ def ordre(): #Funció mostra els jugadors a l'atzar
     Jugador_3 = None
 #Defineixo per variables els jugadors
     if orden[0] == "V":#Si vermell es troba al primer lloc de la llista orden
-        jugador_v = Jugador_0 #Defineixo el jugador amb una variable
+        jugador_ve = Jugador_0 #Defineixo el jugador amb una variable
         Jugador_0 = "Vermell"
         if orden[1] == "T":##Segona posició
-            jugador_t = Jugador_1
+            jugador_tg = Jugador_1
             Jugador_1 = "Taronja"
             if orden[2] == "B":###tercera posició
-                jugador_b = Jugador_2
+                jugador_bl = Jugador_2
                 Jugador_2 = "Blau"
             elif orden[2] == "G":###
-                jugador_g = Jugador_2
+                jugador_go = Jugador_2
                 Jugador_2 = "Groc"
         elif orden[1] == "G":##
-            jugador_g = Jugador_1
+            jugador_go = Jugador_1
             Jugador_1 = "Groc"
             if orden[2] == "B":###
-                jugador_b = Jugador_2
+                jugador_bl = Jugador_2
                 Jugador_2 = "Blau"
             elif orden[2] == "T":###
-                jugador_t = Jugador_2
+                jugador_tg = Jugador_2
                 Jugador_2 = "Taronja"
         elif orden[1] == "B":##
-            jugador_b = Jugador_1
+            jugador_bl = Jugador_1
             Jugador_1 = "Blau"
             if orden[2] == "T":###
-                jugador_t = Jugador_2
+                jugador_tg = Jugador_2
                 Jugador_2 = "Taronja"
             elif orden[2] == "G":###
-                jugador_g = Jugador_2
+                jugador_go = Jugador_2
                 Jugador_2 = "Groc"
     elif orden[0] == "T":#Si taronja es troba al primer lloc de la llista orden
-        jugador_t = Jugador_0
+        jugador_tg = Jugador_0
         Jugador_0 = "Taronja"
         if orden[1] == "V":##
-            jugador_v = Jugador_1
+            jugador_ve = Jugador_1
             Jugador_1 = "Vermell"
             if orden[2] == "B":###
-                jugador_b = Jugador_2
+                jugador_bl = Jugador_2
                 Jugador_2 = "Blau"
             elif orden[2] == "G":###
-                jugador_g = Jugador_2
+                jugador_go = Jugador_2
                 Jugador_2 = "Groc"
         elif orden[1] == "G":##
-            jugador_g == Jugador_1
+            jugador_go = Jugador_1
             Jugador_1 = "Groc"
             if orden[2] == "B":###
-                jugador_b = Jugador_2
+                jugador_bl = Jugador_2
                 Jugador_2 = "Blau"
             elif orden[2] == "V":###
-                jugador_v = Jugador_2
+                jugador_ve = Jugador_2
                 Jugador_2 = "Vermell"
         elif orden[1] == "B":##
-            jugador_b = Jugador_1
+            jugador_bl = Jugador_1
             Jugador_1 = "Blau"
             if orden[2] == "V":###
-                jugador_v = Jugador_2
+                jugador_ve = Jugador_2
                 Jugador_2 = "Vermell" 
             elif orden[2] == "G":###
-                jugador_g = Jugador_2
+                jugador_go = Jugador_2
                 Jugador_2 = "Groc"
     elif  orden[0] == "G":#Si groc es troba al primer lloc de la llista orden
-        jugador_g == Jugador_0
+        jugador_go == Jugador_0
         Jugador_0 = "Groc"
         if orden[1] == "T":##
-            jugador_t = Jugador_1
+            jugador_tg = Jugador_1
             Jugador_1 = "Taronja"
             if orden[2] == "B":###
-                jugador_b = Jugador_2
+                jugador_bl = Jugador_2
                 Jugador_2 = "Blau"
             elif orden[2] == "V":###
-                jugador_v = Jugador_2
+                jugador_ve = Jugador_2
                 Jugador_2 = "Vermell"
         elif orden[1] == "V":##
-            jugador_v = Jugador_1
+            jugador_ve = Jugador_1
             Jugador_1 = "Vermell"
             if orden[2] == "B":###
-                jugador_b = Jugador_2
+                jugador_bl = Jugador_2
                 Jugador_2 = "Blau"
             elif orden[2] == "T":###
-                jugador_t = Jugador_2
+                jugador_tg = Jugador_2
                 Jugador_2 = "Taronja"
         elif orden[1] == "B":##
-            jugador_b = Jugador_1
+            jugador_bl = Jugador_1
             Jugador_1 = "Blau"
             if orden[2] == "V":###
-                jugador_v = Jugador_2
+                jugador_ve = Jugador_2
                 Jugador_2 = "Vermell"
             elif orden[2] == "T":###
-                jugador_t = Jugador_2
+                jugador_tg = Jugador_2
                 Jugador_2 = "Taronja"
     elif orden[0] == "B":#Si blau es troba al primer lloc de la llista orden
-        jugador_b = Jugador_0
+        jugador_bl = Jugador_0
         Jugador_0 = "Blau"
         if orden[1] == "T":##
-            jugador_t = Jugador_1
+            jugador_tg = Jugador_1
             Jugador_1 = "Taronja"
             if orden[2] == "V":###
-                jugador_v = Jugador_2
+                jugador_ve = Jugador_2
                 Jugador_2 = "Vermell"
             elif orden[2] == "G":###
-                jugador_g = Jugador_2
+                jugador_go = Jugador_2
                 Jugador_2 = "Groc"
         elif orden[1] == "G":##
-            jugador_g = Jugador_1
+            jugador_go = Jugador_1
             Jugador_1 = "Groc"
             if orden[2] == "T":###
-                jugador_t = Jugador_2
+                jugador_tg = Jugador_2
                 Jugador_2 = "Taronja"
             elif orden[2] == "V":###
-                jugador_v = Jugador_2
+                jugador_ve = Jugador_2
                 Jugador_2 = "Vermell"
         elif orden[1] == "V":##
-            jugador_v = Jugador_1
+            jugador_ve = Jugador_1
             Jugador_1 = "Vermell"
             if orden[2] == "T":###
-                jugador_t = Jugador_2
+                jugador_tg = Jugador_2
                 Jugador_2 = "Taronja"
             elif orden[2] == "G":###
-                jugador_g = Jugador_2
+                jugador_go = Jugador_2
                 Jugador_2 = "Groc"
     if orden[3] == "V":####
-        jugador_v = Jugador_3
+        jugador_ve = Jugador_3
         Jugador_3 = "Vermell"
     elif orden[3] == "G":####
-        jugador_g = Jugador_3
+        jugador_go = Jugador_3
         Jugador_3 = "Groc"
     elif orden[3] == "T":####
-        jugador_t = Jugador_3
+        jugador_tg = Jugador_3
         Jugador_3 = "Taronja"
     else:####
-        jugador_b = Jugador_3
+        jugador_bl = Jugador_3
         Jugador_3 = "Blau"
     
 
