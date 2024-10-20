@@ -427,6 +427,7 @@ def accions_partida():
 """
 INFORMACIÓ PARTIDA (DRETA)
                             -Els jugadors es mostren per ordre de tirada
+                            -Els carrers es mostren per ordre en el taulell
 """
 
 def informacio_usuari():
