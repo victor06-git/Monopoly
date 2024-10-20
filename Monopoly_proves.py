@@ -135,6 +135,11 @@ class Jugador:
         self.propietats.append(name_propietat)
     def add_carta_especial(self, carta): #Definir les cartes especials que té el jugador
         self.carta_especial.append(carta)#Només hi ha una carta especial
+    def show_especial_card(self):
+        if len(self.carta_especial) != 0:
+            return True
+        else:
+            pass
     def diners_propietat(self, diners_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
         self.money = (self.money - diners_propietat)  
     def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
@@ -305,24 +310,87 @@ def Anr_pro  ():
         jugador_t.move_to_jail(6,tauler)
     elif jugador_v in preso:
         jugador_v.move_to_jail(6,tauler)
-def Caixa ():
+
+def Caixa (): #Casella caixa
     caixa1 = tauler[9]
     caixa2 = tauler[21]
     if jugador_b in caixa1 or caixa2:
         carta_jugador = random.choice(cartes_caixa)
-        if carta_jugador == cartes_caixa[0]:
+        if carta_jugador == "Sortir de la presó":
             jugador_b.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
             cartes_caixa.remove(carta_jugador)
-            cartes_caixa.index(carta_jugador)    
-            
-    
-    pass
-def Sort  ():
-    pass
+            cartes_caixa.index(carta_jugador)   
+    elif jugador_g in caixa1 or caixa2:
+        carta_jugador = random.choice(cartes_caixa)
+        if carta_jugador == "Sortir de la presó":
+            jugador_g.add_carta_especial(carta_jugador)
+            cartes_caixa.remove(carta_jugador)
+        else:
+            cartes_caixa.remove(carta_jugador)
+            cartes_caixa.index(carta_jugador)
+    elif jugador_t in caixa1 or caixa2:
+        carta_jugador = random.choice(cartes_caixa)
+        if carta_jugador == "Sortir de la presó":
+            jugador_t.add_carta_especial(carta_jugador)
+            cartes_caixa.remove(carta_jugador)
+        else:
+            cartes_caixa.remove(carta_jugador)
+            cartes_caixa.index(carta_jugador) 
+    elif jugador_v in caixa1 or caixa2:
+        carta_jugador = random.choice(cartes_caixa)
+        if carta_jugador == "Sortir de la presó":
+            jugador_v.add_carta_especial(carta_jugador)
+            cartes_caixa.remove(carta_jugador)
+        else:
+            cartes_caixa.remove(carta_jugador)
+            cartes_caixa.index(carta_jugador) 
+def Sort  (): #Casella sort
+    sort1 = tauler[3]
+    sort2 = tauler[15]
+    if jugador_b in sort1 or sort2:
+        carta_jugador2 = random.choice(cartes_sort)
+        if carta_jugador2 == "Sortir de la presó":
+            jugador_b.add_carta_especial(carta_jugador2)
+            cartes_sort.remove(carta_jugador2)
+        else:
+            cartes_sort.remove(carta_jugador2)
+            cartes_sort.index(carta_jugador2) 
+    elif jugador_g in sort1 or sort2:
+        carta_jugador2 = random.choice(cartes_sort)
+        if carta_jugador2 == "Sortir de la presó":
+            jugador_g.add_carta_especial(carta_jugador2)
+            cartes_sort.remove(carta_jugador2)
+        else:
+            cartes_sort.remove(carta_jugador2)
+            cartes_sort.index(carta_jugador2) 
+    elif jugador_t in sort1 or sort2:
+        carta_jugador2 = random.choice(cartes_sort)
+        if carta_jugador2 == "Sortir de la presó":
+            jugador_t.add_carta_especial(carta_jugador2)
+            cartes_sort.remove(carta_jugador2)
+        else:
+            cartes_sort.remove(carta_jugador2)
+            cartes_sort.index(carta_jugador2)  
+    elif jugador_v in sort1 or sort2:
+        carta_jugador2 = random.choice(cartes_sort)
+        if carta_jugador2 == "Sortir de la presó":
+            jugador_v.add_carta_especial(carta_jugador2)
+            cartes_sort.remove(carta_jugador2)
+        else:
+            cartes_sort.remove(carta_jugador2)
+            cartes_sort.index(carta_jugador2) 
+
 def Preso ():
-    pass
+    preso = tauler[6]
+    if jugador_b in preso:
+        if jugador_b.show_especial_card() == True:
+            pass  #Definir que el jugador pot sortir en el próxim torn
+        elif dau_1 == dau_2:
+            pass #Definir que el jugador pot sortir en el próxim torn
+        
+
 
 """
 CASES I HOTELS
