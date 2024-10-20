@@ -294,7 +294,7 @@ def Sortida ():
 
 def Anr_pro  ():
     if jugador_b in "Anr pró":
-        jugador_b
+        jugador_b.move_to_jail(6,board)
     pass
 def Caixa ():
     pass
