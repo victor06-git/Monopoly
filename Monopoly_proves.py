@@ -122,6 +122,7 @@ class Jugador:
         self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
         self.diners = 2000
         self.a_preso = False
+        self.torns_a_preso = 0
     def en_preso(self):
         return self.a_preso()
     def move(self,passos,tauler):
@@ -326,7 +327,7 @@ def Anr_pro  ():
 def Caixa (): #Casella caixa
     caixa1 = tauler[9]
     caixa2 = tauler[21]
-    if jugador_b in caixa1 or caixa2:
+    if jugador_b in caixa1 or caixa2:# Jugador blau
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
             jugador_b.add_carta_especial(carta_jugador)
@@ -334,7 +335,7 @@ def Caixa (): #Casella caixa
         else:
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
-    elif jugador_g in caixa1 or caixa2:
+    elif jugador_g in caixa1 or caixa2:#Jugador groc
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
             jugador_g.add_carta_especial(carta_jugador)
@@ -342,7 +343,7 @@ def Caixa (): #Casella caixa
         else:
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)
-    elif jugador_t in caixa1 or caixa2:
+    elif jugador_t in caixa1 or caixa2: #Jugador taronja
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
             jugador_t.add_carta_especial(carta_jugador)
@@ -350,7 +351,7 @@ def Caixa (): #Casella caixa
         else:
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
-    elif jugador_v in caixa1 or caixa2:
+    elif jugador_v in caixa1 or caixa2: #Jugador vermell
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
             jugador_v.add_carta_especial(carta_jugador)
@@ -361,7 +362,7 @@ def Caixa (): #Casella caixa
 def Sort  (): #Casella sort
     sort1 = tauler[3]
     sort2 = tauler[15]
-    if jugador_b in sort1 or sort2:
+    if jugador_b in sort1 or sort2: #Jugador blau
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
             jugador_b.add_carta_especial(carta_jugador2)
@@ -369,7 +370,7 @@ def Sort  (): #Casella sort
         else:
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
-    elif jugador_g in sort1 or sort2:
+    elif jugador_g in sort1 or sort2: #Jugador groc
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
             jugador_g.add_carta_especial(carta_jugador2)
@@ -377,7 +378,7 @@ def Sort  (): #Casella sort
         else:
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
-    elif jugador_t in sort1 or sort2:
+    elif jugador_t in sort1 or sort2: #Jugador taronja
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
             jugador_t.add_carta_especial(carta_jugador2)
@@ -385,7 +386,7 @@ def Sort  (): #Casella sort
         else:
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2)  
-    elif jugador_v in sort1 or sort2:
+    elif jugador_v in sort1 or sort2: #Jugador vermell
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
             jugador_v.add_carta_especial(carta_jugador2)
@@ -397,19 +398,21 @@ def Sort  (): #Casella sort
 def Preso ():
     preso = tauler[6]
     torns = 0
-    if jugador_b:
+    if jugador_b in preso:
+        jugador_b.en_preso = True
         if jugador_b.show_especial_card() == True:
-            pass  #Definir que el jugador pot sortir en el próxim torn
-        elif dau_1 == dau_2:
-            pass #Definir que el jugador pot sortir en el próxim torn
-        else:
-            #Quan passin els 3 torns pot sortir
-            torns += 1
-def torn():
-    pass
+            jugador_b.en_preso = False
+            return "El jugador \"B\" surt de la presó"
+        elif valor_dau_1 == valor_dau_2:
+            jugador_b.en_preso = True
+            return "El jugador \"B\" ha tirat dobles i pot sortir de la presó"
+    jugador_b.torns_a_preso += 1
+    if jugador_b.torns_a_preso >= 3:
+        jugador_b.en_preso = False
+        return "El jugador \"B\" ha estat tres torns a presó i pot sortir"
 """
 CASES I HOTELS
-                -Afegir número cases i hotels en cada cas (3C2H) camiant (---) o  ("|")
+                -Afegir número cases i hotels en cada cas (3C2H) canviant (---) o  ("|")
 """
 
 
