@@ -105,9 +105,7 @@ def banca():#Funció diners banca
         return valor_banca
     else:
         valor_banca = valor_inicial
-    
-    # Retorna el valor en diners que te la banca en aquell moment
-    return valor_banca
+        return valor_banca # Retorna el valor en diners que te la banca en aquell moment
 """
 JUGADORS
             -Class Jugador
@@ -314,14 +312,14 @@ def Sortida ():
         pass
 
 def Anr_pro  ():
-    preso = tauler[18]
-    if jugador_b in preso:
+    anar_preso = tauler[18]
+    if jugador_b in anar_preso:
         jugador_b.move_to_jail(6,tauler)
-    elif jugador_g in preso:
+    elif jugador_g in anar_preso:
         jugador_g.move_to_jail(6, tauler)
-    elif jugador_t in preso:
+    elif jugador_t in anar_preso:
         jugador_t.move_to_jail(6,tauler)
-    elif jugador_v in preso:
+    elif jugador_v in anar_preso:
         jugador_v.move_to_jail(6,tauler)
 
 def Caixa (): #Casella caixa
@@ -428,7 +426,9 @@ def accions_partida():
 
 """
 INFORMACIÓ PARTIDA (DRETA)
+                            -Els jugadors es mostren per ordre de tirada
 """
+
 def informacio_usuari():
     info_groc = jugador_g.jugador_info()
     info_blau = jugador_b.jugador_info()
@@ -437,16 +437,16 @@ def informacio_usuari():
     print(f"""
         "Banca:"
         "Diners:" :
-        "Jugador Groc:"
+        "{Jugador_1}:"
         {info_groc}
-        "Jugador Taronja:"
+        "{Jugador_2}:"
         {info_taronja}
-        "Jugador Vermell:"
+        "{Jugador_3}:"
         {info_vermell}
-        "Jugador Blau:"
+        "{Jugador_4}:"
         {info_blau}
     """)
-    
+
 
 """
 INFORMACIÓ PARTIDA (SOTA)
@@ -482,8 +482,3 @@ def inici_partida():
   # Definir els jugadors
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
-
-  
-
-
-
