@@ -5,9 +5,9 @@ Monopoly --> grupo: Manel y Víctor
 2 -- Tauler amb noms
 3 -- Definir banca quan doni diners als jugadors i es quedi amb 500.000 euros (Fer que s'afegeixin 1M d'euros).
 4 -- Definir ordre tirada (amb random) fer que apareixin les inicials dels colors
-       que comencen en ordre ( exemple: VGTB)
+       que comencen en ordre (exemple: VGTB)
 5 -- Definir inici_partida(); Els jugadors comencen amb 2000 euros.
-6 -- Definir els jugadors amb 4 funcions diferents; (Els color taronja, groc, blava i vermell)
+6 -- Definir els jugadors amb 4 funcions diferents; (Els color taronja, groc, blava i vermell)(class Jugador)
 7 -- Definir casella(); a cada casella hi ha d'haver un espai que faci que hi hagi el jugador quan cau.
 8 -- Definir cases i hotels en dos funcions diferents. (Es mostraran en l'espai o hi ha "|" cap a la dreta)
 9 -- Informació jugadors; es mostra a la dreta del taulell, 
@@ -101,7 +101,7 @@ def banca():#Funció diners banca
     valor_inicial = 1000000
     valor = 500000
     if valor_inicial <= valor:
-        valor_banca = valor_inicial + 1000000
+        valor_banca = valor_inicial + 1000000 #Afegeix 1M d'euros a la banca si té 500mil o menys 
         return valor_banca
     else:
         valor_banca = valor_inicial
