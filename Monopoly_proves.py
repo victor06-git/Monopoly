@@ -150,15 +150,15 @@ class Jugador:
         else:
             pass
     def diners_propietat(self, diners_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
-        self.money = (self.money - diners_propietat)  
+        self.diners = (self.diners - diners_propietat)  
    
     def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
-        self.money = (self.money + sortida)
+        self.diners = (self.diners + sortida)
    
     def jugador_info(self):#Definir informació que es mostra en la pantalla
         info = {
             "Propietats": self.propietats,
-            "Diners": self.money,
+            "Diners": self.diners,
             "Especial": self.carta_especial
         }
         salts_de_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
@@ -455,16 +455,16 @@ def informacio_usuari():
     print(f"""
         "Banca:"
         "Diners:" :
-        "{Jugador_1}:"
+        "{Jugador_0}:"
         {info_groc}
-        "{Jugador_2}:"
+        "{Jugador_1}:"
         {info_taronja}
-        "{Jugador_3}:"
+        "{Jugador_2}:"
         {info_vermell}
-        "{Jugador_4}:"
+        "{Jugador_3}:"
         {info_blau}
     """)
-
+informacio_usuari()
 
 """
 INFORMACIÓ PARTIDA (SOTA)
