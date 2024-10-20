@@ -187,6 +187,8 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         players.remove(eleccio)
     print()
     global jugador_v, jugador_t, jugador_g, jugador_b
+    #Ordre tirada jugadors
+    global Jugador_0, Jugador_1, Jugador_2, Jugador_3
     Jugador_0 = 0
     Jugador_1 = 1
     Jugador_2 = 2
