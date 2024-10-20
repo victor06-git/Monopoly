@@ -411,7 +411,6 @@ def Sort  (): #Casella sort
 
 def Preso ():
     preso = tauler[6]
-    torns = 0
     if jugador_b in preso:
         jugador_b.en_preso = True
         if jugador_b.show_especial_card() == True:
@@ -448,21 +447,21 @@ INFORMACIÓ PARTIDA (DRETA)
 """
 
 def informacio_usuari():
-    info_groc = jugador_g.jugador_info()
-    info_blau = jugador_b.jugador_info()
-    info_vermell = jugador_v.jugador_info()
-    info_taronja = jugador_t.jugador_info()
+    info_0 = jugador_t.jugador_info()
+    info_1 = jugador_g.jugador_info()
+    info_2 = jugador_b.jugador_info()
+    info_3 = jugador_v.jugador_info()
     print(f"""
-"Banca:"
-"Diners:" :
-"{Jugador_0}:"
-{info_groc}
-"{Jugador_1}:"
-{info_taronja}
-"{Jugador_2}:"
-{info_vermell}
-"{Jugador_3}:"
-{info_blau}
+Banca:
+Diners: 
+Jugador {Jugador_0}:
+{info_0}
+Jugador {Jugador_1}:
+{info_1}
+Jugador {Jugador_2}:
+{info_2}
+Jugador {Jugador_3}:
+{info_3}
     """)
 informacio_usuari()
 
