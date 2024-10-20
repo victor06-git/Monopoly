@@ -133,8 +133,8 @@ class Jugador:
             pass
     def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
         self.propietats.append(name_propietat)
-    def add_carta_especial(self, cartes): #Definir les cartes especials que té el jugador
-        self.carta_especial.append(cartes)
+    def add_carta_especial(self, carta): #Definir les cartes especials que té el jugador
+        self.carta_especial.append(carta)#Només hi ha una carta especial
     def diners_propietat(self, diners_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
         self.money = (self.money - diners_propietat)  
     def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
@@ -271,8 +271,11 @@ ordre()
 
 
 """
-CARRERS(CASELLES)
+CASELLES
+            -Definir caselles com números ( exemple: Sortida == 0)
+            -Per la seva posició en la llista tauler
 """
+
 
 """
 CASELLES ESPECIALS
@@ -281,22 +284,36 @@ CASELLES ESPECIALS
 
 def Sortida ():
     diners_sortida = 200
-    if jugador_g  in "sortida": #Si el jugador groc es troba en la casella sortida
+    if jugador_g  in tauler[0]: #Si el jugador groc es troba en la casella sortida
         jugador_g.diners_sortida(diners_sortida) #El jugador guanya 200 euros
-    elif jugador_b in "sortida":
+    elif jugador_b in tauler[0]:
         jugador_b.diners_sortida(diners_sortida)
-    elif jugador_t in "sortida":
+    elif jugador_t in tauler[0]:
         jugador_t.diners_sortida(diners_sortida)
-    elif jugador_v in "sortida":
+    elif jugador_v in tauler[0]:
         jugador_v.diners_sortida(diners_sortida)
     else:
         pass
 
 def Anr_pro  ():
-    if jugador_b in "Anr pró":
+    preso = tauler[18]
+    if jugador_b in preso:
         jugador_b.move_to_jail(6,tauler)
-    pass
+    elif jugador_g in preso:
+        jugador_g.move_to_jail(6, tauler)
+    elif jugador_t in preso:
+        jugador_t.move_to_jail(6,tauler)
+    elif jugador_v in preso:
+        jugador_v.move_to_jail(6,tauler)
 def Caixa ():
+    caixa1 = tauler[9]
+    caixa2 = tauler[21]
+    if jugador_b in caixa1 or caixa2:
+        carta_jugador = random.choice(cartes_caixa)
+        if random.choice(cartes_caixa) == cartes_caixa[0]:
+            cartes_caixa.pop(0)
+        else:
+            del cartes_caixa(car)
     pass
 def Sort  ():
     pass
