@@ -125,7 +125,7 @@ class Jugador:
         self.posicio = (self.posicio + passos) % len(tauler)
         casella_actual = tauler[self.posicio]
         return casella_actual
-    def move_to_jail(self, casella, tauler):
+    def move_to_jail(self, casella, tauler):  #Funció anar a presó
         if 0 <= casella < len(tauler):
             self.posicio = casella
             return tauler[self.posicio]
@@ -384,13 +384,15 @@ def Sort  (): #Casella sort
 
 def Preso ():
     preso = tauler[6]
+    torns = 0
     if jugador_b in preso:
         if jugador_b.show_especial_card() == True:
             pass  #Definir que el jugador pot sortir en el próxim torn
         elif dau_1 == dau_2:
             pass #Definir que el jugador pot sortir en el próxim torn
-        
-
+        else:
+            #Quan passin els 3 torns pot sortir
+            torns += 1
 
 """
 CASES I HOTELS
