@@ -5,11 +5,11 @@ Monopoly --> grupo: Manel y Víctor
 2 -- Tauler amb noms
 3 -- Definir banca quan doni diners als jugadors i es quedi amb 500.000 euros (Fer que s'afegeixin 1M d'euros).
 4 -- Definir ordre tirada (amb random) fer que apareixin les inicials dels colors
-       que comencen en ordre ( exemple: VGTB)
+       que comencen en ordre (exemple: VGTB)
 5 -- Definir inici_partida(); Els jugadors comencen amb 2000 euros.
-6 -- Definir els jugadors amb 4 funcions diferents; (Els color taronja, groc, blava i vermell)
+6 -- Definir els jugadors amb 4 funcions diferents; (Els color taronja, groc, blava i vermell)(class Jugador)
 7 -- Definir casella(); a cada casella hi ha d'haver un espai que faci que hi hagi el jugador quan cau.
-8 -- Definir cases i hotels en dos funcions diferents. (Es mostraran en l'espai o hi ha "|" cap a la dreta)
+8 -- Definir cases i hotels en dos funcions diferents. (Es mostraran en l'espai on hi ha "|" cap a la dreta)
 9 -- Informació jugadors; es mostra a la dreta del taulell, 
      on hi ha la banca amb 1M d'euros a sota surt; Jugador: --/ Carrers: --/ Diners: --/ Especial: --
      Es mostren per ordre de tirada els valors dels jugadors / I els carrers amb nom complet per ordre en taulell (ordre: agulles del rellotge)
