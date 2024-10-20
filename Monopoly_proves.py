@@ -121,10 +121,11 @@ class Jugador:
         self.propietats = [] #Lista de les propietats que té l'usuari
         self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
         self.diners = 2000
-        self.en_preso = False
-
+        self.a_preso = False
+    def en_preso(self):
+        return self.a_preso()
     def move(self,passos,tauler):
-        if self.en_preso == True:
+        if self.a_preso == True:
             print("Jugador a presó, no pot tirar")
             return None
         else:
@@ -396,7 +397,7 @@ def Sort  (): #Casella sort
 def Preso ():
     preso = tauler[6]
     torns = 0
-    if jugador_b in preso:
+    if jugador_b:
         if jugador_b.show_especial_card() == True:
             pass  #Definir que el jugador pot sortir en el próxim torn
         elif dau_1 == dau_2:
