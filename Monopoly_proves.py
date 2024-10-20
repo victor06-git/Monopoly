@@ -203,31 +203,31 @@ def ordre(): #Funció mostra els jugadors a l'atzar
             elif orden[2] == "T":###
                 jugador_t == Jugador_2
         elif orden[1] == "B":##
-            print("blau juga segon")
+            jugador_b == Jugador_1
             if orden[2] == "T":###
-                print("taronja juga tercer")
+                jugador_t == Jugador_2
             elif orden[2] == "G":###
-                print("groc juga tercer")
+                jugador_g == Jugador_2
     elif orden[0] == "T":#Si taronja es troba al primer lloc de la llista orden
-        print("taronja juga primer")
+        jugador_t == Jugador_0
         if orden[1] == "V":##
-            print("vermell juga segon")
+            jugador_v == Jugador_1
             if orden[2] == "B":###
-                print("blau juga tercer")
+                jugador_b == Jugador_2
             elif orden[2] == "G":###
-                print("groc juga tercer")
+                jugador_g == Jugador_2
         elif orden[1] == "G":##
-            print("groc juga segon")
+            jugador_g == Jugador_1
             if orden[2] == "B":###
-                print("blau juga tercer")
+                jugador_b == Jugador_2
             elif orden[2] == "V":###
-                print("vermell juga tercer")
+                jugador_v == Jugador_2
         elif orden[1] == "B":##
-            print("blau juga segon")
+            jugador_b == Jugador_1
             if orden[2] == "V":###
-                print("vermell juga tercer")
+                jugador_v == Jugador_2
             elif orden[2] == "G":###
-                print("groc juga tercer")
+                jugador_g == Jugador_2
     elif  orden[0] == "G":#Si groc es troba al primer lloc de la llista orden
         print("groc juga primer")
         if orden[1] == "T":##
