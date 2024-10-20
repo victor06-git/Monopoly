@@ -310,10 +310,14 @@ def Caixa ():
     caixa2 = tauler[21]
     if jugador_b in caixa1 or caixa2:
         carta_jugador = random.choice(cartes_caixa)
-        if random.choice(cartes_caixa) == cartes_caixa[0]:
-            cartes_caixa.pop(0)
+        if carta_jugador == cartes_caixa[0]:
+            jugador_b.add_carta_especial(carta_jugador)
+            cartes_caixa.remove(carta_jugador)
         else:
-            del cartes_caixa(car)
+            cartes_caixa.remove(carta_jugador)
+            cartes_caixa.index(carta_jugador)    
+            
+    
     pass
 def Sort  ():
     pass
@@ -385,10 +389,13 @@ casellas_num = ["Sortida","Lauria","Roselló","Sort","Marina","Consell de Cent",
 INICI PARTIDA
                 -Cada jugador comença amb 2000 euros
                 -Mostra sempre a cada casella el primer jugador 
+                -Barrejar les cartes de caixa i sort
 """
 def inici_partida():
   """Inicia la partida amb els jugadors tenint 2000 euros."""
   # Definir els jugadors
+  random.shuffle(cartes_caixa) #Barreja les cartes de caixa
+  random.shuffle(cartes_sort) #Barreja les cartes de sort
 
   
 
