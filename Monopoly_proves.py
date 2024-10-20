@@ -121,10 +121,17 @@ class Jugador:
         self.propietats = [] #Lista de les propietats que té l'usuari
         self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
         self.diners = 2000
+        self.en_preso = False
+
     def move(self,passos,tauler):
-        self.posicio = (self.posicio + passos) % len(tauler)
-        casella_actual = tauler[self.posicio]
-        return casella_actual
+        if self.en_preso == True:
+            print("Jugador a presó, no pot tirar")
+            return None
+        else:
+            self.posicio = (self.posicio + passos) % len(tauler) #Passos == resultat_daus
+            casella_actual = tauler[self.posicio]
+            return casella_actual
+        
     def move_to_jail(self, casella, tauler):  #Funció anar a presó
         if 0 <= casella < len(tauler):
             self.posicio = casella
@@ -133,8 +140,10 @@ class Jugador:
             pass
     def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
         self.propietats.append(name_propietat)
+
     def add_carta_especial(self, carta): #Definir les cartes especials que té el jugador
         self.carta_especial.append(carta)#Només hi ha una carta especial
+    
     def show_especial_card(self):
         if len(self.carta_especial) != 0:
             return True
@@ -142,16 +151,18 @@ class Jugador:
             pass
     def diners_propietat(self, diners_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
         self.money = (self.money - diners_propietat)  
+   
     def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
         self.money = (self.money + sortida)
+   
     def jugador_info(self):#Definir informació que es mostra en la pantalla
         info = {
             "Propietats": self.propietats,
             "Diners": self.money,
             "Especial": self.carta_especial
         }
-        salts_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
-        return salts_linea
+        salts_de_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
+        return salts_de_linea
 
 jugador_v = Jugador("V", "Vermell")
 jugador_b =Jugador("B", "Blau")
@@ -393,7 +404,8 @@ def Preso ():
         else:
             #Quan passin els 3 torns pot sortir
             torns += 1
-
+def torn():
+    pass
 """
 CASES I HOTELS
                 -Afegir número cases i hotels en cada cas (3C2H) camiant (---) o  ("|")
@@ -447,7 +459,7 @@ def opcions():
         print(preu_terreny)
 def preu_terreny(casilla):
     precios = [50,60,70,80]
-    if jugador_b in caselles[0]:
+    if jugador_b in tauler[0]:
         pass
     """
     Definir las caselles por números como los jugadores, 
