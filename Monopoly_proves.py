@@ -132,7 +132,7 @@ class Jugador:
             casella_actual = tauler[self.posicio]
             return casella_actual
         
-    def move_to_jail(self, casella, tauler):  #Funció anar a presó
+    def move_to(self, casella, tauler):  #Funció anar a presó
         if 0 <= casella < len(tauler):
             self.posicio = casella
             return tauler[self.posicio]
@@ -314,13 +314,13 @@ def Sortida ():
 def Anr_pro  ():
     anar_preso = tauler[18]
     if jugador_b in anar_preso:
-        jugador_b.move_to_jail(6,tauler)
+        jugador_b.move_to(6,tauler)
     elif jugador_g in anar_preso:
-        jugador_g.move_to_jail(6, tauler)
+        jugador_g.move_to(6, tauler)
     elif jugador_t in anar_preso:
-        jugador_t.move_to_jail(6,tauler)
+        jugador_t.move_to(6,tauler)
     elif jugador_v in anar_preso:
-        jugador_v.move_to_jail(6,tauler)
+        jugador_v.move_to(6,tauler)
 
 def Caixa (): #Casella caixa
     caixa1 = tauler[9]
@@ -390,6 +390,16 @@ def Sort  (): #Casella sort
             jugador_v.add_carta_especial(carta_jugador2)
             cartes_sort.remove(carta_jugador2)
         else:
+            if carta_jugador2 == "Anar a la presó":
+                jugador_v.move_to(6, tauler)
+            elif carta_jugador2 == "Anar a la sortida":
+                jugador_v.move_to(0, tauler)
+            elif carta_jugador2 == "Anar tres espais endarrera":
+                jugador_v.move(-3,tauler)
+            elif carta_jugador2 == "Fer reparacions a les propietats":
+                pass
+            elif carta_jugador2 == "Ets escollit alcalde":
+                pass
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
 
@@ -408,6 +418,7 @@ def Preso ():
     if jugador_b.torns_a_preso >= 3:
         jugador_b.en_preso = False
         return "El jugador \"B\" ha estat tres torns a presó i pot sortir"
+
 """
 CASES I HOTELS
                 -Afegir número cases i hotels en cada cas (3C2H) canviant (---) o  ("|")
