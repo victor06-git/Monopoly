@@ -453,16 +453,16 @@ def informacio_usuari():
     info_vermell = jugador_v.jugador_info()
     info_taronja = jugador_t.jugador_info()
     print(f"""
-        "Banca:"
-        "Diners:" :
-        "{Jugador_0}:"
-        {info_groc}
-        "{Jugador_1}:"
-        {info_taronja}
-        "{Jugador_2}:"
-        {info_vermell}
-        "{Jugador_3}:"
-        {info_blau}
+"Banca:"
+"Diners:" :
+"{Jugador_0}:"
+{info_groc}
+"{Jugador_1}:"
+{info_taronja}
+"{Jugador_2}:"
+{info_vermell}
+"{Jugador_3}:"
+{info_blau}
     """)
 informacio_usuari()
 
