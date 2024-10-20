@@ -189,9 +189,9 @@ def ordre(): #Funció mostra els jugadors a l'atzar
     global jugador_v, jugador_t, jugador_g, jugador_b
     #Ordre tirada jugadors
     global Jugador_0, Jugador_1, Jugador_2, Jugador_3
-    Jugador_0 = 0
-    Jugador_1 = 1
-    Jugador_2 = 2
+    Jugador_0 = orden[0]
+    Jugador_1 = orden[1]
+    Jugador_2 = orden[2]
     Jugador_3 = 3
 #Defineixo per variables els jugadors
     if orden[0] == "V":#Si vermell es troba al primer lloc de la llista orden
@@ -282,6 +282,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         jugador_t == Jugador_3
     else:####
         jugador_b == Jugador_3
+    
 
 ordre()
 
