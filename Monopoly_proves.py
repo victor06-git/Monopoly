@@ -362,7 +362,7 @@ def Sortida ():
     else:
         pass
 
-def Anr_pro  ():
+def Anr_pro  (): #Funció casella anar presó
     anar_preso = tauler[18]
     if jugador_b in anar_preso:
         jugador_b.move_to(6,tauler)
@@ -373,7 +373,7 @@ def Anr_pro  ():
     elif jugador_v in anar_preso:
         jugador_v.move_to(6,tauler)
 
-def Caixa (): #Casella caixa
+def Caixa (): #Funció casella caixa
     caixa1 = tauler[9]
     caixa2 = tauler[21]
     if jugador_b in caixa1 or caixa2:# Jugador blau
@@ -408,9 +408,9 @@ def Caixa (): #Casella caixa
         else:
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
-def Sort  (): #Casella sort
-    sort1 = tauler[3]
-    sort2 = tauler[15]
+def Sort  (): #Funció casella sort
+    sort1 = tauler[3] #Casella sort 1
+    sort2 = tauler[15] #Casella sort 2
     if jugador_b in sort1 or sort2: #Jugador blau
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
@@ -454,7 +454,7 @@ def Sort  (): #Casella sort
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
 
-def Preso ():
+def Preso (): #Funció casella presó
     preso = tauler[6]
     if jugador_b in preso:
         jugador_b.en_preso = True
@@ -471,7 +471,7 @@ def Preso ():
 
 """
 CASES I HOTELS
-                -Afegir número cases i hotels en cada cas (3C2H) canviant (---) o  ("|")
+                -Afegir número cases i hotels en cada cas (3C1H) canviant (---) o  ("|")
 """
 
 
@@ -530,7 +530,7 @@ def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny selec
     if jugador_b in tauler[0]:
         pass
     """
-    Definir las caselles por números como los jugadores, 
+    Definir las caselles per numeros com els jugadores, 
     desde el array caselles del archivo tauler.py según la posició del tablero empezará 
     desde 0 con la sortida dando la vuelta en sentido de las agujas del reloj
     """
