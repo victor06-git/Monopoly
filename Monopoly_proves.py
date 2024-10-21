@@ -400,7 +400,7 @@ def Caixa (): #Funció casella caixa
             elif carta_jugador == "Reparacions al carrer":
                 jugador_b.diners -= 40
             elif carta_jugador  == "Concurs de bellesa":
-                jugador_v.diners += 10
+                jugador_b.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
     elif jugador_g.posicio == 9 or jugador_g.posicio == 21:#Jugador groc
