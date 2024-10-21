@@ -680,8 +680,10 @@ def accio_usuari():
     text = (f"Juga {jugador_b}, opcions: passar, comprar terreny, preus")
     text2 = (f"Juga {jugador_b}, opcions: passar, comprar casa, comprar hotel, preus")
     pass
-
-def opcions():
+"""
+Definir turno jugadores en los condicionales
+"""
+def opcions(): 
     if jugador_b:
         opcion_jugador = input(f"Juga \"B\", opcions: {preu_terreny(jugador_b.posicio)}") #L'usuari escull una opció
         if opcion_jugador == "comprar terreny" or 1:
