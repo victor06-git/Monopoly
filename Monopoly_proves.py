@@ -403,6 +403,7 @@ def Caixa (): #Funció casella caixa
                 jugador_v.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
+            
     elif jugador_g.posicio == 9 or jugador_g.posicio == 21:#Jugador groc
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
@@ -423,6 +424,7 @@ def Caixa (): #Funció casella caixa
                 jugador_g.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)
+
     elif jugador_t.posicio == 9 or jugador_t.posicio == 21: #Jugador taronja
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
@@ -443,6 +445,7 @@ def Caixa (): #Funció casella caixa
                 jugador_t.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
+
     elif jugador_v.posicio == 9 or jugador_v.posicio == 21: #Jugador vermell
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
@@ -490,6 +493,7 @@ def Sort  (): #Funció casella sort
                 jugador_v.diners -= 50
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
+
     elif jugador_g.posicio == 3 or jugador_g.posicio == 15: #Jugador groc
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
@@ -515,6 +519,7 @@ def Sort  (): #Funció casella sort
                 jugador_v.diners -= 50
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
+
     elif jugador_t.posicio == 3 or jugador_t.posicio == 15: #Jugador taronja
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
@@ -532,7 +537,6 @@ def Sort  (): #Funció casella sort
                     jugador_t.diners -= 25
                     if j == 1 :
                         jugador_t.diners -= 100 
-
             elif carta_jugador2 == "Ets escollit alcalde":
                 jugador_b.diners -= 50
                 jugador_g.diners -= 50
@@ -540,6 +544,7 @@ def Sort  (): #Funció casella sort
                 jugador_v.diners -= 50
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2)  
+
     elif jugador_v.posicio == 3 or jugador_v.posicio == 15: #Jugador vermell
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
