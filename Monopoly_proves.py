@@ -255,7 +255,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
                 jugador_go = Jugador_2
                 Jugador_2 = "Groc"
     elif  orden[0] == "G":#Si groc es troba al primer lloc de la llista orden
-        jugador_go == Jugador_0
+        jugador_go = Jugador_0
         Jugador_0 = "Groc"
         if orden[1] == "T":##
             jugador_tg = Jugador_1
