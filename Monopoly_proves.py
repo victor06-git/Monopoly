@@ -474,7 +474,6 @@ def Sort  (): #Funció casella sort
                     jugador_v.diners -= 25
                     if j == 1 :
                         jugador_v.diners -= 100 
-
             elif carta_jugador2 == "Ets escollit alcalde":
                 jugador_b.diners -= 50
                 jugador_g.diners -= 50
