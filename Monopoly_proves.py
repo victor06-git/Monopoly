@@ -422,6 +422,23 @@ def Sort  (): #Funció casella sort
             jugador_b.add_carta_especial(carta_jugador2)
             cartes_sort.remove(carta_jugador2)
         else:
+            if carta_jugador2 == "Anar a la presó":
+                jugador_b.move_to(6, tauler)
+            elif carta_jugador2 == "Anar a la sortida":
+                jugador_b.move_to(0, tauler)
+            elif carta_jugador2 == "Anar tres espais endarrera":
+                jugador_b.move(-3,tauler)
+            elif carta_jugador2 == "Fer reparacions a les propietats":
+                if len(jugador_b.propietats) != 0 :
+                    jugador_b.diners -=25
+                    if j == 1 :
+                        jugador_b.diners -= 100 
+
+            elif carta_jugador2 == "Ets escollit alcalde":
+                jugador_b.diners += 150
+                jugador_g.diners -= 50
+                jugador_t.diners -= 50
+                jugador_v.diners -= 50
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
     elif jugador_g.posicio == 3 or jugador_g.posicio == 15: #Jugador groc
