@@ -607,7 +607,7 @@ def inici_partida():
   random.shuffle(cartes_sort) #Barreja les cartes de sort
   
 """
-TRUCS
+TRUCS(canvair variables)
         -Anar a una casella
         -Afegir X cases
         -Afegir X hotels
