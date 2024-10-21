@@ -683,8 +683,14 @@ def opcions():
         print("Compres terreny")
 
     elif opcion == "preus" or 2:
-        print(preu_terreny(casilla=None)) #Definir la casilla cuando cae el jugador
-    
+        if jugador_b:
+            return preu_terreny(jugador_b.posicio)#Definir la casilla cuando cae el jugador
+        elif jugador_g:
+            return preu_terreny(jugador_g.posicio)
+        elif jugador_t:
+            return preu_terreny(jugador_t.posicio)
+        elif jugador_v:
+            return preu_terreny(jugador_v.posicio)
     else: 
         pass
 
