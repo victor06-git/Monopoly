@@ -153,8 +153,8 @@ class Jugador:
             pass
     def add_especial_card(self): #Si el jugador té una carta especial mostrala, sino mostra "(res)""
         pass
-    def diners_propietat(self, diners_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
-        self.diners = (self.diners - diners_propietat)  
+    def diners_propietat(self, diner_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
+        self.diners = (self.diners - diner_propietat)  
    
     def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
         self.diners = (self.diners + sortida)
