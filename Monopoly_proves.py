@@ -413,6 +413,7 @@ def Caixa (): #Funció casella caixa
             jugador_v.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
+
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
 def Sort  (): #Funció casella sort
@@ -514,8 +515,8 @@ def Sort  (): #Funció casella sort
                 jugador_t.diners -= 50
                 jugador_v.diners += 150
 
-            cartes_sort.remove(carta_jugador2)
-            cartes_sort.index(carta_jugador2) 
+        cartes_sort.remove(carta_jugador2)
+        cartes_sort.index(carta_jugador2) 
 
 def Preso (): #Funció casella presó
     preso = tauler[6]
