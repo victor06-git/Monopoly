@@ -151,6 +151,8 @@ class Jugador:
             return True
         else:
             pass
+    def add_especial_card(self): #Si el jugador té una carta especial mostrala, sino mostra "(res)""
+        pass
     def diners_propietat(self, diners_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
         self.diners = (self.diners - diners_propietat)  
    
@@ -354,16 +356,16 @@ CASELLES ESPECIALS
 def Sortida (): #Funció casella sortida
     global valor_banca
     diners_sortida = 200
-    if jugador_g  in tauler[0]: #Si el jugador groc es troba en la casella sortida
+    if jugador_g.posicio == 0: #Si el jugador groc es troba en la casella sortida
         jugador_g.diners_sortida(diners_sortida) #El jugador guanya 200 euros
         valor_banca -= diners_sortida
-    elif jugador_b in tauler[0]:
+    elif jugador_b.posicio == 0:
         jugador_b.diners_sortida(diners_sortida)
         valor_banca -= diners_sortida
-    elif jugador_t in tauler[0]:
+    elif jugador_t.posicio == 0:
         jugador_t.diners_sortida(diners_sortida)
         valor_banca -= diners_sortida
-    elif jugador_v in tauler[0]:
+    elif jugador_v.posicio == 0:
         jugador_v.diners_sortida(diners_sortida)
         valor_banca -= diners_sortida
     else:
@@ -381,9 +383,7 @@ def Anr_pro  (): #Funció casella anar presó
         jugador_v.move_to(6,tauler)
 
 def Caixa (): #Funció casella caixa
-    caixa1 = tauler[9]
-    caixa2 = tauler[21]
-    if jugador_b in caixa1 or caixa2:# Jugador blau
+    if jugador_b.posicio == 9 or jugador_b.posicio == 21:# Jugador blau
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
             jugador_b.add_carta_especial(carta_jugador)
@@ -391,7 +391,7 @@ def Caixa (): #Funció casella caixa
         else:
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
-    elif jugador_g in caixa1 or caixa2:#Jugador groc
+    elif jugador_g.posicio == 9 or jugador_g.posicio == 21:#Jugador groc
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
             jugador_g.add_carta_especial(carta_jugador)
@@ -399,7 +399,7 @@ def Caixa (): #Funció casella caixa
         else:
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)
-    elif jugador_t in caixa1 or caixa2: #Jugador taronja
+    elif jugador_t.posicio == 9 or jugador_t.posicio == 21: #Jugador taronja
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
             jugador_t.add_carta_especial(carta_jugador)
@@ -407,7 +407,7 @@ def Caixa (): #Funció casella caixa
         else:
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
-    elif jugador_v in caixa1 or caixa2: #Jugador vermell
+    elif jugador_v.posicio == 9 or jugador_v.posicio == 21: #Jugador vermell
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
             jugador_v.add_carta_especial(carta_jugador)
@@ -416,9 +416,7 @@ def Caixa (): #Funció casella caixa
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
 def Sort  (): #Funció casella sort
-    sort1 = tauler[3] #Casella sort 1
-    sort2 = tauler[15] #Casella sort 2
-    if jugador_b in sort1 or sort2: #Jugador blau
+    if jugador_b.posicio == 3 or jugador_b.posicio == 15: #Jugador blau
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
             jugador_b.add_carta_especial(carta_jugador2)
@@ -426,7 +424,7 @@ def Sort  (): #Funció casella sort
         else:
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
-    elif jugador_g in sort1 or sort2: #Jugador groc
+    elif jugador_g.posicio == 3 or jugador_g.posicio == 15: #Jugador groc
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
             jugador_g.add_carta_especial(carta_jugador2)
@@ -434,7 +432,7 @@ def Sort  (): #Funció casella sort
         else:
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
-    elif jugador_t in sort1 or sort2: #Jugador taronja
+    elif jugador_t.posicio == 3 or jugador_t.posicio == 15: #Jugador taronja
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
             jugador_t.add_carta_especial(carta_jugador2)
@@ -442,7 +440,7 @@ def Sort  (): #Funció casella sort
         else:
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2)  
-    elif jugador_v in sort1 or sort2: #Jugador vermell
+    elif jugador_v.posicio == 3 or jugador_v.posicio == 15: #Jugador vermell
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
             jugador_v.add_carta_especial(carta_jugador2)
