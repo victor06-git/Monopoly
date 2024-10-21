@@ -684,7 +684,7 @@ def accio_usuari():
 def opcions():
     opcion = ["passar", "comprar terreny", "preus"]
     opcion_jugador = input("Escull passar, comprar terreny o 1, preus o 2: ")
-    if opcion == "comprar terreny" or 1:
+    if opcion_jugador == "comprar terreny" or 1:
         print("Compres terreny")
         if jugador_b:
             jugador_b.compra_propietat(tauler[jugador_b.posicio])
@@ -694,7 +694,7 @@ def opcions():
             jugador_t.compra_propietat(tauler[jugador_t.posicio])
         elif jugador_v:
             jugador_v.compra_propietat(tauler[jugador_v.posicio])
-    elif opcion == "preus" or 2:
+    elif opcion_jugador == "preus" or 2:
         if jugador_b:
             return preu_terreny(jugador_b.posicio)#Definir la casilla cuando cae el jugador
         elif jugador_g:
