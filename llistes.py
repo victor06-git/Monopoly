@@ -3,7 +3,7 @@ PROPIETATS/CASES/HOTELS
 
 """
 
-diners_propietat = [50, 60, 70, 80]
+diners_propietats = [50, 60, 70, 80]
 lloguer_casa = [10, 15, 20, 25, 30, 35, 40, 50]
 lloguer_hotel = [15, 20, 25, 30, 35, 40, 50]
 comprar_casa = [200, 225, 250, 275, 300,  325, 350, 375, 400, 425, 450, 475, 500, 525, 550, 525]
