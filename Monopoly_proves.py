@@ -621,7 +621,10 @@ def opcions():
         print(preu_terreny)
 
 def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
-    if jugador_b in tauler[0]:
+    if jugador_b.posicio == casilla: #Casilla igual 
+        if casilla == 1 or 2 or 4 or 5:
+            pass
+
         pass
     """
     Definir las caselles per numeros com els jugadores, 
