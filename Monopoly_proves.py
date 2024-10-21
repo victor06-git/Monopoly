@@ -676,13 +676,14 @@ def opcions():
 def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
     if jugador_b.posicio == casilla: #Casilla igual 
         if casilla == 1 or 2 or 4 or 5:
-            return
+            return f"El preu del terreny és de:{diners_propietats[0]}"
         elif casilla == 7 or 8 or 10 or 11:
-            return
-        elif casilla == 13:
-            pass
+            return f"El preu del terreny és de:{diners_propietats[1]}"
+        elif casilla == 13 or 14 or 16 or 17:
+            return f"El preu del terreny és de:{diners_propietats[2]}"
+        elif casilla == 19 or 20 or 22 or 23:
+            return f"El preu del terreny és de:{diners_propietats[3]}"
 
-        pass
     """
     Definir las caselles per numeros com els jugadores, 
     desde el array caselles del archivo tauler.py según la posició del tablero empezará 
