@@ -403,7 +403,7 @@ def Caixa (): #Funció casella caixa
                 jugador_b.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
-            
+
     elif jugador_g.posicio == 9 or jugador_g.posicio == 21:#Jugador groc
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó":
@@ -671,11 +671,15 @@ def opcions():
         print("Compres terreny")
 
     elif opcion == "preus" or 2:
-        print(preu_terreny)
+        print(preu_terreny(casilla=None)) #Definir la casilla cuando cae el jugador
 
 def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
     if jugador_b.posicio == casilla: #Casilla igual 
         if casilla == 1 or 2 or 4 or 5:
+            return
+        elif casilla == 7 or 8 or 10 or 11:
+            return
+        elif casilla == 13:
             pass
 
         pass
