@@ -384,82 +384,82 @@ def Anr_pro  (): #Funció casella anar presó
 
 def Caixa (): #Funció casella caixa
     if jugador_b.posicio == 9 or jugador_b.posicio == 21:# Jugador blau
-        carta_jugador = random.choice(cartes_caixa)
-        if carta_jugador == "Sortir de la presó":
+        carta_jugador = random.choice(cartes_caixa) 
+        if carta_jugador == "Sortir de la presó": # Jugador Blau guanya sortir de la preso
             jugador_b.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
-            if carta_jugador == "Anar a la presó":
+            if carta_jugador == "Anar a la presó": # Jugador Blau va a la presó
                 jugador_b.move_to(6, tauler)
-            elif carta_jugador == "Error de la banca":
+            elif carta_jugador == "Error de la banca": # Jugador Blau guanya diners per error de la banca
                 jugador_b.diners += 150
-            elif carta_jugador == "Despeses mèdiques":
+            elif carta_jugador == "Despeses mèdiques": # Jugador Blau perd diners per despeses mèdiques 
                 jugador_b.diners -= 50
-            elif carta_jugador == "Despeses escolars":
+            elif carta_jugador == "Despeses escolars": # Jugador Blau perd diners per despeses escolars
                 jugador_b.diners -= 50
-            elif carta_jugador == "Reparacions al carrer":
+            elif carta_jugador == "Reparacions al carrer": # Jugador Blau perd diners per  reparacions al carrer
                 jugador_b.diners -= 40
-            elif carta_jugador  == "Concurs de bellesa":
+            elif carta_jugador  == "Concurs de bellesa":  # Jugador Blau guanya diners per guanyar un concurs de bellesa
                 jugador_b.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
     elif jugador_g.posicio == 9 or jugador_g.posicio == 21:#Jugador groc
         carta_jugador = random.choice(cartes_caixa)
-        if carta_jugador == "Sortir de la presó":
+        if carta_jugador == "Sortir de la presó": # Jugador Groc guanya sortir de la presó
             jugador_g.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
-            if carta_jugador == "Anar a la presó":
+            if carta_jugador == "Anar a la presó": # Jugador Groc va a la presó
                 jugador_g.move_to(6, tauler)
-            elif carta_jugador == "Error de la banca":
+            elif carta_jugador == "Error de la banca": # Jugador Groc guanya diners per error de la banca
                 jugador_g.diners += 150
-            elif carta_jugador == "Despeses mèdiques":
+            elif carta_jugador == "Despeses mèdiques": # Jugador Groc perd diners per despeses mèdiques 
                 jugador_g.diners -= 50
-            elif carta_jugador == "Despeses escolars":
+            elif carta_jugador == "Despeses escolars": # Jugador Groc perd diners per despeses escolars
                 jugador_g.diners -= 50
-            elif carta_jugador == "Reparacions al carrer":
+            elif carta_jugador == "Reparacions al carrer": # Jugador Groc perd diners per  reparacions al carrer
                 jugador_g.diners -= 40
-            elif carta_jugador  == "Concurs de bellesa":
+            elif carta_jugador  == "Concurs de bellesa": # Jugador Groc guanya diners per guanyar un concurs de bellesa
                 jugador_g.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)
     elif jugador_t.posicio == 9 or jugador_t.posicio == 21: #Jugador taronja
         carta_jugador = random.choice(cartes_caixa)
-        if carta_jugador == "Sortir de la presó":
+        if carta_jugador == "Sortir de la presó": # Jugador Taronja guanya surt de la presó
             jugador_t.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
-            if carta_jugador == "Anar a la presó":
+            if carta_jugador == "Anar a la presó": # Jugador Taronja  va a la presó
                 jugador_t.move_to(6, tauler)
-            elif carta_jugador == "Error de la banca":
+            elif carta_jugador == "Error de la banca": # Jugador Taronja guanya diners per despesa de la banca 
                 jugador_t.diners += 150
-            elif carta_jugador == "Despeses mèdiques":
+            elif carta_jugador == "Despeses mèdiques": # Jugador Taronja perd diners per despeses mèdiques
                 jugador_t.diners -= 50
-            elif carta_jugador == "Despeses escolars":
+            elif carta_jugador == "Despeses escolars": # Jugador Taronja perd diners per despeses escolars
                 jugador_t.diners -= 50
-            elif carta_jugador == "Reparacions al carrer":
+            elif carta_jugador == "Reparacions al carrer": # Jugador Taronja perd diners per reparacions al carrer
                 jugador_t.diners -= 40
-            elif carta_jugador  == "Concurs de bellesa":
+            elif carta_jugador  == "Concurs de bellesa":  # Jugador Taronja guanya diners per guanyar un concurs de belles
                 jugador_t.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
     elif jugador_v.posicio == 9 or jugador_v.posicio == 21: #Jugador vermell
         carta_jugador = random.choice(cartes_caixa)
-        if carta_jugador == "Sortir de la presó":
+        if carta_jugador == "Sortir de la presó": # Jugador Verd guanya sortir de la presó
             jugador_v.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
-            if carta_jugador == "Anar a la presó":
+            if carta_jugador == "Anar a la presó": # Jugador Verd va a la presó
                 jugador_v.move_to(6, tauler)
-            elif carta_jugador == "Error de la banca":
+            elif carta_jugador == "Error de la banca": # Jugador Verd guanya diners per error de la banca
                 jugador_v.diners += 150
-            elif carta_jugador == "Despeses mèdiques":
+            elif carta_jugador == "Despeses mèdiques": # Jugador Verd perd diners per despeses mèdiques 
                 jugador_v.diners -= 50
-            elif carta_jugador == "Despeses escolars":
+            elif carta_jugador == "Despeses escolars": # Jugador Verd perd diners per despeses escolars 
                 jugador_v.diners -= 50
-            elif carta_jugador == "Reparacions al carrer":
+            elif carta_jugador == "Reparacions al carrer":  # Jugador Verd perd diners per reparacions al carrer    
                 jugador_v.diners -= 40
-            elif carta_jugador  == "Concurs de bellesa":
+            elif carta_jugador  == "Concurs de bellesa": # Jugador Verd guanya diners per concurs de bellesa
                 jugador_v.diners += 10
 
                 cartes_caixa.remove(carta_jugador)
