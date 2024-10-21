@@ -675,18 +675,26 @@ def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny selec
             return f"El preu del terreny és de:{diners_propietats[2]}"
         elif casilla == 19 or 20 or 22 or 23:
             return f"El preu del terreny és de:{diners_propietats[3]}"
+
 def accio_usuari():
     text = (f"Juga {jugador_b}, opcions: passar, comprar terreny, preus")
     text2 = (f"Juga {jugador_b}, opcions: passar, comprar casa, comprar hotel, preus")
     pass
+
 def opcions():
     opcion = ["passar", "comprar terreny", "preus"]
     if opcion == "comprar terreny" or 1:
         print("Compres terreny")
 
     elif opcion == "preus" or 2:
-        print(preu_terreny(casilla=None)) #Definir la casilla cuando cae el jugador
-    
+        if jugador_b:
+            return preu_terreny(jugador_b.posicio)#Definir la casilla cuando cae el jugador
+        elif jugador_g:
+            return preu_terreny(jugador_g.posicio)
+        elif jugador_t:
+            return preu_terreny(jugador_t.posicio)
+        elif jugador_v:
+            return preu_terreny(jugador_v.posicio)
     else: 
         pass
 
@@ -697,7 +705,7 @@ def opcions():
     desde el array caselles del archivo tauler.py según la posició del tablero empezará 
     desde 0 con la sortida dando la vuelta en sentido de las agujas del reloj
     """
-casellas_num = ["Sortida","Lauria","Roselló","Sort","Marina","Consell de Cent","Presó","Muntaner","Aribau","Sant Joan","Aragó","Parking","Urquinaona","Fontana","Sort","Les Rambles","Plaça Catalunya","Anar presó","Portal de l'Àngel", "Via Augusta","Caixa","Balmes","Passeig de Gràcia"]
+
 """
 INICI PARTIDA
                 -Cada jugador comença amb 2000 euros
