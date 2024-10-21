@@ -389,6 +389,18 @@ def Caixa (): #Funció casella caixa
             jugador_b.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
+            if carta_jugador == "Anar a la presó":
+                jugador_b.move_to(6, tauler)
+            elif carta_jugador == "Error de la banca":
+                jugador_b.diners += 150
+            elif carta_jugador == "Despeses mèdiques":
+                jugador_b.diners -= 50
+            elif carta_jugador == "Despeses escolars":
+                jugador_b.diners -= 50
+            elif carta_jugador == "Reparacions al carrer":
+                jugador_b.diners -= 40
+            elif carta_jugador  == "Concurs de bellesa":
+                jugador_v.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
     elif jugador_g.posicio == 9 or jugador_g.posicio == 21:#Jugador groc
@@ -397,6 +409,18 @@ def Caixa (): #Funció casella caixa
             jugador_g.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
+            if carta_jugador == "Anar a la presó":
+                jugador_g.move_to(6, tauler)
+            elif carta_jugador == "Error de la banca":
+                jugador_g.diners += 150
+            elif carta_jugador == "Despeses mèdiques":
+                jugador_g.diners -= 50
+            elif carta_jugador == "Despeses escolars":
+                jugador_g.diners -= 50
+            elif carta_jugador == "Reparacions al carrer":
+                jugador_g.diners -= 40
+            elif carta_jugador  == "Concurs de bellesa":
+                jugador_g.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)
     elif jugador_t.posicio == 9 or jugador_t.posicio == 21: #Jugador taronja
@@ -405,6 +429,18 @@ def Caixa (): #Funció casella caixa
             jugador_t.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
+            if carta_jugador == "Anar a la presó":
+                jugador_t.move_to(6, tauler)
+            elif carta_jugador == "Error de la banca":
+                jugador_t.diners += 150
+            elif carta_jugador == "Despeses mèdiques":
+                jugador_t.diners -= 50
+            elif carta_jugador == "Despeses escolars":
+                jugador_t.diners -= 50
+            elif carta_jugador == "Reparacions al carrer":
+                jugador_t.diners -= 40
+            elif carta_jugador  == "Concurs de bellesa":
+                jugador_t.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
     elif jugador_v.posicio == 9 or jugador_v.posicio == 21: #Jugador vermell
@@ -413,8 +449,21 @@ def Caixa (): #Funció casella caixa
             jugador_v.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
-            cartes_caixa.remove(carta_jugador)
-            cartes_caixa.index(carta_jugador) 
+            if carta_jugador == "Anar a la presó":
+                jugador_v.move_to(6, tauler)
+            elif carta_jugador == "Error de la banca":
+                jugador_v.diners += 150
+            elif carta_jugador == "Despeses mèdiques":
+                jugador_v.diners -= 50
+            elif carta_jugador == "Despeses escolars":
+                jugador_v.diners -= 50
+            elif carta_jugador == "Reparacions al carrer":
+                jugador_v.diners -= 40
+            elif carta_jugador  == "Concurs de bellesa":
+                jugador_v.diners += 10
+
+                cartes_caixa.remove(carta_jugador)
+                cartes_caixa.index(carta_jugador) 
 def Sort  (): #Funció casella sort
     if jugador_b.posicio == 3 or jugador_b.posicio == 15: #Jugador blau
         carta_jugador2 = random.choice(cartes_sort)
