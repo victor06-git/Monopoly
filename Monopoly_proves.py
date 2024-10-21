@@ -339,7 +339,7 @@ ordre()
 
 """
 CASELLES
-            -Definir caselles com números ( exemple: Sortida == 0)
+            -Definir caselles com números ( exemple: Sortida = 0)
             -Per la seva posició en la llista tauler
 """
 
@@ -522,7 +522,7 @@ def opcions():
     opcion = ["passar", "comprar terreny", "preus"]
     if opcion == "comprar terreny" or 1:
         print("Compres terreny")
-        
+
     elif opcion == "preus" or 2:
         print(preu_terreny)
 
