@@ -661,6 +661,16 @@ informacio_usuari()
 """
 INFORMACIÓ PARTIDA (SOTA)
 """
+def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
+    if jugador_b.posicio == casilla: #Casilla igual al número de casella
+        if casilla == 1 or 2 or 4 or 5:
+            return f"El preu del terreny és de:{diners_propietats[0]}"
+        elif casilla == 7 or 8 or 10 or 11:
+            return f"El preu del terreny és de:{diners_propietats[1]}"
+        elif casilla == 13 or 14 or 16 or 17:
+            return f"El preu del terreny és de:{diners_propietats[2]}"
+        elif casilla == 19 or 20 or 22 or 23:
+            return f"El preu del terreny és de:{diners_propietats[3]}"
 def accio_usuari():
     text = (f"Juga {jugador_b}, opcions: passar, comprar terreny, preus")
     text2 = (f"Juga {jugador_b}, opcions: passar, comprar casa, comprar hotel, preus")
@@ -672,17 +682,11 @@ def opcions():
 
     elif opcion == "preus" or 2:
         print(preu_terreny(casilla=None)) #Definir la casilla cuando cae el jugador
+    
+    else: 
+        pass
 
-def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
-    if jugador_b.posicio == casilla: #Casilla igual 
-        if casilla == 1 or 2 or 4 or 5:
-            return f"El preu del terreny és de:{diners_propietats[0]}"
-        elif casilla == 7 or 8 or 10 or 11:
-            return f"El preu del terreny és de:{diners_propietats[1]}"
-        elif casilla == 13 or 14 or 16 or 17:
-            return f"El preu del terreny és de:{diners_propietats[2]}"
-        elif casilla == 19 or 20 or 22 or 23:
-            return f"El preu del terreny és de:{diners_propietats[3]}"
+
 
     """
     Definir las caselles per numeros com els jugadores, 
