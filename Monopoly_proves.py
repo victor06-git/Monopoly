@@ -705,13 +705,14 @@ def opcions():
     else: 
         pass
 
+opcions()
 
 
-    """
+"""
     Definir las caselles per numeros com els jugadores, 
     desde el array caselles del archivo tauler.py según la posició del tablero empezará 
     desde 0 con la sortida dando la vuelta en sentido de las agujas del reloj
-    """
+"""
 
 """
 INICI PARTIDA
