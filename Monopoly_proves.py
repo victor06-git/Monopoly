@@ -98,6 +98,7 @@ BANCA
 valor_banca = None
 
 def banca():#Funció diners banca
+    global valor_banca
     valor_inicial = 1000000
     valor = 500000
     if valor_inicial <= valor:
@@ -123,6 +124,7 @@ class Jugador:
         self.torns_a_preso = 0
     def en_preso(self):
         return self.a_preso()
+    
     def move(self,passos,tauler):
         if self.a_preso == True:
             print("Jugador a presó, no pot tirar")
@@ -349,16 +351,21 @@ CASELLES ESPECIALS
 """
 
 
-def Sortida ():
+def Sortida (): #Funció casella sortida
+    global valor_banca
     diners_sortida = 200
     if jugador_g  in tauler[0]: #Si el jugador groc es troba en la casella sortida
         jugador_g.diners_sortida(diners_sortida) #El jugador guanya 200 euros
+        valor_banca -= diners_sortida
     elif jugador_b in tauler[0]:
         jugador_b.diners_sortida(diners_sortida)
+        valor_banca -= diners_sortida
     elif jugador_t in tauler[0]:
         jugador_t.diners_sortida(diners_sortida)
+        valor_banca -= diners_sortida
     elif jugador_v in tauler[0]:
         jugador_v.diners_sortida(diners_sortida)
+        valor_banca -= diners_sortida
     else:
         pass
 
@@ -499,7 +506,7 @@ def informacio_usuari():
     info_3 = jugador_v.jugador_info()
     print(f"""
 Banca:
-Diners: 
+Diners: {banca()} 
 Jugador {Jugador_0}:
 {info_0}
 Jugador {Jugador_1}:

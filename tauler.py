@@ -1,7 +1,8 @@
 """
 TABLERO
         -Modificar una parte para que en el centro no se impriman "|" y solo espacio.
-"""
+        -Canviar totes les funcions per tal que faci només prints del tauler a partir de la llista tauler
+        """
 def line(): #Funció linea (+--------+--...)
     for _ in range(7):
         print("+---------", end="")
