@@ -683,6 +683,7 @@ def accio_usuari():
 
 def opcions():
     opcion = ["passar", "comprar terreny", "preus"]
+    opcion_jugador = input("Escull passar, comprar terreny o 1, preus o 2: ")
     if opcion == "comprar terreny" or 1:
         print("Compres terreny")
         if jugador_b:
