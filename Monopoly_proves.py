@@ -448,21 +448,21 @@ def Caixa (): #Funció casella caixa
 
     elif jugador_v.posicio == 9 or jugador_v.posicio == 21: #Jugador vermell
         carta_jugador = random.choice(cartes_caixa)
-        if carta_jugador == "Sortir de la presó": # Jugador Verd guanya sortir de la presó
+        if carta_jugador == "Sortir de la presó": # Jugador Vermell guanya sortir de la presó
             jugador_v.add_carta_especial(carta_jugador)
             cartes_caixa.remove(carta_jugador)
         else:
-            if carta_jugador == "Anar a la presó": # Jugador Verd va a la presó
+            if carta_jugador == "Anar a la presó": # Jugador Vermell va a la presó
                 jugador_v.move_to(6, tauler)
-            elif carta_jugador == "Error de la banca": # Jugador Verd guanya diners per error de la banca
+            elif carta_jugador == "Error de la banca": # Jugador Vermell guanya diners per error de la banca
                 jugador_v.diners += 150
-            elif carta_jugador == "Despeses mèdiques": # Jugador Verd perd diners per despeses mèdiques 
+            elif carta_jugador == "Despeses mèdiques": # Jugador Vermell perd diners per despeses mèdiques 
                 jugador_v.diners -= 50
-            elif carta_jugador == "Despeses escolars": # Jugador Verd perd diners per despeses escolars 
+            elif carta_jugador == "Despeses escolars": # Jugador Vermell perd diners per despeses escolars 
                 jugador_v.diners -= 50
-            elif carta_jugador == "Reparacions al carrer":  # Jugador Verd perd diners per reparacions al carrer    
+            elif carta_jugador == "Reparacions al carrer":  # Jugador Vermell perd diners per reparacions al carrer    
                 jugador_v.diners -= 40
-            elif carta_jugador  == "Concurs de bellesa": # Jugador Verd guanya diners per concurs de bellesa
+            elif carta_jugador  == "Concurs de bellesa": # Jugador Vermell guanya diners per concurs de bellesa
                 jugador_v.diners += 10
 
                 cartes_caixa.remove(carta_jugador)
@@ -470,23 +470,24 @@ def Caixa (): #Funció casella caixa
 def Sort  (): #Funció casella sort
     if jugador_b.posicio == 3 or jugador_b.posicio == 15: #Jugador blau
         carta_jugador2 = random.choice(cartes_sort)
-        if carta_jugador2 == "Sortir de la presó":
+        if carta_jugador2 == "Sortir de la presó": # Jugador Blau guanya sortir de la presó
             jugador_b.add_carta_especial(carta_jugador2)
             cartes_sort.remove(carta_jugador2)
         else:
-            if carta_jugador2 == "Anar a la presó":
+            if carta_jugador2 == "Anar a la presó": # Jugador Blau va a la presó
                 jugador_b.move_to(6, tauler)
-            elif carta_jugador2 == "Anar a la sortida":
+            elif carta_jugador2 == "Anar a la sortida": # Jugador Blau va a la sortida 
                 jugador_b.move_to(0, tauler)
-            elif carta_jugador2 == "Anar tres espais endarrera":
+            elif carta_jugador2 == "Anar tres espais endarrera": #  Jugador Blau va tres espais endarrera
                 jugador_b.move(-3,tauler)
-            elif carta_jugador2 == "Fer reparacions a les propietats":
+            elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Blau perd diners per reparacions a les propietats
                 if len(jugador_b.propietats) != 0 :
                     jugador_b.diners -=25
                     if j == 1 :
                         jugador_b.diners -= 100 
 
-            elif carta_jugador2 == "Ets escollit alcalde":
+            elif carta_jugador2 == "Ets escollit alcalde": # Jugador Blau guanya diners per ser escollit alcalde
+
                 jugador_b.diners += 150
                 jugador_g.diners -= 50
                 jugador_t.diners -= 50
@@ -496,23 +497,24 @@ def Sort  (): #Funció casella sort
 
     elif jugador_g.posicio == 3 or jugador_g.posicio == 15: #Jugador groc
         carta_jugador2 = random.choice(cartes_sort)
-        if carta_jugador2 == "Sortir de la presó":
+        if carta_jugador2 == "Sortir de la presó": # Jugador Groc guanya sortir de la presó
             jugador_g.add_carta_especial(carta_jugador2)
             cartes_sort.remove(carta_jugador2)
         else:
-            if carta_jugador2 == "Anar a la presó":
+            if carta_jugador2 == "Anar a la presó": # Jugador Groc va a la presó
                 jugador_g.move_to(6, tauler)
-            elif carta_jugador2 == "Anar a la sortida":
+            elif carta_jugador2 == "Anar a la sortida": # Jugador Groc va a la sortida 
                 jugador_g.move_to(0, tauler)
-            elif carta_jugador2 == "Anar tres espais endarrera":
+            elif carta_jugador2 == "Anar tres espais endarrera": # Jugador Groc va tres espais endarrera
                 jugador_g.move(-3,tauler)
-            elif carta_jugador2 == "Fer reparacions a les propietats":
+            elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Groc perd diners per reparacions a les propietats
                 if len(jugador_g.propietats) != 0 :
                     jugador_g.diners -=25
                     if j == 1 :
                         jugador_g.diners -= 100 
 
-            elif carta_jugador2 == "Ets escollit alcalde":
+            elif carta_jugador2 == "Ets escollit alcalde": # Jugador Groc guanya diners per ser escollit alcalde
+
                 jugador_b.diners -= 50
                 jugador_g.diners += 150
                 jugador_t.diners -= 50
@@ -522,22 +524,24 @@ def Sort  (): #Funció casella sort
 
     elif jugador_t.posicio == 3 or jugador_t.posicio == 15: #Jugador taronja
         carta_jugador2 = random.choice(cartes_sort)
-        if carta_jugador2 == "Sortir de la presó":
+        if carta_jugador2 == "Sortir de la presó": # Jugador Taronja guanya sortir de la presó
             jugador_t.add_carta_especial(carta_jugador2)
             cartes_sort.remove(carta_jugador2)
         else:
-            if carta_jugador2 == "Anar a la presó":
+            if carta_jugador2 == "Anar a la presó": # Jugador Taronja va a la preso
                 jugador_t.move_to(6, tauler)
-            elif carta_jugador2 == "Anar a la sortida":
+            elif carta_jugador2 == "Anar a la sortida": # Jugador Taronja va a la sortida 
                 jugador_t.move_to(0, tauler)
-            elif carta_jugador2 == "Anar tres espais endarrera":
+            elif carta_jugador2 == "Anar tres espais endarrera": # Jugador Taronja va tres espais enderrera 
                 jugador_t.move(-3,tauler)
-            elif carta_jugador2 == "Fer reparacions a les propietats":
+            elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Taronja perd diners per reparacions a les propietats
+
                 if len(jugador_t.propietats) != 0 :
                     jugador_t.diners -= 25
                     if j == 1 :
                         jugador_t.diners -= 100 
-            elif carta_jugador2 == "Ets escollit alcalde":
+            elif carta_jugador2 == "Ets escollit alcalde": # Jugador Taronja guanya diners per ser escollit alcalde
+
                 jugador_b.diners -= 50
                 jugador_g.diners -= 50
                 jugador_t.diners += 150
@@ -547,22 +551,22 @@ def Sort  (): #Funció casella sort
 
     elif jugador_v.posicio == 3 or jugador_v.posicio == 15: #Jugador vermell
         carta_jugador2 = random.choice(cartes_sort)
-        if carta_jugador2 == "Sortir de la presó":
+        if carta_jugador2 == "Sortir de la presó": # Jugador Vermell guanya sortir de la presó
             jugador_v.add_carta_especial(carta_jugador2)
             cartes_sort.remove(carta_jugador2)
         else:
-            if carta_jugador2 == "Anar a la presó":
+            if carta_jugador2 == "Anar a la presó": # Jugador Vermell va a la presó
                 jugador_v.move_to(6, tauler)
-            elif carta_jugador2 == "Anar a la sortida":
+            elif carta_jugador2 == "Anar a la sortida": # Jugador Vermell va la sortida 
                 jugador_v.move_to(0, tauler)
-            elif carta_jugador2 == "Anar tres espais endarrera":
+            elif carta_jugador2 == "Anar tres espais endarrera": # Jugador Vermell va tres espais enderrera 
                 jugador_v.move(-3,tauler)
-            elif carta_jugador2 == "Fer reparacions a les propietats":
+            elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Vermell perd diners per reparacions a les propietats
                 if len(jugador_v.propietats) != 0 :
                     jugador_v.diners -= 25
                     if j == 1 :
                         jugador_v.diners -= 100 
-            elif carta_jugador2 == "Ets escollit alcalde":
+            elif carta_jugador2 == "Ets escollit alcalde": # Jugador Vermell guanya diners per ser escollit alcalde
                 jugador_b.diners -= 50
                 jugador_g.diners -= 50
                 jugador_t.diners -= 50
