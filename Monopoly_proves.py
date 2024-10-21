@@ -681,7 +681,14 @@ def opcions():
     opcion = ["passar", "comprar terreny", "preus"]
     if opcion == "comprar terreny" or 1:
         print("Compres terreny")
-
+        if jugador_b:
+            jugador_b.compra_propietat(tauler[jugador_b.posicio])
+        elif jugador_g:
+            jugador_g.compra_propietat(tauler[jugador_g.posicio])
+        elif jugador_t:
+            jugador_t.compra_propietat(tauler[jugador_t.posicio])
+        elif jugador_v:
+            jugador_v.compra_propietat(tauler[jugador_v.posicio])
     elif opcion == "preus" or 2:
         if jugador_b:
             return preu_terreny(jugador_b.posicio)#Definir la casilla cuando cae el jugador
