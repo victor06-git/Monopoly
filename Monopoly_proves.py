@@ -455,7 +455,11 @@ def Sort  (): #Funció casella sort
             elif carta_jugador2 == "Anar tres espais endarrera":
                 jugador_v.move(-3,tauler)
             elif carta_jugador2 == "Fer reparacions a les propietats":
-                pass
+                if len(jugador_v.propietats) != 0 :
+                    diners_propietat(25)
+                    if j == 1 :
+                        diners_propietat(100)
+
             elif carta_jugador2 == "Ets escollit alcalde":
                 pass
             cartes_sort.remove(carta_jugador2)
@@ -485,7 +489,7 @@ i = 0
 j = 0
 
 # Función para intentar comprar un hotel
-def comprar_hotel(cantidad):
+def comprar_j(cantidad):
     global i, j
     if j + cantidad > 2:
         print("No se pueden comprar más de 2 hoteles.")
@@ -500,7 +504,7 @@ def comprar_hotel(cantidad):
                 break
 
 # Función para intentar comprar casas
-def comprar_casa(cantidad):
+def comprar_i(cantidad):
     global i, j
     if j == 2:
         print("No se pueden comprar casas porque ya tienes 2 hoteles.")
