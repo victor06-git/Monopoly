@@ -480,6 +480,7 @@ CASES I HOTELS
 
 """
 INFORMACIÓ PARTIDA (CENTRE)
+                            -Mostra les accions que passen a la partida
 """
 def accions_partida():
     pass
@@ -521,10 +522,11 @@ def opcions():
     opcion = ["passar", "comprar terreny", "preus"]
     if opcion == "comprar terreny" or 1:
         print("Compres terreny")
+        
     elif opcion == "preus" or 2:
         print(preu_terreny)
-def preu_terreny(casilla):
-    precios = [50,60,70,80]
+
+def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
     if jugador_b in tauler[0]:
         pass
     """
