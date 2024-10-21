@@ -454,12 +454,16 @@ def Sort  (): #Funció casella sort
                 jugador_v.move(-3,tauler)
             elif carta_jugador2 == "Fer reparacions a les propietats":
                 if len(jugador_v.propietats) != 0 :
-                    diners_propietat(25)
+                    diners_propietat(jugador_v,25)
                     if j == 1 :
-                        diners_propietat(100)
+                        diners_propietat(jugador_v,100)
 
             elif carta_jugador2 == "Ets escollit alcalde":
-                pass
+                diners_propietat(jugador_b,50)
+                diners_propietat(jugador_g,50)
+                diners_propietat(jugador_t,50)
+                
+
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
 
