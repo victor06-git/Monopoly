@@ -682,9 +682,8 @@ def accio_usuari():
     pass
 
 def opcions():
-    opcion_jugador = input("Escull passar, comprar terreny o 1, preus o 2: ")
+    opcion_jugador = input("Escull \"passar\", \"comprar terreny o 1\", \"preus o 2\": ")
     if opcion_jugador == "comprar terreny" or 1:
-        print("Compres terreny")
         if jugador_b:
             jugador_b.compra_propietat(tauler[jugador_b.posicio])
         elif jugador_g:
@@ -705,6 +704,7 @@ def opcions():
     else: 
         pass
 
+jugador_b.move(2,tauler)
 opcions()
 
 
