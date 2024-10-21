@@ -403,6 +403,7 @@ def Caixa (): #Funció casella caixa
                 jugador_b.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
+
     elif jugador_g.posicio == 9 or jugador_g.posicio == 21:#Jugador groc
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó": # Jugador Groc guanya sortir de la presó
@@ -423,6 +424,7 @@ def Caixa (): #Funció casella caixa
                 jugador_g.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)
+
     elif jugador_t.posicio == 9 or jugador_t.posicio == 21: #Jugador taronja
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó": # Jugador Taronja guanya surt de la presó
@@ -443,6 +445,7 @@ def Caixa (): #Funció casella caixa
                 jugador_t.diners += 10
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
+
     elif jugador_v.posicio == 9 or jugador_v.posicio == 21: #Jugador vermell
         carta_jugador = random.choice(cartes_caixa)
         if carta_jugador == "Sortir de la presó": # Jugador Verd guanya sortir de la presó
@@ -490,6 +493,7 @@ def Sort  (): #Funció casella sort
                 jugador_v.diners -= 50
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
+
     elif jugador_g.posicio == 3 or jugador_g.posicio == 15: #Jugador groc
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
@@ -515,6 +519,7 @@ def Sort  (): #Funció casella sort
                 jugador_v.diners -= 50
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
+
     elif jugador_t.posicio == 3 or jugador_t.posicio == 15: #Jugador taronja
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
@@ -532,7 +537,6 @@ def Sort  (): #Funció casella sort
                     jugador_t.diners -= 25
                     if j == 1 :
                         jugador_t.diners -= 100 
-
             elif carta_jugador2 == "Ets escollit alcalde":
                 jugador_b.diners -= 50
                 jugador_g.diners -= 50
@@ -540,6 +544,7 @@ def Sort  (): #Funció casella sort
                 jugador_v.diners -= 50
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2)  
+
     elif jugador_v.posicio == 3 or jugador_v.posicio == 15: #Jugador vermell
         carta_jugador2 = random.choice(cartes_sort)
         if carta_jugador2 == "Sortir de la presó":
@@ -656,6 +661,16 @@ informacio_usuari()
 """
 INFORMACIÓ PARTIDA (SOTA)
 """
+def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
+    if jugador_b.posicio == casilla: #Casilla igual al número de casella
+        if casilla == 1 or 2 or 4 or 5:
+            return f"El preu del terreny és de:{diners_propietats[0]}"
+        elif casilla == 7 or 8 or 10 or 11:
+            return f"El preu del terreny és de:{diners_propietats[1]}"
+        elif casilla == 13 or 14 or 16 or 17:
+            return f"El preu del terreny és de:{diners_propietats[2]}"
+        elif casilla == 19 or 20 or 22 or 23:
+            return f"El preu del terreny és de:{diners_propietats[3]}"
 def accio_usuari():
     text = (f"Juga {jugador_b}, opcions: passar, comprar terreny, preus")
     text2 = (f"Juga {jugador_b}, opcions: passar, comprar casa, comprar hotel, preus")
@@ -666,14 +681,13 @@ def opcions():
         print("Compres terreny")
 
     elif opcion == "preus" or 2:
-        print(preu_terreny)
-
-def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
-    if jugador_b.posicio == casilla: #Casilla igual 
-        if casilla == 1 or 2 or 4 or 5:
-            pass
-
+        print(preu_terreny(casilla=None)) #Definir la casilla cuando cae el jugador
+    
+    else: 
         pass
+
+
+
     """
     Definir las caselles per numeros com els jugadores, 
     desde el array caselles del archivo tauler.py según la posició del tablero empezará 
