@@ -480,7 +480,37 @@ def Preso (): #Funció casella presó
 CASES I HOTELS
                 -Afegir número cases i hotels en cada cas (3C1H) canviant (---) o  ("|")
 """
+# Inicializamos las cantidades de casas (i) y hoteles (j)
+i = 0
+j = 0
 
+# Función para intentar comprar un hotel
+def comprar_hotel(cantidad):
+    global i, j
+    if j + cantidad > 2:
+        print("No se pueden comprar más de 2 hoteles.")
+    else:
+        for _ in range(cantidad):
+            if i >= 2:
+                i -= 2  # Restar 2 casas por cada hotel comprado
+                j += 1
+                print(f"Compraste 1 hotel. Ahora tienes {i} casas y {j} hotel(es).")
+            else:
+                print("No tienes suficientes casas para comprar un hotel.")
+                break
+
+# Función para intentar comprar casas
+def comprar_casa(cantidad):
+    global i, j
+    if j == 2:
+        print("No se pueden comprar casas porque ya tienes 2 hoteles.")
+    elif j == 1 and i + cantidad > 2:
+        print("No se pueden tener más de 2 casas con 1 hotel.")
+    elif j == 0 and i + cantidad > 4:
+        print("No se pueden comprar más de 4 casas.")
+    else:
+        i += cantidad
+        print(f"Compraste {cantidad} casa(s). Ahora tienes {i} casas y {j} hotel(es).")
 
 
 
