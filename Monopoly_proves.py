@@ -639,3 +639,13 @@ def inici_partida():
   # Definir els jugadors
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
+  
+"""
+TRUCS
+        -Anar a una casella
+        -Afegir X cases
+        -Afegir X hotels
+        -Seguent X (jugador, saltar torn)
+        -Diners X YY (Jugador, Quantitat)
+        -Diners X banca
+"""
