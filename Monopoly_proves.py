@@ -354,16 +354,16 @@ CASELLES ESPECIALS
 def Sortida (): #Funció casella sortida
     global valor_banca
     diners_sortida = 200
-    if jugador_g  in tauler[0]: #Si el jugador groc es troba en la casella sortida
+    if jugador_g.posicio == 0: #Si el jugador groc es troba en la casella sortida
         jugador_g.diners_sortida(diners_sortida) #El jugador guanya 200 euros
         valor_banca -= diners_sortida
-    elif jugador_b in tauler[0]:
+    elif jugador_b.posicio == 0:
         jugador_b.diners_sortida(diners_sortida)
         valor_banca -= diners_sortida
-    elif jugador_t in tauler[0]:
+    elif jugador_t.posicio == 0:
         jugador_t.diners_sortida(diners_sortida)
         valor_banca -= diners_sortida
-    elif jugador_v in tauler[0]:
+    elif jugador_v.posicio == 0:
         jugador_v.diners_sortida(diners_sortida)
         valor_banca -= diners_sortida
     else:
