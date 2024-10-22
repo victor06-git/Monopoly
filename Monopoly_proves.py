@@ -660,7 +660,7 @@ Jugador {Jugador_2}:
 Jugador {Jugador_3}:
 {info_3}
     """)
-informacio_usuari()
+
 
 """
 INFORMACIÓ PARTIDA (SOTA)
