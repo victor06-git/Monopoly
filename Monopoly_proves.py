@@ -737,7 +737,7 @@ def inici_partida():
   # Definir els jugadors
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
-  
+  tablero()
 """
 TRUCS
         -Anar a una casella
@@ -747,3 +747,7 @@ TRUCS
         -Diners X YY (Jugador, Quantitat)
         -Diners X banca
 """
+
+
+
+inici_partida()
