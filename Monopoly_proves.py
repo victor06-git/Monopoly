@@ -111,6 +111,8 @@ JUGADORS
             -Class Jugador
             -Jugadors definits per color
 """
+def torn(jugador): #Definir quin es el torn de cada jugador
+    pass
 class Jugador:
     def __init__(self,name,color):
         self.name = name
