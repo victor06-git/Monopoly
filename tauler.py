@@ -3,7 +3,6 @@ TABLERO
         -Variables casellas (cell(número))
         -Variables cases i hotels (casa(número))
 """
-from Monopoly_proves import *
 
 cell0,cell1,cell2,cell3,cell4,cell5,cell6,cell7,cell8,cell9,cell10 = "","","","","","","","","","",""
 cell11,cell12,cell13,cell14,cell15,cell16,cell17,cell18,cell19,cell20 = "","","","","","","","","",""
@@ -37,4 +36,3 @@ def tablero(): #Funció imprimeix tauler
     print("+--------+--------+--------+--------+--------+--------+--------+")
 
 
-tablero()

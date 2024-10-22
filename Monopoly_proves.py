@@ -716,7 +716,9 @@ def opcions():
             return preu_terreny(jugador_v.posicio)
         else: 
             pass
-
+def tauler_monopoly():
+    
+    tablero()
 
 
 
