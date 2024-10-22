@@ -751,16 +751,17 @@ def tablero(): #Funció imprimeix tauler
     print(f"+--------+                                            +--------+ {info_1[0]}")
     print(f"|Caixa   |                                            |Caixa   |")
     print(f"|{cell9:<8}|                                            |{cell21:<8}| Jugador {Jugador_2}")
-    print(f"+--------+                                            +--------+ {info_2}")
+    print(f"+--------+                                            +--------+ {info_2[0]}")
     print(f"|Aribau {casa6:<2}                                            |Balmes {casa15:<2}")
     print(f"|{cell8:<8}|                                            |{cell22:<8}|")
     print(f"+--------+                                            +--------+ Jugador {Jugador_3}")
-    print(f"|Muntan {casa5:<2}                                            |Gracia {casa16:<2} {info_3}")
+    print(f"|Muntan {casa5:<2}                                            |Gracia {casa16:<2} {info_3[0]}")
     print(f"|{cell7:<8}|                                            |{cell23:<8}|")
     print(f"+--------+----{casa4:<2}--+----{casa3:<2}--+--------+----{casa2:<2}--+----{casa1:<2}--+--------+")
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
+
 
 
 
