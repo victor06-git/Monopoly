@@ -1,107 +1,71 @@
 """
 TABLERO
         -Modificar una parte para que en el centro no se impriman "|" y solo espacio.
-        -Canviar totes les funcions per tal que faci només prints del tauler a partir de la llista tauler
-        """
-def line(): #Funció linea (+--------+--...)
-    for _ in range(7):
-        print("+---------", end="")
-    print("+")
-
-    
-def create_board(rows, cols):#Funció que crear el tauler
-    board = [] #Llista taula
-    for row in range(rows):
-        board.append([" " for _ in range(cols)])#Afegeix espais per columna
-    return board#Retorna la llista
+"""
 
 
-def print_board(board): #Imprimeix el tauler
-    #for row  in board[0]: #Posar que en la primera y última fila faci un afegit de |
-        #print("|", end="")
-    for row in board:#Per cada fila en el tauler
-        print("|", end="")#Imprimeix "|" i les va afegint en linea 
-        for cell in row:#Per cada cel·la en la fila
-            print(cell, end="|")#Afegeix la cel·la i acaba amb "|"
-        print()#Imprimeix un espai de línea
-        line()
-        
+cell0 = ""
+cell1 = ""
+cell2 = ""
+cell3 = ""
+cell4 = ""
+cell5 = ""
+cell6 = ""
+cell7 = ""
+cell8 = ""
+cell9 = ""
+cell10 = ""
+cell11 = ""
+cell12 = ""
+cell13 = ""
+cell14 = ""
+cell15 = ""
+cell16 = ""
+cell17 = ""
+cell18 = ""
+cell19 = ""
+cell20 = ""
+cell21 = ""
+cell22 = ""
+cell23 = ""
+casa1 = "--"
+casa2 = "--"
+casa3 = "--"
+casa4 = "--"
+casa5 = " |"
+casa6 = " |"
+casa7 = " |"
+casa8 = " |"
+casa9 = "--"
+casa10 = "--"
+casa11 = "--"
+casa12 = "--"
+casa13 = " |"
+casa14 = " |"
+casa15 = " |"
+casa16 = " |"
+def tablero():
+    print(f"+--------+----{casa9:<2}--+----{casa10:<2}--+--------+----{casa11:<2}--+----{casa12:<2}--+--------+")
+    print("|Parking |Urqinoa |Fontan  |Sort    |Rambles |Pl.Cat  |Anr pró |")
+    print(f"|{cell12:<8}|{cell13:<8}|{cell14:<8}|{cell15:<8}|{cell16:<8}|{cell17:<8}|{cell18:<8}|")
+    print("+--------+--------+--------+--------+--------+--------+--------+")
+    print(f"|Aragó  {casa8:<2}                                            | Angel {casa13:<2}")
+    print(f"|{cell11:<8}|                                            |{cell19:<8}|")
+    print("+--------+                                            +--------+")
+    print(f"|S.Joan {casa7:<2}                                            |Augusta{casa14:<2}")
+    print(f"|{cell10:<8}|                                            |{cell20:<8}|")
+    print("+--------+                                            +--------+")
+    print(f"|Caixa   |                                            |Caixa   |")
+    print(f"|{cell9:<8}|                                            |{cell21:<8}|")
+    print("+--------+                                            +--------+")
+    print(f"|Aribau {casa6:<2}                                            |Balmes {casa15:<2}")
+    print(f"|{cell8:<8}|                                            |{cell22:<8}|")
+    print("+--------+                                            +--------+")
+    print(f"|Muntan {casa5:<2}                                            |Gracia {casa16:<2}")
+    print(f"|{cell7:<8}|                                            |{cell23:<8}|")
+    print(f"+--------+----{casa4:<2}--+----{casa3:<2}--+--------+----{casa2:<2}--+----{casa1:<2}--+--------+")
+    print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
+    print("|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
+    print("+--------+--------+--------+--------+--------+--------+--------+")
 
 
-def add_piece(board, row, col, piece):#Funció afegir nom
-    board[row][col] = piece #Defineix la variable piece com un caracter en la taula
-
-def add_text(text):
-    pass    
-
-def texto():
-    text = "Hola"
-    add_piece(board, 1, 1, f"{text:<9}")
-    add_piece(board, 1, 2, f"{text:<9}")
-    add_piece(board, 1, 3, f"{text:<9}")
-    add_piece(board, 1, 4, f"{text:<9}")
-    add_piece(board, 1, 5, f"{text:<9}")
-    add_piece(board, 2, 1, f"{text:<9}")
-    add_piece(board, 2, 2, f"{text:<9}")
-    add_piece(board, 2, 3, f"{text:<9}")
-    add_piece(board, 2, 4, f"{text:<9}")
-    add_piece(board, 2, 5, f"{text:<9}")
-    add_piece(board, 3, 1, f"{text:<9}")
-    add_piece(board, 3, 2, f"{text:<9}")
-    add_piece(board, 3, 3, f"{text:<9}")
-    add_piece(board, 3, 4, f"{text:<9}")
-    add_piece(board, 3, 5, f"{text:<9}")
-    add_piece(board, 4, 1, f"{text:<9}")
-    add_piece(board, 4, 2, f"{text:<9}")
-    add_piece(board, 4, 3, f"{text:<9}")
-    add_piece(board, 4, 4, f"{text:<9}")
-    add_piece(board, 4, 5, f"{text:<9}")
-    add_piece(board, 5, 1, f"{text:<9}")
-    add_piece(board, 5, 2, f"{text:<9}")
-    add_piece(board, 5, 3, f"{text:<9}")
-    add_piece(board, 5, 4, f"{text:<9}")
-    add_piece(board, 5, 5, f"{text:<9}")
-
-
-
-def main():#Funció principal (main)
-    global board
-    global caselles
-    rows = 7#Filas
-    cols = 7#Columnas
-    board = create_board(rows, cols)#Crida la funció crear tauler
-
-    
-    
-    caselles = ["Parking","Urqinoa", "Fontan", "Sort", "Rambles", "Pl. Cat", "Anr pró", "Aragó", "S.Joan","Caixa","Aribau","Muntan","Angel","Augusta","Caixa","Balmes","Gracia","Presó","Consell","Marina","Sort","Rosell","Lauria","Sortida"]
-    
-    #Afegeix els noms de les caselles
-    line()
-    add_piece(board, 0, 0, f"{caselles[0]:<9}")
-    add_piece(board, 0, 1, f"{caselles[1]:<9}")
-    add_piece(board, 0, 2, f"{caselles[2]:<9}")
-    add_piece(board, 0, 3, f"{caselles[3]:<9}")
-    add_piece(board, 0, 4, f"{caselles[4]:<9}")
-    add_piece(board, 0, 5, f"{caselles[5]:<9}")
-    add_piece(board, 0, 6, f"{caselles[6]:<9}")
-    add_piece(board, 1, 0, f"{caselles[7]:<9}")
-    add_piece(board, 2, 0, f"{caselles[8]:<9}")
-    add_piece(board, 3, 0, f"{caselles[9]:<9}")
-    add_piece(board, 4, 0, f"{caselles[10]:<9}")
-    add_piece(board, 5, 0, f"{caselles[11]:<9}")
-    add_piece(board, 1, 6, f"{caselles[12]:<9}")
-    add_piece(board, 2, 6, f"{caselles[13]:<9}")
-    add_piece(board, 3, 6, f"{caselles[14]:<9}")
-    add_piece(board, 4, 6, f"{caselles[15]:<9}")
-    add_piece(board, 5, 6, f"{caselles[16]:<9}")
-    add_piece(board, 6, 0, f"{caselles[17]:<9}")
-    add_piece(board, 6, 1, f"{caselles[18]:<9}")
-    add_piece(board, 6, 2, f"{caselles[19]:<9}")
-    add_piece(board, 6, 3, f"{caselles[20]:<9}")
-    add_piece(board, 6, 4, f"{caselles[21]:<9}")
-    add_piece(board, 6, 5, f"{caselles[22]:<9}")
-    add_piece(board, 6, 6, f"{caselles[23]:<9}")
-    texto()
-    print_board(board)
-
-main()
