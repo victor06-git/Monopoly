@@ -181,14 +181,14 @@ ORDRE TIRADA
                 -
 """
 def ordre(): #Funció mostra els jugadors a l'atzar
+    global cell0
     players = ["V","T","G","B"]
     orden = []
     for _ in range(4):    
         eleccio = random.choice(players)
         orden.append(eleccio)
-        print(eleccio, end="")
         players.remove(eleccio)
-    print()
+    cell0 = orden[0] + orden[1] + orden[2]+ orden[3]
     global jugador_ve, jugador_tg, jugador_go, jugador_bl
     #Ordre tirada jugadors
     global Jugador_0, Jugador_1, Jugador_2, Jugador_3
@@ -330,8 +330,8 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         jugador_bl = Jugador_3
         Jugador_3 = "Blau"
     
+    return orden
 
-ordre()
 
 
 # Imprimimos la información de cada jugador
@@ -764,11 +764,7 @@ def tablero(): #Funció imprimeix tauler
 
 
 
-"""
-    Definir las caselles per numeros com els jugadores, 
-    desde el array caselles del archivo tauler.py según la posició del tablero empezará 
-    desde 0 con la sortida dando la vuelta en sentido de las agujas del reloj
-"""
+
 
 """
 INICI PARTIDA
@@ -781,7 +777,8 @@ def inici_partida():
   # Definir els jugadors
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
-  tablero()
+  ordre() #Crida la funció ordre
+  tablero() #Crida la funció imprimeix tauler
 """
 TRUCS
         -Anar a una casella
@@ -791,7 +788,18 @@ TRUCS
         -Diners X YY (Jugador, Quantitat)
         -Diners X banca
 """
-
+def anar_casella():
+    pass
+def afegir_cases():
+    pass
+def afegir_hotels():
+    pass
+def next_player():
+    pass
+def diners_player():
+    pass
+def diners_banca():
+    pass
 
 
 inici_partida()
