@@ -277,7 +277,7 @@ class Joc: #Definir class Joc
     def pasar_turno(self):
         torn_actual = (torn_actual + 1) % len(orden)
     
-joc = Joc(orden)
+
 
 class Jugador:#Definir class Jugador
     global torn_actual
@@ -332,14 +332,13 @@ class Jugador:#Definir class Jugador
         self.diners = (self.diners + sortida)
    
     def propietat_info(self):#Definir informació que es mostra en la pantalla
-        propietats_jugador = {"Propietats": self.propietats}
-        return propietats_jugador
+        return f"Propietats: {self.propietats}"
     def diner_info(self):
-        diners_jugador = {"Diners": self.diners}
-        return diners_jugador
+        return f"Diners: {self.diners}"
+        
     def especial_info(self):
-        especial_jugador = {"Especial": self.carta_especial}
-        return especial_jugador
+        return f"Especial:  {self.carta_especial}"
+
 
 jugador_v = Jugador("V", "Vermell")
 jugador_b =Jugador("B", "Blau")
@@ -734,10 +733,19 @@ casa5,casa6,casa7,casa8,casa13,casa14,casa15,casa16 = " |"," |"," |"," |"," |","
 
 def tablero(): #Funció imprimeix tauler
     
-    info_0 = jugador_t.jugador_info()
-    info_1 = jugador_g.jugador_info()
-    info_2 = jugador_b.jugador_info()
-    info_3 = jugador_v.jugador_info()
+    info_0 = jugador_t.propietat_info()
+    info_1 = jugador_g.propietat_info()
+    info_2 = jugador_b.propietat_info()
+    info_3 = jugador_v.propietat_info()
+    info_4 = jugador_t.diner_info()
+    info_5 = jugador_g.diner_info()
+    info_6  = jugador_b.diner_info()
+    info_7 = jugador_v.diner_info()
+    info_8 = jugador_t.especial_info()
+    info_9 = jugador_g.especial_info()
+    info_10 = jugador_b.especial_info()
+    info_11 = jugador_v.especial_info()
+    
     
         
 
@@ -745,25 +753,25 @@ def tablero(): #Funció imprimeix tauler
     print(f"|Parking |Urqinoa |Fontan  |Sort    |Rambles |Pl.Cat  |Anr pró | Diners: {banca()}")                                           
     print(f"|{cell12:<8}|{cell13:<8}|{cell14:<8}|{cell15:<8}|{cell16:<8}|{cell17:<8}|{cell18:<8}|")
     print(f"+--------+--------+--------+--------+--------+--------+--------+ Jugador {Jugador_0}:")
-    print(f"|Aragó  {casa8:<2}                                            | Angel {casa13:<2} {info_0[0]}")
-    print(f"|{cell11:<8}|                                            |{cell19:<8}|")
-    print("+--------+                                            +--------+")
+    print(f"|Aragó  {casa8:<2}                                            | Angel {casa13:<2} {info_0}")
+    print(f"|{cell11:<8}|                                            |{cell19:<8}| {info_4}")
+    print(f"+--------+                                            +--------+ {info_8}")
     print(f"|S.Joan {casa7:<2}                                            |Augusta{casa14:<2} Jugador {Jugador_1}:")
-    print(f"|{cell10:<8}|                                            |{cell20:<8}|")
-    print(f"+--------+                                            +--------+ {info_1[0]}")
-    print(f"|Caixa   |                                            |Caixa   |")
+    print(f"|{cell10:<8}|                                            |{cell20:<8}|  {info_1}")
+    print(f"+--------+                                            +--------+ {info_5}")
+    print(f"|Caixa   |                                            |Caixa   | {info_9}")
     print(f"|{cell9:<8}|                                            |{cell21:<8}| Jugador {Jugador_2}")
-    print(f"+--------+                                            +--------+ {info_2[0]}")
-    print(f"|Aribau {casa6:<2}                                            |Balmes {casa15:<2}")
-    print(f"|{cell8:<8}|                                            |{cell22:<8}|")
+    print(f"+--------+                                            +--------+ {info_2}")
+    print(f"|Aribau {casa6:<2}                                            |Balmes {casa15:<2} {info_6}")
+    print(f"|{cell8:<8}|                                            |{cell22:<8}| {info_10}")
     print(f"+--------+                                            +--------+ Jugador {Jugador_3}")
-    print(f"|Muntan {casa5:<2}                                            |Gracia {casa16:<2} {info_3[0]}")
-    print(f"|{cell7:<8}|                                            |{cell23:<8}|")
-    print(f"+--------+----{casa4:<2}--+----{casa3:<2}--+--------+----{casa2:<2}--+----{casa1:<2}--+--------+")
+    print(f"|Muntan {casa5:<2}                                            |Gracia {casa16:<2} {info_3}")
+    print(f"|{cell7:<8}|                                            |{cell23:<8}| {info_7}")
+    print(f"+--------+----{casa4:<2}--+----{casa3:<2}--+--------+----{casa2:<2}--+----{casa1:<2}--+--------+ {info_11}")
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-    opcions()
+    
 
 
 
@@ -776,10 +784,8 @@ INICI PARTIDA
                 -Barrejar les cartes de caixa i sort
 """
 def inici_partida():
-  global torn_actual
   """Inicia la partida amb els jugadors tenint 2000 euros."""
   # Definir els jugadors
-  torn_actual = 0
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
   ordre() #Crida la funció ordre
@@ -807,4 +813,4 @@ def diners_banca():
     pass
 
 
-"inici_partida()"
+inici_partida()
