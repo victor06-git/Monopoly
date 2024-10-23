@@ -122,7 +122,10 @@ class Jugador:
         self.diners = 2000 #Diners amb els que comença cada partida els jugadors
         self.a_preso = False #False per definir que el jugador no es troba a presó
         self.torns_a_preso = 0 #Número torns a preso
-        
+        self.torn = None
+    
+    def torn(self):
+        pass
 
     def en_preso(self):
         return self.a_preso()
@@ -767,7 +770,7 @@ def tablero(): #Funció imprimeix tauler
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-
+    opcions()
 
 
 
