@@ -74,12 +74,6 @@ Monopoly --> grupo: Manel y Víctor
 16 -- Definir els preus de les cases, els hotels, el terreny, compra casa, compra hotel.
 17 -- Definir trucs
 """
-"""
-Coses fetes:
-       /
-daus \/
-
-"""
 
 """
 IMPORTS
@@ -264,6 +258,8 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         Jugador_3 = "Blau"
     
     return orden,players
+orden,players = ordre()
+
 """
 JUGADORS
             -Class Jugador
@@ -273,6 +269,7 @@ class Joc: #Definir class Joc
     def __init__(self):
         self.torn_actual = 0
         self.jugador_actual = None
+        self.orden = orden
    
     def torn_jugador(self):
         self.jugador_actual = orden[torn_actual]
@@ -351,25 +348,6 @@ jugador_g = Jugador("G", "Groc")
 jugador_t = Jugador("T","Taronja")
 
 
-
-
-
-
-
-    
-# Imprimimos la información de cada jugador
-#jugadores = ["", taronja, blau, vermell]
-#for jugador in jugadores:
-    #print(f"Jugador: {jugador} \nCarrers: {jugadores[jugador]['Carrers']} \nDiners: {jugadores[jugador]['Diners']} \n Especial: {jugadores[jugador]['Especial']}\n---")
-
-
-"""
-CASELLES
-            -Definir caselles com números ( exemple: Sortida = 0)
-            -Per la seva posició en la llista tauler
-"""
-
-
 """
 CASELLES ESPECIALS
 """
@@ -394,14 +372,14 @@ def Sortida (): #Funció casella sortida
         pass
 
 def Anr_pro  (): #Funció casella anar presó
-    anar_preso = tauler[18]
-    if jugador_b in anar_preso:
+    anar_preso = 18
+    if jugador_b.posicio == anar_preso:
         jugador_b.move_to(6,tauler)
-    elif jugador_g in anar_preso:
+    elif jugador_g.posicio == anar_preso:
         jugador_g.move_to(6, tauler)
-    elif jugador_t in anar_preso:
+    elif jugador_t.posicio == anar_preso:
         jugador_t.move_to(6,tauler)
-    elif jugador_v in anar_preso:
+    elif jugador_v.posicio == anar_preso:
         jugador_v.move_to(6,tauler)
 
 def Caixa (): #Funció casella caixa
@@ -829,4 +807,4 @@ def diners_banca():
     pass
 
 
-inici_partida()
+"inici_partida()"
