@@ -111,8 +111,7 @@ JUGADORS
             -Class Jugador
             -Jugadors definits per color
 """
-def torn(jugador): #Definir quin es el torn de cada jugador
-    pass
+
 class Jugador:
     def __init__(self,name,color):
         self.name = name
@@ -120,9 +119,11 @@ class Jugador:
         self.posicio = 0 #Comença a la casella "sortida"
         self.propietats = [] #Lista de les propietats que té l'usuari
         self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
-        self.diners = 2000
-        self.a_preso = False
-        self.torns_a_preso = 0
+        self.diners = 2000 #Diners amb els que comença cada partida els jugadors
+        self.a_preso = False #False per definir que el jugador no es troba a presó
+        self.torns_a_preso = 0 #Número torns a preso
+        self.torn_jugador = 0
+
     def en_preso(self):
         return self.a_preso()
     
