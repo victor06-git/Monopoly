@@ -117,8 +117,9 @@ class Joc: #Definir class Joc
    
     def torn_jugador(self):
         jugador_actual = orden[torn_actual]
+        return jugador_actual  
+    def pasar_turno(self):
         torn_actual = (torn_actual + 1) % len(orden)
-        return jugador_actual, torn_actual  
     
 class Jugador:#Definir class Jugador
     global torn_actual
