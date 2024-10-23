@@ -107,91 +107,6 @@ def banca():#Funció diners banca
         valor_banca = valor_inicial
         return valor_banca # Retorna el valor en diners que te la banca en aquell moment
 """
-JUGADORS
-            -Class Jugador
-            -Jugadors definits per color
-"""
-class Joc: #Definir class Joc
-    def __init__(self):
-        self.torn_actual = 0
-   
-    def torn_jugador(self):
-        jugador_actual = orden[torn_actual]
-        return jugador_actual  
-    def pasar_turno(self):
-        torn_actual = (torn_actual + 1) % len(orden)
-    
-class Jugador:#Definir class Jugador
-    global torn_actual
-    def __init__(self,name,color):
-        self.name = name
-        self.color = color
-        self.posicio = 0 #Comença a la casella "sortida"
-        self.propietats = [] #Lista de les propietats que té l'usuari
-        self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
-        self.diners = 2000 #Diners amb els que comença cada partida els jugadors
-        self.a_preso = False #False per definir que el jugador no es troba a presó
-        self.torns_a_preso = 0 #Número torns a preso
-        self.torn_actual = 0
-    
-     
-
-    def en_preso(self):
-        return self.a_preso()
-    
-    def move(self,passos,tauler):
-        if self.a_preso == True:
-            print("Jugador a presó, no pot tirar")
-            return None
-        else:
-            self.posicio = (self.posicio + passos) % len(tauler) #Passos == resultat_daus
-            casella_actual = tauler[self.posicio]
-            return casella_actual
-        
-    def move_to(self, casella, tauler):  #Funció anar a presó
-        if 0 <= casella < len(tauler):
-            self.posicio = casella
-            return tauler[self.posicio]
-        else:
-            pass
-    def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
-        self.propietats.append(name_propietat)
-
-    def add_carta_especial(self, carta): #Definir les cartes especials que té el jugador
-        self.carta_especial.append(carta)#Només hi ha una carta especial
-    
-    def show_especial_card(self):
-        if len(self.carta_especial) != 0:
-            return True
-        else:
-            pass
-    def add_especial_card(self): #Si el jugador té una carta especial mostrala, sino mostra "(res)""
-        pass
-    def diners_propietat(self, diner_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
-        self.diners = (self.diners - diner_propietat)  
-   
-    def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
-        self.diners = (self.diners + sortida)
-   
-    def jugador_info(self):#Definir informació que es mostra en la pantalla
-        info = {
-            "Propietats": self.propietats,
-            "Diners": self.diners,
-            "Especial": self.carta_especial
-        }
-        salts_de_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
-        return salts_de_linea
-    def torn_jugador(): #Definir a partir de la llista ordre dels jugadors
-        pass
-
-jugador_v = Jugador("V", "Vermell")
-jugador_b =Jugador("B", "Blau")
-jugador_g = Jugador("G", "Groc")
-jugador_t = Jugador("T","Taronja")
-
-
-
-"""
 ORDRE TIRADA
                 -Aleatoriament selecciona al principi de cada partida
                 -Condicional para saber que valores entre el 0 i el 3 tienen los jugadores
@@ -349,6 +264,95 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         Jugador_3 = "Blau"
     
     return orden,players
+"""
+JUGADORS
+            -Class Jugador
+            -Jugadors definits per color
+"""
+class Joc: #Definir class Joc
+    def __init__(self):
+        self.torn_actual = 0
+        self.jugador_actual = None
+   
+    def torn_jugador(self):
+        self.jugador_actual = orden[torn_actual]
+          
+    def pasar_turno(self):
+        torn_actual = (torn_actual + 1) % len(orden)
+    
+joc = Joc(orden)
+
+class Jugador:#Definir class Jugador
+    global torn_actual
+    def __init__(self,name,color):
+        self.name = name
+        self.color = color
+        self.posicio = 0 #Comença a la casella "sortida"
+        self.propietats = [] #Lista de les propietats que té l'usuari
+        self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
+        self.diners = 2000 #Diners amb els que comença cada partida els jugadors
+        self.a_preso = False #False per definir que el jugador no es troba a presó
+        self.torns_a_preso = 0 #Número torns a preso
+        self.torn_actual = 0
+    
+     
+
+    def en_preso(self):
+        return self.a_preso()
+    
+    def move(self,passos,tauler):
+        if self.a_preso == True:
+            print("Jugador a presó, no pot tirar")
+            return None
+        else:
+            self.posicio = (self.posicio + passos) % len(tauler) #Passos == resultat_daus
+            casella_actual = tauler[self.posicio]
+            return casella_actual
+        
+    def move_to(self, casella, tauler):  #Funció anar a presó
+        if 0 <= casella < len(tauler):
+            self.posicio = casella
+            return tauler[self.posicio]
+        else:
+            pass
+    def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
+        self.propietats.append(name_propietat)
+
+    def add_carta_especial(self, carta): #Definir les cartes especials que té el jugador
+        self.carta_especial.append(carta)#Només hi ha una carta especial
+    
+    def show_especial_card(self):
+        if len(self.carta_especial) != 0:
+            return True
+        else:
+            pass
+    def add_especial_card(self): #Si el jugador té una carta especial mostrala, sino mostra "(res)""
+        pass
+    def diners_propietat(self, diner_propietat): #Definir els diners que té després de comprar un terreny, casa o hotel
+        self.diners = (self.diners - diner_propietat)  
+   
+    def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
+        self.diners = (self.diners + sortida)
+   
+    def jugador_info(self):#Definir informació que es mostra en la pantalla
+        info = {
+            "Propietats": self.propietats,
+            "Diners": self.diners,
+            "Especial": self.carta_especial
+        }
+        salts_de_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
+        return salts_de_linea
+    def torn_jugador(): #Definir a partir de la llista ordre dels jugadors
+        pass
+
+jugador_v = Jugador("V", "Vermell")
+jugador_b =Jugador("B", "Blau")
+jugador_g = Jugador("G", "Groc")
+jugador_t = Jugador("T","Taronja")
+
+
+
+
 
 
 
