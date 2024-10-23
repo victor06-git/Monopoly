@@ -169,7 +169,7 @@ class Jugador:
         }
         salts_de_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
         return salts_de_linea
-    def torn_jugador():
+    def torn_jugador(): #Definir a partir de la llista ordre dels jugadors
         pass
 
 jugador_v = Jugador("V", "Vermell")
