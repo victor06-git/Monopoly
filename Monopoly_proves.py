@@ -169,6 +169,8 @@ class Jugador:
         }
         salts_de_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
         return salts_de_linea
+    def torn_jugador():
+        pass
 
 jugador_v = Jugador("V", "Vermell")
 jugador_b =Jugador("B", "Blau")
@@ -336,10 +338,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
     
     return orden,players
 
-players = ordre()
-def torn(jugador):
-    for player in players:
-        print(f"Torn {player}")
+
 
     pass
 # Imprimimos la información de cada jugador
