@@ -124,8 +124,10 @@ class Jugador:
         self.torns_a_preso = 0 #Número torns a preso
         self.torn = None
     
-    def torn(self):
-        pass
+    def torn_jugador(self,ordre,torn_actual):
+        jugador_actual = ordre[torn_actual]
+        torn_actual = (torn_actual + 1) % len(ordre)
+        return jugador_actual   
 
     def en_preso(self):
         return self.a_preso()
@@ -343,7 +345,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
 
 
 
-    pass
+    
 # Imprimimos la información de cada jugador
 #jugadores = ["", taronja, blau, vermell]
 #for jugador in jugadores:
