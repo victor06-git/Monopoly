@@ -183,8 +183,7 @@ ORDRE TIRADA
                 -Condicional para saber que valores entre el 0 i el 3 tienen los jugadores
                 -
 """
-def torn():
-    pass
+
 def ordre(): #Funció mostra els jugadors a l'atzar
     global cell0
     players = ["V","T","G","B"]
@@ -335,10 +334,14 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         jugador_bl = Jugador_3
         Jugador_3 = "Blau"
     
-    return orden
+    return orden,players
 
+players = ordre()
+def torn(jugador):
+    for player in players:
+        print(f"Torn {player}")
 
-
+    pass
 # Imprimimos la información de cada jugador
 #jugadores = ["", taronja, blau, vermell]
 #for jugador in jugadores:
