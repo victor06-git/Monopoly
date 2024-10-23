@@ -122,7 +122,7 @@ class Jugador:
         self.diners = 2000 #Diners amb els que comença cada partida els jugadors
         self.a_preso = False #False per definir que el jugador no es troba a presó
         self.torns_a_preso = 0 #Número torns a preso
-        self.torn_jugador = 0
+        
 
     def en_preso(self):
         return self.a_preso()
@@ -183,6 +183,8 @@ ORDRE TIRADA
                 -Condicional para saber que valores entre el 0 i el 3 tienen los jugadores
                 -
 """
+def torn():
+    pass
 def ordre(): #Funció mostra els jugadors a l'atzar
     global cell0
     players = ["V","T","G","B"]
