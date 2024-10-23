@@ -331,16 +331,15 @@ class Jugador:#Definir class Jugador
     def diners_sortida(self, sortida):#Definir els diners que té després de passar per la casella de sortida
         self.diners = (self.diners + sortida)
    
-    def jugador_info(self):#Definir informació que es mostra en la pantalla
-        info = {
-            "Propietats": self.propietats,
-            "Diners": self.diners,
-            "Especial": self.carta_especial
-        }
-        salts_de_linea = "\n".join([f"{key}: {value}" for key, value in info.items()])
-        return salts_de_linea
-    def torn_jugador(): #Definir a partir de la llista ordre dels jugadors
-        pass
+    def propietat_info(self):#Definir informació que es mostra en la pantalla
+        propietats_jugador = {"Propietats": self.propietats}
+        return propietats_jugador
+    def diner_info(self):
+        diners_jugador = {"Diners": self.diners}
+        return diners_jugador
+    def especial_info(self):
+        especial_jugador = {"Especial": self.carta_especial}
+        return especial_jugador
 
 jugador_v = Jugador("V", "Vermell")
 jugador_b =Jugador("B", "Blau")
@@ -577,7 +576,8 @@ def Sort  (): #Funció casella sort
 
 def Preso (): #Funció casella presó
     preso = tauler[6]
-    if jugador_b in preso:
+    if jugador_b.a_preso ==  True:
+
         jugador_b.en_preso = True
         if jugador_b.show_especial_card() == True:
             jugador_b.en_preso = False
