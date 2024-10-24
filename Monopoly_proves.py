@@ -1565,24 +1565,22 @@ def Caixa (): #Funció casella caixa
             cartes_caixa.remove(carta_jugador)
         else:
             if carta_jugador == "Anar a la presó": # Jugador Vermell va a la presó
-                jugador_v.move_to(6, tauler)
-                cell15= "V"
+                Anr_pro()
             elif carta_jugador == "Error de la banca": # Jugador Vermell guanya diners per error de la banca
                 jugador_v.diners += 150
-                cell15= "V"
+                print(f"Quina sort! Guanyes 150 per un error a la banca, carta: {carta_jugador}")
             elif carta_jugador == "Despeses mèdiques": # Jugador Vermell perd diners per despeses mèdiques 
                 jugador_v.diners -= 50
-                cell15= "V"
+                print(f"Has de pagar 50, carta: {carta_jugador}")
             elif carta_jugador == "Despeses escolars": # Jugador Vermell perd diners per despeses escolars 
                 jugador_v.diners -= 50
-                cell15= "V"
+                print(f"Has de pagar 50, carta: {carta_jugador}")
             elif carta_jugador == "Reparacions al carrer":  # Jugador Vermell perd diners per reparacions al carrer    
                 jugador_v.diners -= 40
-                cell15= "V"
+                print(f"Has de pagar 40, carta: {carta_jugador}")
             elif carta_jugador  == "Concurs de bellesa": # Jugador Vermell guanya diners per concurs de bellesa
                 jugador_v.diners += 10
-                cell15= "V"
-
+                print(f"Guanyes 10, carta: {carta_jugador}")
                 cartes_caixa.remove(carta_jugador)
                 cartes_caixa.index(carta_jugador) 
 def Sort  (): #Funció casella sort
@@ -1593,14 +1591,13 @@ def Sort  (): #Funció casella sort
             cartes_sort.remove(carta_jugador2)
         else:
             if carta_jugador2 == "Anar a la presó": # Jugador Blau va a la presó
-                jugador_b.move_to(6, tauler)
-                cell6= "B"
+                Anr_pro()
             elif carta_jugador2 == "Anar a la sortida": # Jugador Blau va a la sortida 
-                jugador_b.move_to(0, tauler)
-                cell0= "B"
+                jugador_b.move_to(0, cells)
+                print("Tornes a la casella de sortida")
             elif carta_jugador2 == "Anar tres espais endarrera": #  Jugador Blau va tres espais endarrera
-                jugador_b.move(-3,tauler)
-                cell12= "B"
+                jugador_b.move(-3,cells)
+                print("Retrocedeix  espais")
             elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Blau perd diners per reparacions a les propietats
                 if len(jugador_b.propietats) != 0 :
                     jugador_b.diners -=25
@@ -1612,8 +1609,7 @@ def Sort  (): #Funció casella sort
                 jugador_g.diners -= 50
                 jugador_t.diners -= 50
                 jugador_v.diners -= 50
-                cell15= "B"
-                return cell0, cell6, cell12, cell15
+                
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
                 
@@ -1624,14 +1620,13 @@ def Sort  (): #Funció casella sort
             cartes_sort.remove(carta_jugador2)
         else:
             if carta_jugador2 == "Anar a la presó": # Jugador Groc va a la presó
-                jugador_g.move_to(6, tauler)
-                cell6= "G"
+                Anr_pro()
             elif carta_jugador2 == "Anar a la sortida": # Jugador Groc va a la sortida 
-                jugador_g.move_to(0, tauler)
-                cell0= "G"
+                jugador_g.move_to(0, cells)
+                print("Torna a la sortida")
             elif carta_jugador2 == "Anar tres espais endarrera": # Jugador Groc va tres espais endarrera
                 jugador_g.move(-3,tauler)
-                cell12= "G"
+                print("Retrocedeix 3 caselles")
             elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Groc perd diners per reparacions a les propietats
                 if len(jugador_g.propietats) != 0 :
                     jugador_g.diners -=25
