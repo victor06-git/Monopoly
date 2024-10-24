@@ -838,68 +838,29 @@ casa5,casa6,casa7,casa8,casa13,casa14,casa15,casa16 = " |"," |"," |"," |"," |","
 
 
     
-def ajustar_texto(texto, ancho):
-    """Ajusta el texto a un ancho específico y lo divide en líneas si es necesario."""
-    # Dividir el texto en palabras
-    palabras = texto.split()
-    lineas = []
-    linea_actual = ""
 
-    for palabra in palabras:
-        # Comprobar si la palabra cabe en la línea actual
-        if len(linea_actual) + len(palabra) + 1 <= ancho:
-            if linea_actual:
-                linea_actual += " "  # Añadir espacio si no es la primera palabra
-            linea_actual += palabra
-        else:
-            # Si no cabe, añadir la línea actual a la lista y empezar una nueva
-            lineas.append(linea_actual)
-            linea_actual = palabra
-
-    # Añadir la última línea si hay texto
-    if linea_actual:
-        lineas.append(linea_actual)
-
-    # Asegurarse de que cada línea tenga el ancho especificado
-    lineas_ajustadas = [linea.ljust(ancho) for linea in lineas]
-    return lineas_ajustadas
 
 # Definición de variables
-texto0 = ""
-texto1 = ""
-texto2 = ""
-texto3 = ""
-texto4 = ""    
-texto5 = ""
-texto6 = ""
-texto7 = ""
-texto8 = ""
-texto9 = ""
-texto10 = ""
-texto11 = ""
-texto12 = "No coje nigún atajo"
-texto13 = "Juega jugador 4 con 5 dados"
 
-# Ajustar el texto a un ancho específico
-ancho_texto = 30  # Ancho deseado para el texto
-lineas_texto0 = ajustar_texto(texto0, ancho_texto)
-lineas_texto1 = ajustar_texto(texto1, ancho_texto)
-lineas_texto2 = ajustar_texto(texto2, ancho_texto)
-lineas_texto3 = ajustar_texto(texto3, ancho_texto)
-lineas_texto4 = ajustar_texto(texto4, ancho_texto)
-lineas_texto5 = ajustar_texto(texto5, ancho_texto)
-lineas_texto6 = ajustar_texto(texto6, ancho_texto)
-lineas_texto7 = ajustar_texto(texto7, ancho_texto)
-lineas_texto8 = ajustar_texto(texto8, ancho_texto)
-lineas_texto9 = ajustar_texto(texto9, ancho_texto)
-lineas_texto10 = ajustar_texto(texto10, ancho_texto)
-lineas_texto11 = ajustar_texto(texto11, ancho_texto)
-lineas_texto12 = ajustar_texto(texto12, ancho_texto)
-lineas_texto13 = ajustar_texto(texto13, ancho_texto)
 
 def tablero(): #Funció imprimeix tauler
    
-    
+    texto0 = ""
+    texto1 = ""
+    texto2 = ""
+    texto3 = ""
+    texto4 = ""    
+    texto5 = ""
+    texto6 = ""
+    texto7 = ""
+    texto8 = ""
+    texto9 = ""
+    texto10 = ""
+    texto11 = ""
+    texto12 = ""
+    texto13 = ""
+
+
     info_0 = jugador_t.propietat_info()
     info_1 = jugador_g.propietat_info()
     info_2 = jugador_b.propietat_info()
@@ -917,19 +878,19 @@ def tablero(): #Funció imprimeix tauler
     print(f"|Parking |Urqinoa |Fontan  |Sort    |Rambles |Pl.Cat  |Anr pró | Diners: {banca()}")                                           
     print(f"|{cell12:<8}|{cell13:<8}|{cell14:<8}|{cell15:<8}|{cell16:<8}|{cell17:<8}|{cell18:<8}|")
     print(f"+--------+--------+--------+--------+--------+--------+--------+ Jugador {Jugador_0}:")
-    print(f"|Aragó  {casa8:<2}{texto13:<8}                                           | Angel {casa13:<2} {info_0}")
-    print(f"|{cell11:<8}|{texto12:<8}                                            |{cell19:<8}| {info_4}")
-    print(f"+--------+{texto11:<8}                                            +--------+ {info_8}")
-    print(f"|S.Joan {casa7:<2}{texto10:<8}                                            |Augusta{casa14:<2} Jugador {Jugador_1}:")
-    print(f"|{cell10:<8}|{texto9:<8}                                            |{cell20:<8}|  {info_1}")
-    print(f"+--------+{texto8:<8}                                            +--------+ {info_5}")
-    print(f"|Caixa   |{texto7:<8}                                            |Caixa   | {info_9}")
-    print(f"|{cell9:<8}|{texto6:<8}                                            |{cell21:<8}| Jugador {Jugador_2}")
-    print(f"+--------+{texto5:<8}                                            +--------+ {info_2}")
-    print(f"|Aribau {casa6:<2}{texto4:<8}                                            |Balmes {casa15:<2} {info_6}")
-    print(f"|{cell8:<8}|{texto3:<8}                                            |{cell22:<8}| {info_10}")
-    print(f"+--------+{texto2:<8}                                  +--------+ Jugador {Jugador_3}")
-    print(f"|Muntan {casa5:<2}{texto1:<8}                                  |Gracia {casa16:<2} {info_3}")
+    print(f"|Aragó  {casa8:<2}{texto13:<8}                 | Angel {casa13:<2} {info_0}")
+    print(f"|{cell11:<8}|{texto12:<8}                         |{cell19:<8}| {info_4}")
+    print(f"+--------+{texto11:<8}                                    +--------+ {info_8}")
+    print(f"|S.Joan {casa7:<2}{texto10:<8}                                    |Augusta{casa14:<2} Jugador {Jugador_1}:")
+    print(f"|{cell10:<8}|{texto9:<8}                                    |{cell20:<8}|  {info_1}")
+    print(f"+--------+{texto8:<8}                                    +--------+ {info_5}")
+    print(f"|Caixa   |{texto7:<8}                                    |Caixa   | {info_9}")
+    print(f"|{cell9:<8}|{texto6:<8}                                    |{cell21:<8}| Jugador {Jugador_2}")
+    print(f"+--------+{texto5:<8}                                    +--------+ {info_2}")
+    print(f"|Aribau {casa6:<2}{texto4:<8}                                    |Balmes {casa15:<2} {info_6}")
+    print(f"|{cell8:<8}|{texto3:<8}                                    |{cell22:<8}| {info_10}")
+    print(f"+--------+{texto2:<8}                                    +--------+ Jugador {Jugador_3}")
+    print(f"|Muntan {casa5:<2}{texto1:<8}                                    |Gracia {casa16:<2} {info_3}")
     print(f"|{cell7:<8}|{texto0:>8}                                    |{cell23:<8}| {info_7}")
     print(f"+--------+----{casa4:<2}--+----{casa3:<2}--+--------+----{casa2:<2}--+----{casa1:<2}--+--------+ {info_11}")
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
