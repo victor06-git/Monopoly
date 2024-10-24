@@ -262,12 +262,20 @@ orden,players = ordre()
 """
 TORN JUGADOR
 """
-def torn(torn_actual): #Funció  que determina el jugador que toca jugar
-
+jugador = [Jugador_0,Jugador_1,Jugador_2,Jugador_3]
+def torn(torn_actual,jugador): #Funció  que determina el jugador que toca jugar
     jugador_actual = orden[torn_actual % len(orden)]
     next_turn = (torn_actual + 1) % len(orden)
     next_jugador = orden[next_turn]
-    return jugador_actual, next_jugador
+    if torn_actual == 0:
+        jugador_torn = jugador[0]
+    elif torn_actual == 1:
+        jugador_torn = jugador[1]
+    elif torn_actual == 2:
+        jugador_torn = jugador[2]
+    else:
+        jugador_torn = jugador[3]
+    return jugador_actual, next_jugador, jugador_torn
 """
 JUGADORS
             -Class Jugador
@@ -275,7 +283,7 @@ JUGADORS
 """
 torn_actual = 0 #Variable  que indica el torn actual
 
-jugador_actual, next_jugador = torn(torn_actual) #Retorna el  jugador actual i el jugador que toca a continuació
+jugador_actual,next_jugador,jugador_torn = torn(torn_actual) #Retorna el  jugador actual i el jugador que toca a continuació
 
     
 
