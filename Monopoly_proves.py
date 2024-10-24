@@ -340,7 +340,7 @@ def opcions(jugador_actual):
 
     jugador = opcions_jugadors[jugador_actual]
     print(f"Torn Jugador: \"{jugador_actual}\"")
-    if jugador.propietats == 0:   
+    if jugador.propietats != 0:   
         opcion_jugador = input(f"Torn \"{jugador_actual}\", opcions --> (passar, compra terreny, preus):  ")
         if opcion_jugador == 1 or opcion_jugador == "comprar  terreny":
             if torn_jugador_B():
@@ -356,9 +356,22 @@ def opcions(jugador_actual):
             return preu_terreny(jugador.posicio)
         elif opcion_jugador == "trucs".lower():
             trucs()
-    elif jugador.propietats != 0:
-        print(f"Juga {jugador_b}, opcions: passar, comprar casa, comprar hotel, preus")
-        
+    elif jugador.propietats >= 1:
+        opcion_jugador = print(f"Juga {jugador_actual}, opcions: passar, comprar casa, comprar hotel, preus: ")
+        if opcion_jugador == 1 or opcion_jugador == "comprar  terreny":
+            if torn_jugador_B():
+                jugador_b.compra_propietat(tauler[jugador_b.posicio])
+            elif torn_jugador_G():
+                jugador_g.compra_propietat(tauler[jugador_g.posicio])
+            elif torn_jugador_T():
+                jugador_t.compra_propietat(tauler[jugador_t.posicio])
+            elif  torn_jugador_V():
+                jugador_v.compra_propietat(tauler[jugador_v.posicio])
+
+        elif opcion_jugador == "preus" or opcion_jugador == 2:
+            return preu_terreny(jugador.posicio)
+        elif opcion_jugador == "trucs".lower():
+            trucs()
         
 
 
@@ -2022,13 +2035,13 @@ def inici_partida():
   torn(torn_actual)
   llançar_daus()
   if torn_jugador_B():
-    jugador_b.move(suma_daus,tauler)
+    jugador_b.move(suma_daus,cells)
   elif torn_jugador_G():
-      jugador_g.move(suma_daus,tauler)
+      jugador_g.move(suma_daus,cells)
   elif torn_jugador_T():
-      jugador_t.move(suma_daus,tauler)
+      jugador_t.move(suma_daus,cells)
   elif torn_jugador_V():
-      jugador_v.move(suma_daus,tauler)
+      jugador_v.move(suma_daus,cells)
   opcions(jugador_actual)
  
 
