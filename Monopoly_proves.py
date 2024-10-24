@@ -807,6 +807,42 @@ def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny selec
             return f"El preu del terreny és de:{diners_propietats[3]}"
         else:
             pass
+    
+    if jugador_t.posicio == casilla: #Casilla igual al número de casella
+        if casilla == [1,2,4,5]:
+            return f"El preu del terreny és de:{diners_propietats[0]} "
+        elif casilla == [7,8,10,11]:
+            return f"El preu del terreny és de:{diners_propietats[1]}"
+        elif casilla == [13,14,16,17]:
+            return f"El preu del terreny és de:{diners_propietats[2]}"
+        elif casilla == [19,20,22,23]:
+            return f"El preu del terreny és de:{diners_propietats[3]}"
+        else:
+            pass
+
+    if jugador_g.posicio == casilla: #Casilla igual al número de casella
+        if casilla == [1,2,4,5]:
+            return f"El preu del terreny és de:{diners_propietats[0]} "
+        elif casilla == [7,8,10,11]:
+            return f"El preu del terreny és de:{diners_propietats[1]}"
+        elif casilla == [13,14,16,17]:
+            return f"El preu del terreny és de:{diners_propietats[2]}"
+        elif casilla == [19,20,22,23]:
+            return f"El preu del terreny és de:{diners_propietats[3]}"
+        else:
+            pass
+    
+    if jugador_v.posicio == casilla: #Casilla igual al número de casella
+        if casilla == [1,2,4,5]:
+            return f"El preu del terreny és de:{diners_propietats[0]} "
+        elif casilla == [7,8,10,11]:
+            return f"El preu del terreny és de:{diners_propietats[1]}"
+        elif casilla == [13,14,16,17]:
+            return f"El preu del terreny és de:{diners_propietats[2]}"
+        elif casilla == [19,20,22,23]:
+            return f"El preu del terreny és de:{diners_propietats[3]}"
+        else:
+            pass
 
 
 """
@@ -878,8 +914,8 @@ def tablero(): #Funció imprimeix tauler
     print(f"|Parking |Urqinoa |Fontan  |Sort    |Rambles |Pl.Cat  |Anr pró | Diners: {banca()}")                                           
     print(f"|{cell12:<8}|{cell13:<8}|{cell14:<8}|{cell15:<8}|{cell16:<8}|{cell17:<8}|{cell18:<8}|")
     print(f"+--------+--------+--------+--------+--------+--------+--------+ Jugador {Jugador_0}:")
-    print(f"|Aragó  {casa8:<2}{texto13:<8}                 | Angel {casa13:<2} {info_0}")
-    print(f"|{cell11:<8}|{texto12:<8}                         |{cell19:<8}| {info_4}")
+    print(f"|Aragó  {casa8:<2}{texto13:<8}                                    | Angel {casa13:<2} {info_0}")
+    print(f"|{cell11:<8}|{texto12:<8}                                    |{cell19:<8}| {info_4}")
     print(f"+--------+{texto11:<8}                                    +--------+ {info_8}")
     print(f"|S.Joan {casa7:<2}{texto10:<8}                                    |Augusta{casa14:<2} Jugador {Jugador_1}:")
     print(f"|{cell10:<8}|{texto9:<8}                                    |{cell20:<8}|  {info_1}")
@@ -896,7 +932,7 @@ def tablero(): #Funció imprimeix tauler
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-    opcions(jugador_actual)
+    
 
 
 
@@ -911,8 +947,10 @@ INICI PARTIDA
                 -Mostra sempre a cada casella el primer jugador 
                 -Barrejar les cartes de caixa i sort
 """
+suma_daus, resultat_daus = llançar_daus()
 def inici_partida():
   """Inicia la partida amb els jugadors tenint 2000 euros."""
+ 
   # Definir els jugadors
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
@@ -920,6 +958,15 @@ def inici_partida():
   tablero() #Crida la funció imprimeix tauler (imprimeix tauler)
   torn(torn_actual)
   llançar_daus()
+  if torn_jugador_B():
+    jugador_b.move(suma_daus,tauler)
+  elif torn_jugador_G():
+      jugador_g.move(suma_daus,tauler)
+  elif torn_jugador_T():
+      jugador_t.move(suma_daus,tauler)
+  elif torn_jugador_V():
+      jugador_v.move(suma_daus,tauler)
+  opcions(jugador_actual)
  
 """
 TRUCS
