@@ -81,7 +81,9 @@ IMPORTS
 from llistes import *
 from daus import *
 import random
-
+"""
+FUNCIÓO TAULER
+"""
 
 """
 BANCA
@@ -283,7 +285,7 @@ JUGADORS
 """
 torn_actual = 0 #Variable  que indica el torn actual
 
-jugador_actual,next_jugador,jugador_torn = torn(torn_actual) #Retorna el  jugador actual i el jugador que toca a continuació
+jugador_actual,next_jugador,jugador_torn = torn(torn_actual,jugador) #Retorna el  jugador actual i el jugador que toca a continuació
 
     
 
@@ -675,13 +677,13 @@ INFORMACIÓ PARTIDA (SOTA)
 """
 def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny seleccionat
     if jugador_b.posicio == casilla: #Casilla igual al número de casella
-        if casilla == 1 or 2 or 4 or 5:
+        if casilla == [1,2,4,5]:
             return f"El preu del terreny és de:{diners_propietats[0]}"
-        elif casilla == 7 or 8 or 10 or 11:
+        elif casilla == [7,8,10,11]:
             return f"El preu del terreny és de:{diners_propietats[1]}"
-        elif casilla == 13 or 14 or 16 or 17:
+        elif casilla == [13,14,16,17]:
             return f"El preu del terreny és de:{diners_propietats[2]}"
-        elif casilla == 19 or 20 or 22 or 23:
+        elif casilla == [19,20,22,23]:
             return f"El preu del terreny és de:{diners_propietats[3]}"
         else:
             pass
@@ -693,17 +695,20 @@ def accio_usuari():
 """
 Definir turno jugadores en los condicionales
 """
+jugador_b.move(1,  tauler) #Moure jugador B a la casella 1
+
 def opcions(): 
     if jugador_b:
-        opcion_jugador = input(f"Juga \"B\", opcions: {preu_terreny(jugador_b.posicio)}") #L'usuari escull una opció
+        opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
         if opcion_jugador == "comprar terreny" or 1:
             jugador_b.compra_propietat(tauler[jugador_b.posicio])
         elif opcion_jugador == "preus" or 2:
             return preu_terreny(jugador_b.posicio)
         else: 
             pass
+
     elif jugador_g:    
-        opcion_jugador = input(f"Juga \"G\", opcions: {preu_terreny(jugador_g.posicio)}")
+        opcion_jugador = input("Juga \"G\", opcions(comprar terreny, preus): ")
         if opcion_jugador == "comprar terreny" or 1:
             jugador_g.compra_propietat(tauler[jugador_g.posicio])
         elif opcion_jugador == "preus" or 2:
@@ -711,7 +716,7 @@ def opcions():
         else: 
             pass
     elif jugador_t:
-        opcion_jugador = input(f"Juga \"T\", opcions: {preu_terreny(jugador_t.posicio)}")
+        opcion_jugador = input("Juga \"T\", opcions (comprar terreny,  preus): ")
         if opcion_jugador == "comprar terreny" or 1:
             jugador_t.compra_propietat(tauler[jugador_t.posicio])
         elif opcion_jugador == "preus" or 2:
@@ -719,7 +724,7 @@ def opcions():
         else: 
             pass
     elif jugador_v:
-        opcion_jugador = input(f"Juga \"V\", opcions: {preu_terreny(jugador_v.posicio)}")
+        opcion_jugador = input("Juga \"V\", opcions(comprar terreny,  preus): ")
         if opcion_jugador == "comprar terreny" or 1:
            jugador_v.compra_propietat(tauler[jugador_v.posicio])
         elif opcion_jugador == "preus" or 2:
@@ -741,6 +746,9 @@ casa1,casa2,casa3,casa4,casa9,casa10,casa11,casa12 = "--","--","--","--","--","-
 casa5,casa6,casa7,casa8,casa13,casa14,casa15,casa16 = " |"," |"," |"," |"," |"," |"," |"," |"
 
 def tablero(): #Funció imprimeix tauler
+    """
+    HACER CONDICIONAL PARA INFO PANTALLA
+    """
     
     info_0 = jugador_t.propietat_info()
     info_1 = jugador_g.propietat_info()
@@ -780,7 +788,7 @@ def tablero(): #Funció imprimeix tauler
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-    
+    opcions()
 
 
 
@@ -799,6 +807,8 @@ def inici_partida():
   random.shuffle(cartes_sort) #Barreja les cartes de sort
   ordre() #Crida la funció ordre
   tablero() #Crida la funció imprimeix tauler
+  torn(torn_actual,jugador)
+  return f"Torn jugador: {jugador_torn}"
 """
 TRUCS
         -Anar a una casella
@@ -809,6 +819,7 @@ TRUCS
         -Diners X banca
 """
 def anar_casella():
+    escull_jugador = input("Escull una casella : ")
     pass
 def afegir_cases():
     pass
