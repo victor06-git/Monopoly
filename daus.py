@@ -2,7 +2,7 @@
 DADOS
 """
 import random
-def daus(): #Funció daus: mostra el resultat aleatori dels dos daus
+def llançar_daus(): #Funció daus: mostra el resultat aleatori dels dos daus
     global resultat_daus
     dau_1()
     dau_2()
