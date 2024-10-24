@@ -1998,13 +1998,13 @@ def next_player():   # Funcio de trucs per escollir el jugador que segueix
     torn(canviar_torn)
 def diners_player(): # Funcio de trucs per  afegir diners a un jugador
     afegir_diners = input("Indica els diners que vols afegir")
-    if next_player == "B" :
+    if torn_jugador_B():
         jugador_b.diners  += afegir_diners
-    elif next_player == "V" :
+    elif torn_jugador_V():
         jugador_v.diners +=  afegir_diners
-    elif  next_player == "T" :
+    elif  torn_jugador_T() :
         jugador_t.diners += afegir_diners
-    elif next_player == "G" :
+    elif torn_jugador_G():
         jugador_g.diners += afegir_diners
     else  : 
         return "ERROR"
@@ -2039,8 +2039,6 @@ def trucs():
         pass
 
 
-
-    
 
 
 cell0 = orden[0] + orden[1] + orden[2]+ orden[3] #
