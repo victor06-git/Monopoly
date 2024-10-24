@@ -292,8 +292,21 @@ torn_actual = 0
 jugador_actual = torn(torn_actual)
 def torn_jugador_B():
     return jugador_actual == "Blau"
-    
-def opcions(): 
+def opcions(jugador_actual):
+    opcions_jugadors = {
+        "Vermell": jugador_v,
+        "Blau" : jugador_b,
+        "Groc" : jugador_g,
+        "Taronja" : jugador_t
+    }
+
+    jugador = opcions_jugadors[jugador_actual]
+    opcion_jugador = input(f"Juga {jugador_actual}: ")
+    if opcion_jugador == 1:
+        jugador.compra_propietat
+    elif opcion_jugador == "preus":
+        return preu_terreny(jugador.posicio)
+"""def opcions(): 
     if jugador_actual == "B":
         opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
         if opcion_jugador == "comprar terreny" or 1:
@@ -326,7 +339,7 @@ def opcions():
         elif opcion_jugador == "preus" or 2:
             return preu_terreny(jugador_v.posicio)
         else: 
-            pass
+            pass"""
 
 
     
