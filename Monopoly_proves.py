@@ -1462,24 +1462,22 @@ def Sortida (): #Funció casella sortida
     elif jugador_v.posicio == 0:
         jugador_v.diners_sortida(diners_sortida)
         valor_banca -= diners_sortida
-    else:
-        pass
+    
 
 def Anr_pro  (): #Funció casella anar presó
     anar_preso = 18
     if jugador_b.posicio == anar_preso:
-        jugador_b.move_to(6,tauler)
-        cell6= "B"
+        jugador_b.move_to(6,cells)
+        jugador_b.a_preso = True
     elif jugador_g.posicio == anar_preso:
-        jugador_g.move_to(6, tauler)
-        cell6= "G"
+        jugador_g.move_to(6, cells)
+        jugador_g.a_preso  = True
     elif jugador_t.posicio == anar_preso:
-        jugador_t.move_to(6,tauler)
-        cell6= "T"
+        jugador_t.move_to(6,cells)
+        jugador_t.a_preso = True
     elif jugador_v.posicio == anar_preso:
-        jugador_v.move_to(6,tauler)
-        cell6= "V"
-        return cell6
+        jugador_v.move_to(6,cells)
+        jugador_v.a_preso = True
 
 def Caixa (): #Funció casella caixa
     if jugador_b.posicio == 9 or jugador_b.posicio == 21:# Jugador blau
@@ -1489,24 +1487,22 @@ def Caixa (): #Funció casella caixa
             cartes_caixa.remove(carta_jugador)
         else:
             if carta_jugador == "Anar a la presó": # Jugador Blau va a la presó
-                jugador_b.move_to(6, tauler)
-                cell15= "B"
+                Anr_pro()
             elif carta_jugador == "Error de la banca": # Jugador Blau guanya diners per error de la banca
                 jugador_b.diners += 150
-                cell15= "B"
+                print(f"Quina sort! Guanyes 150 per un error a la banca, carta: {carta_jugador}")
             elif carta_jugador == "Despeses mèdiques": # Jugador Blau perd diners per despeses mèdiques 
                 jugador_b.diners -= 50
-                cell15= "B"
+                print(f"Has de pagar 50, carta: {carta_jugador}")
             elif carta_jugador == "Despeses escolars": # Jugador Blau perd diners per despeses escolars
                 jugador_b.diners -= 50
-                cell15= "B"
+                print(f"Has de pagar 50, carta: {carta_jugador}")
             elif carta_jugador == "Reparacions al carrer": # Jugador Blau perd diners per  reparacions al carrer
                 jugador_b.diners -= 40
-                cell15= "B"
+                print(f"Has de pagar 40, carta: {carta_jugador}")
             elif carta_jugador  == "Concurs de bellesa":  # Jugador Blau guanya diners per guanyar un concurs de bellesa
                 jugador_b.diners += 10
-                cell15= "B"
-                return cell15 
+                print(f"Guanyes 10, carta: {carta_jugador}") 
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)   
 
@@ -1517,23 +1513,22 @@ def Caixa (): #Funció casella caixa
             cartes_caixa.remove(carta_jugador)
         else:
             if carta_jugador == "Anar a la presó": # Jugador Groc va a la presó
-                jugador_g.move_to(6, tauler)
-                cell15= "G"
+                Anr_pro()
             elif carta_jugador == "Error de la banca": # Jugador Groc guanya diners per error de la banca
                 jugador_g.diners += 150
-                cell15= "G"
+                print(f"Quina sort! Guanyes 150 per un error a la banca, carta: {carta_jugador}")
             elif carta_jugador == "Despeses mèdiques": # Jugador Groc perd diners per despeses mèdiques 
                 jugador_g.diners -= 50
-                cell15= "G"
+                print(f"Has de pagar 50, carta: {carta_jugador}")
             elif carta_jugador == "Despeses escolars": # Jugador Groc perd diners per despeses escolars
                 jugador_g.diners -= 50
-                cell15= "G"
+                print(f"Has de pagar 50, carta: {carta_jugador}")
             elif carta_jugador == "Reparacions al carrer": # Jugador Groc perd diners per  reparacions al carrer
                 jugador_g.diners -= 40
-                cell15= "G"
+                print(f"Has de pagar 40, carta: {carta_jugador}")
             elif carta_jugador  == "Concurs de bellesa": # Jugador Groc guanya diners per guanyar un concurs de bellesa
                 jugador_g.diners += 10
-                cell15= "G"
+                print(f"Guanyes 10, carta: {carta_jugador}")
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador)
 
@@ -1544,23 +1539,22 @@ def Caixa (): #Funció casella caixa
             cartes_caixa.remove(carta_jugador)
         else:
             if carta_jugador == "Anar a la presó": # Jugador Taronja  va a la presó
-                jugador_t.move_to(6, tauler)
-                cell15= "T"
+                Anr_pro()
             elif carta_jugador == "Error de la banca": # Jugador Taronja guanya diners per despesa de la banca 
                 jugador_t.diners += 150
-                cell15= "T"
+                print(f"Quina sort! Guanyes 150 per un error a la banca, carta: {carta_jugador}")
             elif carta_jugador == "Despeses mèdiques": # Jugador Taronja perd diners per despeses mèdiques
                 jugador_t.diners -= 50
-                cell15= "T"
+                print(f"Has de pagar 50, carta: {carta_jugador}")
             elif carta_jugador == "Despeses escolars": # Jugador Taronja perd diners per despeses escolars
                 jugador_t.diners -= 50
-                cell15= "T"
+                print(f"Has de pagar 50, carta: {carta_jugador}")
             elif carta_jugador == "Reparacions al carrer": # Jugador Taronja perd diners per reparacions al carrer
                 jugador_t.diners -= 40
-                cell15= "T"
+                print(f"Has de pagar 40, carta: {carta_jugador}")
             elif carta_jugador  == "Concurs de bellesa":  # Jugador Taronja guanya diners per guanyar un concurs de belles
                 jugador_t.diners += 10
-                cell15= "T"
+                print(f"Guanyes 10, carta: {carta_jugador}")
             cartes_caixa.remove(carta_jugador)
             cartes_caixa.index(carta_jugador) 
 
