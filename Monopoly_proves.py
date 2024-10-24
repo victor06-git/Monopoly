@@ -276,24 +276,31 @@ def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny selec
                 return f"El preu del terreny és de:{diners_propietats[3]}"
             else:
                 pass
-jugador_actual = None
+
 
 def torn(torn_actual): #Funció  que determina el jugador que toca jugar
-    if torn_actual >= 0:
-       jugador_actual = orden[torn_actual % len(orden)]
-       return jugador_actual
+    if torn_actual  == 0:
+       jugador_actual = Jugador_0
+    elif torn_actual == 1:
+        jugador_actual = Jugador_1
+    elif torn_actual == 2:
+       jugador_actual = Jugador_2
+    else:
+        jugador_actual = Jugador_3
+    return  jugador_actual
 
 torn_actual = 0
 jugador_actual = torn(torn_actual)
+print(jugador_actual)
 
 def torn_jugador_B():
-    return jugador_actual == "B" 
+    return jugador_actual == "Blau" 
 def torn_jugador_V():
-    return jugador_actual == "V"
+    return jugador_actual == "Vermell"
 def torn_jugador_T():
-    return jugador_actual == "T"
+    return jugador_actual == "Taronja"
 def torn_jugador_G():
-    return jugador_actual == "G"
+    return jugador_actual == "Groc"
 
 def opcions(): 
     if torn_jugador_B():
