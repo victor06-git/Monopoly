@@ -1715,32 +1715,34 @@ def Preso (): #Funció casella presó
             jugador_b.a_preso = False
             return "El jugador \"B\" ha tirat dobles i pot sortir de la presó"
             
-    elif jugador_b.a_preso ==  True:
-        jugador_b.en_preso = True
-        if jugador_b.show_especial_card() == True:
-            jugador_b.a_preso = False
-            return "El jugador \"B\" surt de la presó"
-        
+    elif jugador_v.a_preso ==  True:
+        jugador_v.en_preso = True
+        if jugador_v.show_especial_card() == True:
+            jugador_v.a_preso = False
+            return "El jugador \"V\" surt de la presó"
+        elif valor_dau_1 == valor_dau_2:
+            jugador_v.a_preso = False
+            return "El jugador \"V\" ha tirat dobles i pot sortir de la presó"
     
    
-    elif jugador_b.a_preso ==  True:
-        jugador_b.en_preso = True
-        if jugador_b.show_especial_card() == True:
-            jugador_b.a_preso = False
-            return "El jugador \"B\" surt de la presó"
+    elif jugador_g.a_preso ==  True:
+        jugador_g.en_preso = True
+        if jugador_g.show_especial_card() == True:
+            jugador_g.a_preso = False
+            return "El jugador \"G\" surt de la presó"
         elif valor_dau_1 == valor_dau_2:
-            jugador_b.a_preso = False
-            return "El jugador \"B\" ha tirat dobles i pot sortir de la presó"
+            jugador_g.a_preso = False
+            return "El jugador \"G\" ha tirat dobles i pot sortir de la presó"
     
     
-    elif jugador_b.a_preso ==  True:
-        jugador_b.en_preso = True
-        if jugador_b.show_especial_card() == True:
-            jugador_b.a_preso = False
-            return "El jugador \"B\" surt de la presó"
+    elif jugador_t.a_preso ==  True:
+        jugador_t.en_preso = True
+        if jugador_t.show_especial_card() == True:
+            jugador_t.a_preso = False
+            return "El jugador \"T\" surt de la presó"
         elif valor_dau_1 == valor_dau_2:
-            jugador_b.a_preso = False
-            return "El jugador \"B\" ha tirat dobles i pot sortir de la presó"
+            jugador_t.a_preso = False
+            return "El jugador \"T\" ha tirat dobles i pot sortir de la presó"
     
 
         jugador_b.torns_a_preso += 1 
@@ -1766,13 +1768,13 @@ CASES I HOTELS
                 -Afegir número cases i hotels en cada cas (3C1H) canviant (---) o  ("|")
 """
 # Inicializamos las cantidades de casas (i) y hoteles (j)
-i = 0
-j = 0
+cases = 0
+hotels = 0
 
 # Función para intentar comprar un hotel
 def comprar_j(cantidad):
-    global i, j
-    if j + cantidad > 2:
+    global cases, hotels
+    if hotels + cantidad > 2:
         print("No se pueden comprar más de 2 hoteles.")
     else:
         for _ in range(cantidad):
