@@ -1632,16 +1632,13 @@ def Sort  (): #Funció casella sort
                     jugador_g.diners -=25
                     if j == 1 :
                         jugador_g.diners -= 100 
-                cell15= "G"
+                
 
             elif carta_jugador2 == "Ets escollit alcalde": # Jugador Groc guanya diners per ser escollit alcalde
-
                 jugador_b.diners -= 50
                 jugador_g.diners += 150
                 jugador_t.diners -= 50
                 jugador_v.diners -= 50
-                cell15= "G"
-                return cell0, cell6, cell12, cell15
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
 
@@ -1652,30 +1649,28 @@ def Sort  (): #Funció casella sort
             cartes_sort.remove(carta_jugador2)
         else:
             if carta_jugador2 == "Anar a la presó": # Jugador Taronja va a la preso
-                jugador_t.move_to(6, tauler)
-                cell6= "T"
+                Anr_pro()
             elif carta_jugador2 == "Anar a la sortida": # Jugador Taronja va a la sortida 
                 jugador_t.move_to(0, tauler)
-                cell0= "T"
+                print("Torna a la casella de sortida")
             elif carta_jugador2 == "Anar tres espais endarrera": # Jugador Taronja va tres espais enderrera 
                 jugador_t.move(-3,tauler)
-                cell12= "T"
+                print("Retrocedeix 3 caselles")
 
             elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Taronja perd diners per reparacions a les propietats
-
                 if len(jugador_t.propietats) != 0 :
                     jugador_t.diners -= 25
                     if j == 1 :
                         jugador_t.diners -= 100 
-                cell15= "T"
+               
             elif carta_jugador2 == "Ets escollit alcalde": # Jugador Taronja guanya diners per ser escollit alcalde
 
                 jugador_b.diners -= 50
                 jugador_g.diners -= 50
                 jugador_t.diners += 150
                 jugador_v.diners -= 50
-                cell15= "T"
-                return cell0, cell6, cell12, cell15
+                
+                
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2)  
 
@@ -1686,26 +1681,26 @@ def Sort  (): #Funció casella sort
             cartes_sort.remove(carta_jugador2)
         else:
             if carta_jugador2 == "Anar a la presó": # Jugador Vermell va a la presó
-                jugador_v.move_to(6, tauler)
-                cell6=  "V"
+                Anr_pro()
+                
             elif carta_jugador2 == "Anar a la sortida": # Jugador Vermell va la sortida 
                 jugador_v.move_to(0, tauler)
-                cell0=  "V"
+                print("Torna a la casella de sortida")
             elif carta_jugador2 == "Anar tres espais endarrera": # Jugador Vermell va tres espais enderrera 
                 jugador_v.move(-3,tauler)
-                cell12= "V"
+                print("Retrocedeix 3 caselles")
             elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Vermell perd diners per reparacions a les propietats
                 if len(jugador_v.propietats) != 0 :
                     jugador_v.diners -= 25
                     if j == 1 :
                         jugador_v.diners -= 100 
-                cell15= "V"
+                
             elif carta_jugador2 == "Ets escollit alcalde": # Jugador Vermell guanya diners per ser escollit alcalde
                 jugador_b.diners -= 50
                 jugador_g.diners -= 50
                 jugador_t.diners -= 50
                 jugador_v.diners += 150
-                cell15= "V"
+               
 
             cartes_sort.remove(carta_jugador2)
             cartes_sort.index(carta_jugador2) 
