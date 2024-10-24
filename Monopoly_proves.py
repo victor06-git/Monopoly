@@ -329,8 +329,9 @@ def torn_jugador_T(): #Si el torn és del jugador T
 """
 OPCIONS USUARI A CADA TORN
 """
-
+indice_jugador_actual = 0
 def opcions(jugador_actual): 
+    global indice_jugador_actual
     opcions_jugadors = {
         "Vermell": jugador_v,
         "Blau" : jugador_b,
@@ -356,6 +357,15 @@ def opcions(jugador_actual):
             return preu_terreny(jugador.posicio)
         elif opcion_jugador == "trucs".lower():
             trucs()
+        elif opcion_jugador == "passar".lower() or opcion_jugador == 0:
+            # Pasar al siguiente jugador
+            indice_jugador_actual = (indice_jugador_actual + 1) % len(opcions_jugadors)  # Ciclar al siguiente índice
+            jugador_actual = list(opcions_jugadors.keys())[indice_jugador_actual]  # Obtener el siguiente jugador
+            opcions(jugador_actual)
+            return jugador_actual, indice_jugador_actual  # Retornar el nuevo jugador y su índice
+
+    
+
     elif jugador.propietats >= 1:
         opcion_jugador = print(f"Juga {jugador_actual}, opcions: passar, comprar casa, comprar hotel, preus: ")
         if opcion_jugador == 1 or opcion_jugador == "comprar  terreny":
@@ -372,7 +382,12 @@ def opcions(jugador_actual):
             return preu_terreny(jugador.posicio)
         elif opcion_jugador == "trucs".lower():
             trucs()
-        
+        elif opcion_jugador == "passar".lower() or opcion_jugador == 0:
+            # Pasar al siguiente jugador
+            indice_jugador_actual = (indice_jugador_actual + 1) % len(opcions_jugadors)  # Ciclar al siguiente índice
+            jugador_actual = list(opcions_jugadors.keys())[indice_jugador_actual]  # Obtener el siguiente jugador
+            opcions(jugador_actual)
+            return jugador_actual, indice_jugador_actual  # Retornar el nuevo jugador y su índice
 
 
 
