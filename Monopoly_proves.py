@@ -803,8 +803,11 @@ TRUCS
         -Diners X banca
 """
 def anar_casella():
-    next_player = input("Escull una casella : ")
-    pass
+    next_cell = input("Escull una casella : ")
+    jugador_b.move_to(next_cell,tauler)
+    jugador_g.move_to(next_cell,tauler)
+    jugador_t.move_to(next_cell,tauler)
+    jugador_v.move_to(next_cell,tauler)
 def afegir_cases():
     i  = input ("Indica les cases que vols afegir")
     comprar_i(i)
