@@ -1988,11 +1988,11 @@ def anar_casella():  # Funcio de trucs per escollir a quina casella anar
     jugador_t.move_to(next_cell,tauler)
     jugador_v.move_to(next_cell,tauler)
 def afegir_cases():  # Funcio de trucs per afegir cases
-    i  = input ("Indica les cases que vols afegir")
-    comprar_i(i)
+    casas  = input ("Indica les cases que vols afegir")
+    comprar_cases(casas)
 def afegir_hotels(): # Funcio de trucs per afegir hotels 
-    j = input("Indica els hotels que vols afegir")
-    comprar_j(j)
+    hoteles = input("Indica els hotels que vols afegir")
+    comprar_hotels(hoteles)
 def next_player():   # Funcio de trucs per escollir el jugador que segueix
     canviar_torn = input("Indica el torn al que vols pasar")
     torn(canviar_torn)
@@ -2021,7 +2021,26 @@ def trucs():
     print("5.  Diners X YY (Jugador, Quantitat)")
     print("6. Diners X banca")
     eleccio = input("Escull una opció : ")
-    return eleccio
+    if eleccio == 1 or  eleccio == "Anar a una casella" :
+        anar_casella()
+    elif eleccio == 2 or eleccio == "Afegir X cases":
+        afegir_cases()
+    elif  eleccio == 3 or eleccio == "Afegir X hotels":
+        afegir_hotels()
+    elif eleccio == 4 or eleccio == "Seguent X (jugador, saltar torn)":
+        next_player()
+    elif  eleccio == 5 or eleccio == "Diners X YY (Jugador, Quantitat)":
+        diners_player()
+    elif eleccio == 6 or eleccio ==  "Diners X banca":
+        diners_banca()
+    elif eleccio == "trucs": 
+        trucs()
+    else:
+        pass
+
+
+
+    
 
 
 cell0 = orden[0] + orden[1] + orden[2]+ orden[3] #
