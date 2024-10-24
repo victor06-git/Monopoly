@@ -1709,17 +1709,59 @@ def Preso (): #Funció casella presó
     if jugador_b.a_preso ==  True:
         jugador_b.en_preso = True
         if jugador_b.show_especial_card() == True:
-            jugador_b.en_preso = False
+            jugador_b.a_preso = False
             return "El jugador \"B\" surt de la presó"
         elif valor_dau_1 == valor_dau_2:
-            jugador_b.en_preso = True
+            jugador_b.a_preso = False
             return "El jugador \"B\" ha tirat dobles i pot sortir de la presó"
-    jugador_b.torns_a_preso += 1
-    if jugador_b.torns_a_preso >= 3:
-        jugador_b.en_preso = False
-        return "El jugador \"B\" ha estat tres torns a presó i pot sortir"
+            
+    elif jugador_b.a_preso ==  True:
+        jugador_b.en_preso = True
+        if jugador_b.show_especial_card() == True:
+            jugador_b.a_preso = False
+            return "El jugador \"B\" surt de la presó"
+        
+    
+   
+    elif jugador_b.a_preso ==  True:
+        jugador_b.en_preso = True
+        if jugador_b.show_especial_card() == True:
+            jugador_b.a_preso = False
+            return "El jugador \"B\" surt de la presó"
+        elif valor_dau_1 == valor_dau_2:
+            jugador_b.a_preso = False
+            return "El jugador \"B\" ha tirat dobles i pot sortir de la presó"
+    
+    
+    elif jugador_b.a_preso ==  True:
+        jugador_b.en_preso = True
+        if jugador_b.show_especial_card() == True:
+            jugador_b.a_preso = False
+            return "El jugador \"B\" surt de la presó"
+        elif valor_dau_1 == valor_dau_2:
+            jugador_b.a_preso = False
+            return "El jugador \"B\" ha tirat dobles i pot sortir de la presó"
+    
 
-"""
+        jugador_b.torns_a_preso += 1 
+        jugador_t.torns_a_preso += 1 
+        jugador_v.torns_a_preso += 1 
+        jugador_g.torns_a_preso += 1 
+        if jugador_b.torns_a_preso >= 3:
+            jugador_b.a_preso = False
+            return "El jugador \"B\" ha estat tres torns a presó i pot sortir"
+        elif jugador_v.torns_a_preso >= 3:
+            jugador_v.a_preso = False
+            return "El jugador \"V\" ha estat tres torns a presó i pot sortir"
+        elif jugador_g.torns_a_preso >= 3:
+            jugador_g.a_preso = False
+            return "El jugador \"G\" ha estat tres torns a presó i pot sortir"
+        elif jugador_t.torns_a_preso >= 3:
+            jugador_t.a_preso = False
+            return "El jugador \"T\" ha estat tres torns a presó i pot sortir"
+
+
+"""     
 CASES I HOTELS
                 -Afegir número cases i hotels en cada cas (3C1H) canviant (---) o  ("|")
 """
