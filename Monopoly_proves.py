@@ -805,16 +805,28 @@ TRUCS
         -Diners X banca
 """
 def anar_casella():
-    escull_jugador = input("Escull una casella : ")
+    next_player = input("Escull una casella : ")
     pass
 def afegir_cases():
     pass
 def afegir_hotels():
     pass
 def next_player():
-    pass
+    canviar_torn = input("Indica el torn al que vols pasar")
+    torn(canviar_torn)
 def diners_player():
-    pass
+    afegir_diners = input("Indica els diners que vols afegir")
+    if next_player == "B" :
+        jugador_b.diners  += afegir_diners
+    elif next_player == "V" :
+        jugador_v.diners +=  afegir_diners
+    elif  next_player == "T" :
+        jugador_t.diners += afegir_diners
+    elif next_player == "G" :
+        jugador_g.diners += afegir_diners
+    else  : 
+        return "ERROR"
+
 def diners_banca():
     pass
 
