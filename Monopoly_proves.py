@@ -270,6 +270,10 @@ def torn(torn_actual): #Funció  que determina el jugador que toca jugar
     jugador_actual = orden[torn_actual % len(orden)]
     next_turn = (torn_actual + 1) % len(orden)
     next_jugador = orden[next_turn]
+    return jugador_actual, next_jugador
+
+def bucle_jugador_torn():
+    global jugador_torn
     if torn_actual == 0:
         jugador_torn = orden[0]
     elif torn_actual == 1:
@@ -278,7 +282,7 @@ def torn(torn_actual): #Funció  que determina el jugador que toca jugar
         jugador_torn = orden[2]
     else:
         jugador_torn = orden[3]
-    return jugador_actual, next_jugador, jugador_torn
+    return jugador_torn
 """
 JUGADORS
             -Class Jugador
