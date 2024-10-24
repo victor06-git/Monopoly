@@ -266,31 +266,22 @@ TORN JUGADOR
 """
 
 def torn(torn_actual): #Funció  que determina el jugador que toca jugar
-   try:
     if 0 <= torn_actual < len(orden):
        jugador_actual = orden[torn_actual]
        return jugador_actual
-   except:
-       KeyError
 
 torn_actual = 0
 jugador = torn(torn_actual)
+dict_players = {"Vermell" : False,
+                "Blau" : False,
+                "Groc": False,
+                "Taronja": False}
    
 """ jugador_actual = orden[torn_actual]
     next_turn = (torn_actual + 1) % len(orden)
     next_jugador = orden[next_turn]
     return jugador_actual, next_jugador"""  
 
-"""def bucle_jugador_torn(torn_actual):
-    if torn_actual == 0:
-        jugador_torn = Jugador
-    elif torn_actual == 1:
-        jugador_torn = orden[1]
-    elif torn_actual == 2:
-        jugador_torn = orden[2]
-    else:
-        jugador_torn = orden[3]
-    return jugador_torn"""
 """
 JUGADORS
             -Class Jugador
