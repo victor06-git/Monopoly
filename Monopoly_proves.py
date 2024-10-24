@@ -1937,41 +1937,6 @@ def tablero(): #Funció imprimeix tauler
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
     
 
-
-
-
-
-
-
-
-"""
-INICI PARTIDA
-                -Cada jugador comença amb 2000 euros
-                -Mostra sempre a cada casella el primer jugador 
-                -Barrejar les cartes de caixa i sort
-"""
-suma_daus, resultat_daus = llançar_daus()
-
-def inici_partida():
-  """Inicia la partida amb els jugadors tenint 2000 euros."""
- 
-  # Definir els jugadors
-  random.shuffle(cartes_caixa) #Barreja les cartes de caixa
-  random.shuffle(cartes_sort) #Barreja les cartes de sort
-  ordre() #Crida la funció ordre
-  tablero() #Crida la funció imprimeix tauler (imprimeix tauler)
-  torn(torn_actual)
-  llançar_daus()
-  if torn_jugador_B():
-    jugador_b.move(suma_daus,tauler)
-  elif torn_jugador_G():
-      jugador_g.move(suma_daus,tauler)
-  elif torn_jugador_T():
-      jugador_t.move(suma_daus,tauler)
-  elif torn_jugador_V():
-      jugador_v.move(suma_daus,tauler)
-  opcions(jugador_actual)
- 
 """
 TRUCS
         -Anar a una casella
@@ -2038,7 +2003,34 @@ def trucs():
     else:
         pass
 
+"""
+INICI PARTIDA
+                -Cada jugador comença amb 2000 euros
+                -Mostra sempre a cada casella el primer jugador 
+                -Barrejar les cartes de caixa i sort
+"""
+suma_daus, resultat_daus = llançar_daus()
 
+def inici_partida():
+  """Inicia la partida amb els jugadors tenint 2000 euros."""
+ 
+  # Definir els jugadors
+  random.shuffle(cartes_caixa) #Barreja les cartes de caixa
+  random.shuffle(cartes_sort) #Barreja les cartes de sort
+  ordre() #Crida la funció ordre
+  tablero() #Crida la funció imprimeix tauler (imprimeix tauler)
+  torn(torn_actual)
+  llançar_daus()
+  if torn_jugador_B():
+    jugador_b.move(suma_daus,tauler)
+  elif torn_jugador_G():
+      jugador_g.move(suma_daus,tauler)
+  elif torn_jugador_T():
+      jugador_t.move(suma_daus,tauler)
+  elif torn_jugador_V():
+      jugador_v.move(suma_daus,tauler)
+  opcions(jugador_actual)
+ 
 
 
 cell0 = orden[0] + orden[1] + orden[2]+ orden[3] #
