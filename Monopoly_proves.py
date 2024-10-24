@@ -630,7 +630,269 @@ class Jugador:#Definir class Jugador
                     elif torn_jugador_B():
                         cell23 = "B"
 
+            if len(casella_actual) >= 1:
+                if casella_actual == cell0:    
+                    if torn_jugador_T():
+                        cell0 = cell0 + "T"
+                    elif torn_jugador_G():
+                        cell0 = cell0 + "G"
+                    elif torn_jugador_V():
+                        cell0 = cell0 + "V"
+                    elif torn_jugador_B():
+                        cell0 = cell0 + "B"
 
+            if len(casella_actual) >= 1:
+                if casella_actual == cell1:    
+                    if torn_jugador_T():
+                        cell1 = cell1 + "T"
+                    elif torn_jugador_G():
+                        cell1 = cell1 + "G"
+                    elif torn_jugador_V():
+                        cell1 = cell1 + "V"
+                    elif torn_jugador_B():
+                        cell1 = cell1 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell2:    
+                    if torn_jugador_T():
+                        cell2 = cell2 + "T"
+                    elif torn_jugador_G():
+                        cell2 = cell2 + "G"
+                    elif torn_jugador_V():
+                        cell2 = cell2 + "V"
+                    elif torn_jugador_B():
+                        cell2 = cell2 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell3:    
+                    if torn_jugador_T():
+                        cell3 = cell3 + "T"
+                    elif torn_jugador_G():
+                        cell3 = cell3 + "G"
+                    elif torn_jugador_V():
+                        cell3 = cell3 + "V"
+                    elif torn_jugador_B():
+                        cell3 = cell3 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell4:    
+                    if torn_jugador_T():
+                        cell4 = cell4 + "T"
+                    elif torn_jugador_G():
+                        cell4 = cell4 + "G"
+                    elif torn_jugador_V():
+                        cell4 = cell4 + "V"
+                    elif torn_jugador_B():
+                        cell4 = cell4 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell5:    
+                    if torn_jugador_T():
+                        cell5 = cell5 + "T"
+                    elif torn_jugador_G():
+                        cell5 = cell5 + "G"
+                    elif torn_jugador_V():
+                        cell5 = cell5 + "V"
+                    elif torn_jugador_B():
+                        cell5 = cell5 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell6:    
+                    if torn_jugador_T():
+                        cell6 = cell6 + "T"
+                    elif torn_jugador_G():
+                        cell6 = cell6 + "G"
+                    elif torn_jugador_V():
+                        cell6 = cell6 + "V"
+                    elif torn_jugador_B():
+                        cell6 = cell6 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell7:    
+                    if torn_jugador_T():
+                        cell7 = cell7 + "T"
+                    elif torn_jugador_G():
+                        cell7 = cell7 + "G"
+                    elif torn_jugador_V():
+                        cell7 = cell7 + "V"
+                    elif torn_jugador_B():
+                        cell7 = cell7 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell8:    
+                    if torn_jugador_T():
+                        cell8 = cell8 + "T"
+                    elif torn_jugador_G():
+                        cell8 = cell8 + "G"
+                    elif torn_jugador_V():
+                        cell8 = cell8 + "V"
+                    elif torn_jugador_B():
+                        cell8 = cell8 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell9:    
+                    if torn_jugador_T():
+                        cell9 = cell9 + "T"
+                    elif torn_jugador_G():
+                        cell9 = cell9 + "G"
+                    elif torn_jugador_V():
+                        cell9 = cell9 + "V"
+                    elif torn_jugador_B():
+                        cell9 = cell9 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell10:    
+                    if torn_jugador_T():
+                        cell10 = cell10 + "T"
+                    elif torn_jugador_G():
+                        cell10 = cell10 + "G"
+                    elif torn_jugador_V():
+                        cell10 = cell10 + "V"
+                    elif torn_jugador_B():
+                        cell10 = cell10 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell11:    
+                    if torn_jugador_T():
+                        cell11 = cell11 + "T"
+                    elif torn_jugador_G():
+                        cell11 = cell11 + "G"
+                    elif torn_jugador_V():
+                        cell11 = cell11 + "V"
+                    elif torn_jugador_B():
+                        cell11 = cell11 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell12:    
+                    if torn_jugador_T():
+                        cell12 = cell12 + "T"
+                    elif torn_jugador_G():
+                        cell12 = cell12 + "G"
+                    elif torn_jugador_V():
+                        cell12 = cell12 + "V"
+                    elif torn_jugador_B():
+                        cell12 = cell12 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell13:    
+                    if torn_jugador_T():
+                        cell13 = cell13 + "T"
+                    elif torn_jugador_G():
+                        cell13 = cell13 + "G"
+                    elif torn_jugador_V():
+                        cell13 = cell13 + "V"
+                    elif torn_jugador_B():
+                        cell13 = cell13 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell14:    
+                    if torn_jugador_T():
+                        cell14 = cell14 + "T"
+                    elif torn_jugador_G():
+                        cell14 = cell14 + "G"
+                    elif torn_jugador_V():
+                        cell14 = cell14 + "V"
+                    elif torn_jugador_B():
+                        cell14 = cell14 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell15:    
+                    if torn_jugador_T():
+                        cell15 = cell15 + "T"
+                    elif torn_jugador_G():
+                        cell15 = cell15 + "G"
+                    elif torn_jugador_V():
+                        cell15 = cell15 + "V"
+                    elif torn_jugador_B():
+                        cell15 = cell15 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell16:    
+                    if torn_jugador_T():
+                        cell16 = cell16 + "T"
+                    elif torn_jugador_G():
+                        cell16 = cell16 + "G"
+                    elif torn_jugador_V():
+                        cell16 = cell16 + "V"
+                    elif torn_jugador_B():
+                        cell16 = cell16 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell17:    
+                    if torn_jugador_T():
+                        cell17 = cell17 + "T"
+                    elif torn_jugador_G():
+                        cell17 = cell17 + "G"
+                    elif torn_jugador_V():
+                        cell17 = cell17 + "V"
+                    elif torn_jugador_B():
+                        cell17 = cell17 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell18:    
+                    if torn_jugador_T():
+                        cell18 = cell18 + "T"
+                    elif torn_jugador_G():
+                        cell18 = cell18 + "G"
+                    elif torn_jugador_V():
+                        cell18 = cell18 + "V"
+                    elif torn_jugador_B():
+                        cell18 = cell18 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell19:    
+                    if torn_jugador_T():
+                        cell19 = cell19 + "T"
+                    elif torn_jugador_G():
+                        cell19 = cell19 + "G"
+                    elif torn_jugador_V():
+                        cell19 = cell19 + "V"
+                    elif torn_jugador_B():
+                        cell19 = cell19 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell20:    
+                    if torn_jugador_T():
+                        cell20 = cell20 + "T"
+                    elif torn_jugador_G():
+                        cell20 = cell20 + "G"
+                    elif torn_jugador_V():
+                        cell20 = cell20 + "V"
+                    elif torn_jugador_B():
+                        cell20 = cell20 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell21:    
+                    if torn_jugador_T():
+                        cell21 = cell21 + "T"
+                    elif torn_jugador_G():
+                        cell21 = cell21 + "G"
+                    elif torn_jugador_V():
+                        cell21 = cell21 + "V"
+                    elif torn_jugador_B():
+                        cell21 = cell21 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell22:    
+                    if torn_jugador_T():
+                        cell22 = cell22 + "T"
+                    elif torn_jugador_G():
+                        cell22 = cell22 + "G"
+                    elif torn_jugador_V():
+                        cell22 = cell22 + "V"
+                    elif torn_jugador_B():
+                        cell22 = cell22 + "B"
+
+            if len(casella_actual) >= 1:
+                if casella_actual == cell23:    
+                    if torn_jugador_T():
+                        cell23 = cell23 + "T"
+                    elif torn_jugador_G():
+                        cell23 = cell23 + "G"
+                    elif torn_jugador_V():
+                        cell23 = cell23 + "V"
+                    elif torn_jugador_B():
+                        cell23 = cell23 + "B"
 
            
         
