@@ -285,10 +285,6 @@ JUGADORS
 """
 
 
-
-    
-
-
 class Jugador:#Definir class Jugador
     
     def __init__(self,name,color):
