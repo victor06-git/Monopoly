@@ -272,17 +272,16 @@ def torn(torn_actual): #Funció  que determina el jugador que toca jugar
     next_jugador = orden[next_turn]
     return jugador_actual, next_jugador
 
-def bucle_jugador_torn():
-    global jugador_torn
+"""def bucle_jugador_torn(torn_actual):
     if torn_actual == 0:
-        jugador_torn = orden[0]
+        jugador_torn = Jugador
     elif torn_actual == 1:
         jugador_torn = orden[1]
     elif torn_actual == 2:
         jugador_torn = orden[2]
     else:
         jugador_torn = orden[3]
-    return jugador_torn
+    return jugador_torn"""
 """
 JUGADORS
             -Class Jugador
@@ -791,15 +790,14 @@ INICI PARTIDA
 def inici_partida():
   """Inicia la partida amb els jugadors tenint 2000 euros."""
   # Definir els jugadors
-  global torn_actual,jugador_actual,next_jugador,jugador_torn
+  global torn_actual,jugador_actual,next_jugador
   torn_actual = 0 #Variable  que indica el torn actual
-  jugador_actual,next_jugador,jugador_torn = torn(torn_actual) #Retorna el  jugador actual i el jugador que toca a continuació
+  jugador_actual,next_jugador = torn(torn_actual) #Retorna el  jugador actual i el jugador que toca a continuació
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
   ordre() #Crida la funció ordre
   tablero() #Crida la funció imprimeix tauler
   torn(torn_actual)
-  return f"Torn jugador: {jugador_torn}"
 """
 TRUCS
         -Anar a una casella
@@ -827,10 +825,9 @@ def diners_banca():
 inici_partida()
 print(torn_actual)
 print(jugador_actual)
-print(jugador_torn)
+print(jugador_actual)
 print(orden)
 torn_actual += 1
-torn(torn_actual)
 print(torn_actual)
-print(jugador_torn)
+print(jugador_actual)
 print(orden)
