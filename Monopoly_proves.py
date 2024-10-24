@@ -277,7 +277,6 @@ def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny selec
             else:
                 pass
 
-
 def torn(torn_actual): #Funció  que determina el jugador que toca jugar
     if torn_actual  == 0:
        jugador_actual = Jugador_0
@@ -287,38 +286,13 @@ def torn(torn_actual): #Funció  que determina el jugador que toca jugar
        jugador_actual = Jugador_2
     else:
         jugador_actual = Jugador_3
-    return jugador_actual
-
-def opcions(jugador_actual):
-    opcions_jugadors = {
-        "Vermell": jugador_v,
-        "Blau" : jugador_b,
-        "Groc" : jugador_g,
-        "Taronja" : jugador_t
-    }
-
-    jugador = opcions_jugadors[jugador_actual]
-    opcion_jugador = input(f"Juga {jugador_actual}: ")
-    if opcion_jugador == 1:
-        jugador.compra_propietat
-    elif opcion_jugador == "preus":
-        return preu_terreny(jugador.posicio)
+    return  jugador_actual
 
 torn_actual = 0
 jugador_actual = torn(torn_actual)
-print(jugador_actual)
-
-def torn_jugador_B():
-    return jugador_actual == "Blau" 
-def torn_jugador_V():
-    return jugador_actual == "Vermell"
-def torn_jugador_T():
-    return jugador_actual == "Taronja"
-def torn_jugador_G():
-    return jugador_actual == "Groc"
 
 def opcions(): 
-    if torn_jugador_B():
+    if jugador_actual == "B":
         opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
         if opcion_jugador == "comprar terreny" or 1:
             jugador_b.compra_propietat(tauler[jugador_b.posicio])
@@ -327,7 +301,7 @@ def opcions():
         else: 
             pass
 
-    elif torn_jugador_G():    
+    elif jugador_actual == "G":    
         opcion_jugador = input("Juga \"G\", opcions(comprar terreny, preus): ")
         if opcion_jugador == "comprar terreny" or 1:
             jugador_g.compra_propietat(tauler[jugador_g.posicio])
@@ -335,7 +309,7 @@ def opcions():
             return preu_terreny(jugador_g.posicio)
         else: 
             pass
-    elif torn_jugador_T():
+    elif jugador_actual == "T":
         opcion_jugador = input("Juga \"T\", opcions (comprar terreny,  preus): ")
         if opcion_jugador == "comprar terreny" or 1:
             jugador_t.compra_propietat(tauler[jugador_t.posicio])
@@ -343,7 +317,7 @@ def opcions():
             return preu_terreny(jugador_t.posicio)
         else: 
             pass
-    elif torn_jugador_V():
+    elif jugador_actual == "V":
         opcion_jugador = input("Juga \"V\", opcions(comprar terreny,  preus): ")
         if opcion_jugador == "comprar terreny" or 1:
            jugador_v.compra_propietat(tauler[jugador_v.posicio])
@@ -353,7 +327,20 @@ def opcions():
             pass
 
 
+    
 
+
+"""
+Definir turno jugadores en los condicionales
+"""
+
+
+
+
+""" jugador_actual = orden[torn_actual]
+    next_turn = (torn_actual + 1) % len(orden)
+    next_jugador = orden[next_turn]
+    return jugador_actual, next_jugador"""  
 
 """
 JUGADORS
@@ -751,9 +738,42 @@ Definir turno jugadores en los condicionales
 """
 
 
+def opcions(): # Funcio per definir el turn dels jugadors en els condicionals 
+    if torn == "B":
+        opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
+        if opcion_jugador == "comprar terreny" or 1:
+            jugador_b.compra_propietat(tauler[jugador_b.posicio])
+        elif opcion_jugador == "preus" or 2:
+            return preu_terreny(jugador_b.posicio)
+        else: 
+            pass
 
+    elif torn == "G":    
+        opcion_jugador = input("Juga \"G\", opcions(comprar terreny, preus): ")
+        if opcion_jugador == "comprar terreny" or 1:
+            jugador_g.compra_propietat(tauler[jugador_g.posicio])
+        elif opcion_jugador == "preus" or 2:
+            return preu_terreny(jugador_g.posicio)
+        else: 
+            pass
+    elif torn == "T":
+        opcion_jugador = input("Juga \"T\", opcions (comprar terreny,  preus): ")
+        if opcion_jugador == "comprar terreny" or 1:
+            jugador_t.compra_propietat(tauler[jugador_t.posicio])
+        elif opcion_jugador == "preus" or 2:
+            return preu_terreny(jugador_t.posicio)
+        else: 
+            pass
+    elif torn == "V":
+        opcion_jugador = input("Juga \"V\", opcions(comprar terreny,  preus): ")
+        if opcion_jugador == "comprar terreny" or 1:
+           jugador_v.compra_propietat(tauler[jugador_v.posicio])
+        elif opcion_jugador == "preus" or 2:
+            return preu_terreny(jugador_v.posicio)
+        else: 
+            pass
 
-def accio_usuari():
+def accio_usuari(): # Funcio de les accions del usuari
     text = (f"Juga {jugador_b}, opcions: passar, comprar terreny, preus")
     text2 = (f"Juga {jugador_b}, opcions: passar, comprar casa, comprar hotel, preus")
     pass
@@ -814,7 +834,7 @@ def tablero(): #Funció imprimeix tauler
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-    opcions()
+    
 
 
 
@@ -844,22 +864,22 @@ TRUCS
         -Diners X YY (Jugador, Quantitat)
         -Diners X banca
 """
-def anar_casella():
+def anar_casella():  # Funcio de trucs per escollir a quina casella anar
     next_cell = input("Escull una casella : ")
     jugador_b.move_to(next_cell,tauler)
     jugador_g.move_to(next_cell,tauler)
     jugador_t.move_to(next_cell,tauler)
     jugador_v.move_to(next_cell,tauler)
-def afegir_cases():
+def afegir_cases():  # Funcio de trucs per afegir cases
     i  = input ("Indica les cases que vols afegir")
     comprar_i(i)
-def afegir_hotels():
-    j = input("Indica els hotels que vols afegir: ")
+def afegir_hotels(): # Funcio de trucs per afegir hotels 
+    j = input("Indica els hotels que vols afegir")
     comprar_j(j)
-def next_player():
+def next_player():   # Funcio de trucs per escollir el jugador que segueix
     canviar_torn = input("Indica el torn al que vols pasar")
     torn(canviar_torn)
-def diners_player():
+def diners_player(): # Funcio de trucs per  afegir diners a un jugador
     afegir_diners = input("Indica els diners que vols afegir")
     if next_player == "B" :
         jugador_b.diners  += afegir_diners
@@ -872,13 +892,10 @@ def diners_player():
     else  : 
         return "ERROR"
 
-def diners_banca():
-    afegir_diners_banca = input("Indica els diners que vols afegir a la banca: ")
+def diners_banca():  # Funcio de trucs per afegir diners a la banca
+    afegir_diners_banca = input("Indica els diners que vols afegir a la banca")
     valor_banca = afegir_diners_banca
     return valor_banca
 
 
 inici_partida()
-
-
-
