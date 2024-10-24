@@ -383,6 +383,7 @@ class Jugador:#Definir class Jugador
         return self.a_preso()
     
     def move(self,passos,cells):
+        global cell0,cell1,cell2, cell3,cell4,cell5,cell6,cell7,cell8,cell9,cell10, cell11,cell12,cell13,cell14,cell15,cell16,cell17, cell18, cell19,cell20,cell21,cell22,cell23
         if self.a_preso == True:
             missatge = print("Jugador a presó, no pot tirar")
             return missatge
@@ -897,6 +898,7 @@ class Jugador:#Definir class Jugador
            
         
     def move_to(self, casella):  #Funció moure a casella
+        global cell0,cell1,cell2, cell3,cell4,cell5,cell6,cell7,cell8,cell9,cell10, cell11,cell12,cell13,cell14,cell15,cell16,cell17, cell18, cell19,cell20,cell21,cell22,cell23
         if 0 <= casella < len(cells):
             self.posicio = casella
             casella_actual = cells[self.posicio]
