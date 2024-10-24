@@ -117,7 +117,6 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         eleccio = random.choice(players)
         orden.append(eleccio)
         players.remove(eleccio)
-    "cell0 = orden[0] + orden[1] + orden[2]+ orden[3]" 
     global jugador_ve, jugador_tg, jugador_go, jugador_bl
     #Ordre tirada jugadors
     global Jugador_0, Jugador_1, Jugador_2, Jugador_3
@@ -311,10 +310,12 @@ def opcions(jugador_actual):
     jugador = opcions_jugadors[jugador_actual]
     print(f"Torn Jugador: \"{jugador_actual}\"")
     opcion_jugador = input(f"Torn \"{jugador_actual}\", opcions --> (passar, compra terreny, preus):  ")
-    if opcion_jugador == 1:
+    if opcion_jugador == 1 or opcion_jugador == "comprar  terreny":
         jugador.compra_propietat()
-    elif opcion_jugador == "preus":
+    elif opcion_jugador == "preus" or opcion_jugador == 2:
         return preu_terreny(jugador.posicio)
+    elif opcion_jugador == "trucs".lower():
+        trucs()
     
 """def opcions(): 
     if jugador_actual == "B":
@@ -1011,6 +1012,16 @@ def diners_banca():  # Funcio de trucs per afegir diners a la banca
     afegir_diners_banca = input("Indica els diners que vols afegir a la banca")
     valor_banca = afegir_diners_banca
     return valor_banca
+def trucs():
+    print("1. Anar a una casella")
+    print("2. Afegir X cases")
+    print("3. Afegir X hotels")
+    print("4. Seguent X (jugador, saltar torn)")
+    print("5.  Diners X YY (Jugador, Quantitat)")
+    print("6. Diners X banca")
+    eleccio = input("Escull una opció : ")
+    return eleccio
+
 
 cell0 = orden[0] + orden[1] + orden[2]+ orden[3] #
 print(orden)
