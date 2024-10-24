@@ -259,12 +259,23 @@ def ordre(): #Funció mostra els jugadors a l'atzar
     
     return orden,players
 orden,players = ordre()
+"""
+TORN JUGADOR
+"""
+def torn(torn_actual): #Funció  que determina el jugador que toca jugar
 
+    jugador_actual = orden[torn_actual % len(orden)]
+    next_turn = (torn_actual + 1) % len(orden)
+    next_jugador = orden[next_turn]
+    return jugador_actual, next_jugador
 """
 JUGADORS
             -Class Jugador
             -Jugadors definits per color
 """
+torn_actual = 0 #Variable  que indica el torn actual
+
+jugador_actual, next_jugador = torn(torn_actual) #Retorna el  jugador actual i el jugador que toca a continuació
 
     
 
