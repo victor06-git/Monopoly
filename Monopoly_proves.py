@@ -309,6 +309,7 @@ def opcions(jugador_actual):
     }
 
     jugador = opcions_jugadors[jugador_actual]
+    print(f"Torn Jugador: \"{jugador_actual}\"")
     opcion_jugador = input(f"Torn \"{jugador_actual}\", opcions --> (passar, compra terreny, preus):  ")
     if opcion_jugador == 1:
         jugador.compra_propietat()
@@ -948,6 +949,7 @@ INICI PARTIDA
                 -Barrejar les cartes de caixa i sort
 """
 suma_daus, resultat_daus = llançar_daus()
+
 def inici_partida():
   """Inicia la partida amb els jugadors tenint 2000 euros."""
  
