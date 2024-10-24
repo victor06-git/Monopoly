@@ -266,17 +266,13 @@ TORN JUGADOR
 """
 
 def torn(torn_actual): #Funció  que determina el jugador que toca jugar
-    if 0 <= torn_actual < len(orden):
-       jugador_actual = orden[torn_actual]
-       return jugador_actual
+    if 0 <= torn_actual:
+       jugador_actual = orden[torn_actual % len(orden)]
+       print(f"Torn Jugador {jugador_actual}")
 
 torn_actual = 0
 jugador = torn(torn_actual)
-dict_players = {"Vermell" : False,
-                "Blau" : False,
-                "Groc": False,
-                "Taronja": False}
-   
+
 """ jugador_actual = orden[torn_actual]
     next_turn = (torn_actual + 1) % len(orden)
     next_jugador = orden[next_turn]
@@ -826,9 +822,15 @@ def diners_banca():
 inici_partida()
 print(torn_actual)
 
-print(jugador)
+torn(torn_actual)
 print(orden)
 torn_actual += 1
 print(torn_actual)
-
+torn(torn_actual)
 print(orden)
+torn_actual +=1
+torn(torn_actual)
+torn_actual += 1
+torn(torn_actual)
+torn_actual += 1
+torn(torn_actual)
