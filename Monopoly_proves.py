@@ -681,7 +681,7 @@ Definir turno jugadores en los condicionales
 jugador_b.move(1,  tauler) #Moure jugador B a la casella 1
 
 def opcions(): 
-    if jugador_b:
+    if torn(torn_actual) == "B":
         opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
         if opcion_jugador == "comprar terreny" or 1:
             jugador_b.compra_propietat(tauler[jugador_b.posicio])
@@ -690,7 +690,7 @@ def opcions():
         else: 
             pass
 
-    elif jugador_g:    
+    elif torn(torn_actual) == "G":    
         opcion_jugador = input("Juga \"G\", opcions(comprar terreny, preus): ")
         if opcion_jugador == "comprar terreny" or 1:
             jugador_g.compra_propietat(tauler[jugador_g.posicio])
@@ -698,7 +698,7 @@ def opcions():
             return preu_terreny(jugador_g.posicio)
         else: 
             pass
-    elif jugador_t:
+    elif torn(torn_actual) == "T":
         opcion_jugador = input("Juga \"T\", opcions (comprar terreny,  preus): ")
         if opcion_jugador == "comprar terreny" or 1:
             jugador_t.compra_propietat(tauler[jugador_t.posicio])
@@ -706,7 +706,7 @@ def opcions():
             return preu_terreny(jugador_t.posicio)
         else: 
             pass
-    elif jugador_v:
+    elif torn(torn_actual) == "V":
         opcion_jugador = input("Juga \"V\", opcions(comprar terreny,  preus): ")
         if opcion_jugador == "comprar terreny" or 1:
            jugador_v.compra_propietat(tauler[jugador_v.posicio])
