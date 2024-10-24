@@ -283,6 +283,7 @@ JUGADORS
             -Class Jugador
             -Jugadors definits per color
 """
+  
 
 
 class Jugador:#Definir class Jugador
@@ -767,7 +768,7 @@ def tablero(): #Funció imprimeix tauler
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-    opcions()
+    opcions
 
 
 
