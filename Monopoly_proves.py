@@ -733,7 +733,7 @@ Definir turno jugadores en los condicionales
 """
 
 
-def opcions(): 
+def opcions(): # Funcio per definir el turn dels jugadors en els condicionals 
     if torn == "B":
         opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
         if opcion_jugador == "comprar terreny" or 1:
@@ -768,7 +768,7 @@ def opcions():
         else: 
             pass
 
-def accio_usuari():
+def accio_usuari(): # Funcio de les accions del usuari
     text = (f"Juga {jugador_b}, opcions: passar, comprar terreny, preus")
     text2 = (f"Juga {jugador_b}, opcions: passar, comprar casa, comprar hotel, preus")
     pass
@@ -859,22 +859,22 @@ TRUCS
         -Diners X YY (Jugador, Quantitat)
         -Diners X banca
 """
-def anar_casella():
+def anar_casella():  # Funcio de trucs per escollir a quina casella anar
     next_cell = input("Escull una casella : ")
     jugador_b.move_to(next_cell,tauler)
     jugador_g.move_to(next_cell,tauler)
     jugador_t.move_to(next_cell,tauler)
     jugador_v.move_to(next_cell,tauler)
-def afegir_cases():
+def afegir_cases():  # Funcio de trucs per afegir cases
     i  = input ("Indica les cases que vols afegir")
     comprar_i(i)
-def afegir_hotels():
+def afegir_hotels(): # Funcio de trucs per afegir hotels 
     j = input("Indica els hotels que vols afegir")
     comprar_j(j)
-def next_player():
+def next_player():   # Funcio de trucs per escollir el jugador que segueix
     canviar_torn = input("Indica el torn al que vols pasar")
     torn(canviar_torn)
-def diners_player():
+def diners_player(): # Funcio de trucs per  afegir diners a un jugador
     afegir_diners = input("Indica els diners que vols afegir")
     if next_player == "B" :
         jugador_b.diners  += afegir_diners
@@ -887,7 +887,7 @@ def diners_player():
     else  : 
         return "ERROR"
 
-def diners_banca():
+def diners_banca():  # Funcio de trucs per afegir diners a la banca
     afegir_diners_banca = input("Indica els diners que vols afegir a la banca")
     valor_banca = afegir_diners_banca
     return valor_banca
