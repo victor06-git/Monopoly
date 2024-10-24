@@ -290,7 +290,9 @@ def torn(torn_actual): #Funció  que determina el jugador que toca jugar
 
 torn_actual = 0
 jugador_actual = torn(torn_actual)
-
+def torn_jugador_B():
+    return jugador_actual == "Blau"
+    
 def opcions(): 
     if jugador_actual == "B":
         opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
