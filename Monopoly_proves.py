@@ -2040,8 +2040,9 @@ INICI PARTIDA
 suma_daus, resultat_daus = llançar_daus()
 
 def inici_partida():
+  global cell0
   """Inicia la partida amb els jugadors tenint 2000 euros."""
- 
+  cell0 = orden[0] + orden[1] + orden[2]+ orden[3]
   # Definir els jugadors
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
@@ -2050,19 +2051,17 @@ def inici_partida():
   torn(torn_actual)
   llançar_daus()
   if torn_jugador_B():
-    jugador_b.move(suma_daus,cells)
+    jugador_b.move(6,cells)
   elif torn_jugador_G():
-      jugador_g.move(suma_daus,cells)
+      jugador_g.move(6,cells)
   elif torn_jugador_T():
-      jugador_t.move(suma_daus,cells)
+      jugador_t.move(6,cells)
   elif torn_jugador_V():
-      jugador_v.move(suma_daus,cells)
+      jugador_v.move(6,cells)
   opcions(jugador_actual)
+
  
 
-
-cell0 = orden[0] + orden[1] + orden[2]+ orden[3] #
-print(orden)
 
 
 
