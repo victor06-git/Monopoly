@@ -276,6 +276,7 @@ def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny selec
                 return f"El preu del terreny és de:{diners_propietats[3]}"
             else:
                 pass
+jugador_actual = None
 
 def torn(torn_actual): #Funció  que determina el jugador que toca jugar
     if torn_actual >= 0:
@@ -330,20 +331,7 @@ def opcions():
             pass
 
 
-    
 
-
-"""
-Definir turno jugadores en los condicionales
-"""
-
-
-
-
-""" jugador_actual = orden[torn_actual]
-    next_turn = (torn_actual + 1) % len(orden)
-    next_jugador = orden[next_turn]
-    return jugador_actual, next_jugador"""  
 
 """
 JUGADORS
@@ -844,7 +832,7 @@ def afegir_cases():
     i  = input ("Indica les cases que vols afegir")
     comprar_i(i)
 def afegir_hotels():
-    j = input("Indica els hotels que vols afegir")
+    j = input("Indica els hotels que vols afegir: ")
     comprar_j(j)
 def next_player():
     canviar_torn = input("Indica el torn al que vols pasar")
@@ -863,11 +851,12 @@ def diners_player():
         return "ERROR"
 
 def diners_banca():
-    afegir_diners_banca = input("Indica els diners que vols afegir a la banca")
+    afegir_diners_banca = input("Indica els diners que vols afegir a la banca: ")
     valor_banca = afegir_diners_banca
     return valor_banca
 
 
 inici_partida()
+
 
 
