@@ -382,16 +382,257 @@ class Jugador:#Definir class Jugador
     def en_preso(self):
         return self.a_preso()
     
-    def move(self,passos,tauler):
+    def move(self,passos,cells):
         if self.a_preso == True:
-            print("Jugador a presó, no pot tirar")
-            return None
+            missatge = print("Jugador a presó, no pot tirar")
+            return missatge
         else:
-            self.posicio = (self.posicio + passos) % len(tauler) #Passos == resultat_daus
-            if self.posicio == 1:
-                cell1 = "Jugador torn"#Definir que el jugador del torn es mogui fins aquella casella
-            casella_actual = tauler[self.posicio]
-            return casella_actual
+            self.posicio = (self.posicio + passos) % len(cells) #Passos == resultat_daus
+            casella_actual = cells[self.posicio]
+            if len(casella_actual) == 0:
+                if casella_actual == cell0:    
+                    if torn_jugador_T():
+                        cell0 =  "T"
+                    elif torn_jugador_G():
+                        cell0 = "G"
+                    elif torn_jugador_V():
+                        cell0 = "V"
+                    elif torn_jugador_B():
+                        cell0 = "B"
+
+                if casella_actual == cell1:
+                    if torn_jugador_T():
+                        cell1 =  "T"
+                    elif torn_jugador_G():
+                        cell1 = "G"
+                    elif torn_jugador_V():
+                        cell1 = "V"
+                    elif torn_jugador_B():
+                        cell1 = "B"
+
+                if casella_actual == cell2:
+                    if torn_jugador_T():
+                        cell2 =  "T"
+                    elif torn_jugador_G():
+                        cell2 = "G"
+                    elif torn_jugador_V():
+                        cell2 = "V"
+                    elif torn_jugador_B():
+                        cell2 = "B"
+
+                if casella_actual == cell3:
+                    if torn_jugador_T():
+                        cell3 =  "T"
+                    elif torn_jugador_G():
+                        cell3 = "G"
+                    elif torn_jugador_V():
+                        cell3 = "V"
+                    elif torn_jugador_B():
+                        cell3 = "B"
+
+                if casella_actual == cell4:
+                    if torn_jugador_T():
+                        cell4 =  "T"
+                    elif torn_jugador_G():
+                        cell4 = "G"
+                    elif torn_jugador_V():
+                        cell4 = "V"
+                    elif torn_jugador_B():
+                        cell4 = "B"
+
+                if casella_actual == cell5:
+                    if torn_jugador_T():
+                        cell5 =  "T"
+                    elif torn_jugador_G():
+                        cell5 = "G"
+                    elif torn_jugador_V():
+                        cell5 = "V"
+                    elif torn_jugador_B():
+                        cell5 = "B"
+
+                if casella_actual == cell6:
+                    if torn_jugador_T():
+                        cell6 =  "T"
+                    elif torn_jugador_G():
+                        cell6 = "G"
+                    elif torn_jugador_V():
+                        cell6 = "V"
+                    elif torn_jugador_B():
+                        cell6 = "B"
+
+                if casella_actual == cell7:
+                    if torn_jugador_T():
+                        cell7 =  "T"
+                    elif torn_jugador_G():
+                        cell7 = "G"
+                    elif torn_jugador_V():
+                        cell7 = "V"
+                    elif torn_jugador_B():
+                        cell7 = "B"
+
+                if casella_actual == cell8:
+                    if torn_jugador_T():
+                        cell8 =  "T"
+                    elif torn_jugador_G():
+                        cell8 = "G"
+                    elif torn_jugador_V():
+                        cell8 = "V"
+                    elif torn_jugador_B():
+                        cell8 = "B"
+
+                if casella_actual == cell9:
+                    if torn_jugador_T():
+                        cell9 =  "T"
+                    elif torn_jugador_G():
+                        cell9 = "G"
+                    elif torn_jugador_V():
+                        cell9 = "V"
+                    elif torn_jugador_B():
+                        cell9 = "B"
+
+                if casella_actual == cell10:
+                    if torn_jugador_T():
+                        cell10 =  "T"
+                    elif torn_jugador_G():
+                        cell10 = "G"
+                    elif torn_jugador_V():
+                        cell10 = "V"
+                    elif torn_jugador_B():
+                        cell10 = "B"
+
+                if casella_actual == cell11:
+                    if torn_jugador_T():
+                        cell11 =  "T"
+                    elif torn_jugador_G():
+                        cell11 = "G"
+                    elif torn_jugador_V():
+                        cell11 = "V"
+                    elif torn_jugador_B():
+                        cell11 = "B"
+
+                if casella_actual == cell12:
+                    if torn_jugador_T():
+                        cell12 =  "T"
+                    elif torn_jugador_G():
+                        cell12 = "G"
+                    elif torn_jugador_V():
+                        cell12 = "V"
+                    elif torn_jugador_B():
+                        cell12 = "B"
+
+                if casella_actual == cell13:
+                    if torn_jugador_T():
+                        cell13 =  "T"
+                    elif torn_jugador_G():
+                        cell13 = "G"
+                    elif torn_jugador_V():
+                        cell13 = "V"
+                    elif torn_jugador_B():
+                        cell13 = "B"
+
+                if casella_actual == cell14:
+                    if torn_jugador_T():
+                        cell14 =  "T"
+                    elif torn_jugador_G():
+                        cell14 = "G"
+                    elif torn_jugador_V():
+                        cell14 = "V"
+                    elif torn_jugador_B():
+                        cell14 = "B"
+
+                if casella_actual == cell15:
+                    if torn_jugador_T():
+                        cell15 =  "T"
+                    elif torn_jugador_G():
+                        cell15 = "G"
+                    elif torn_jugador_V():
+                        cell15 = "V"
+                    elif torn_jugador_B():
+                        cell15 = "B"
+
+                if casella_actual == cell16:
+                    if torn_jugador_T():
+                        cell16 =  "T"
+                    elif torn_jugador_G():
+                        cell16 = "G"
+                    elif torn_jugador_V():
+                        cell16 = "V"
+                    elif torn_jugador_B():
+                        cell16 = "B"
+
+                if casella_actual == cell17:
+                    if torn_jugador_T():
+                        cell17 =  "T"
+                    elif torn_jugador_G():
+                        cell17 = "G"
+                    elif torn_jugador_V():
+                        cell17 = "V"
+                    elif torn_jugador_B():
+                        cell17 = "B"
+
+                if casella_actual == cell18:
+                    if torn_jugador_T():
+                        cell18 =  "T"
+                    elif torn_jugador_G():
+                        cell18 = "G"
+                    elif torn_jugador_V():
+                        cell18 = "V"
+                    elif torn_jugador_B():
+                        cell18 = "B"
+
+                if casella_actual == cell19:
+                    if torn_jugador_T():
+                        cell19 =  "T"
+                    elif torn_jugador_G():
+                        cell19 = "G"
+                    elif torn_jugador_V():
+                        cell19 = "V"
+                    elif torn_jugador_B():
+                        cell19 = "B"
+
+                if casella_actual == cell20:
+                    if torn_jugador_T():
+                        cell20 =  "T"
+                    elif torn_jugador_G():
+                        cell20 = "G"
+                    elif torn_jugador_V():
+                        cell20 = "V"
+                    elif torn_jugador_B():
+                        cell20 = "B"
+
+                if casella_actual == cell21:
+                    if torn_jugador_T():
+                        cell21 =  "T"
+                    elif torn_jugador_G():
+                        cell21 = "G"
+                    elif torn_jugador_V():
+                        cell21 = "V"
+                    elif torn_jugador_B():
+                        cell21 = "B"
+
+                if casella_actual == cell22:
+                    if torn_jugador_T():
+                        cell22 =  "T"
+                    elif torn_jugador_G():
+                        cell22 = "G"
+                    elif torn_jugador_V():
+                        cell22 = "V"
+                    elif torn_jugador_B():
+                        cell22 = "B"
+
+                if casella_actual == cell23:
+                    if torn_jugador_T():
+                        cell23 =  "T"
+                    elif torn_jugador_G():
+                        cell23 = "G"
+                    elif torn_jugador_V():
+                        cell23 = "V"
+                    elif torn_jugador_B():
+                        cell23 = "B"
+
+
+
+           
         
     def move_to(self, casella, tauler):  #Funció moure a casella
         if 0 <= casella < len(tauler):
@@ -853,12 +1094,8 @@ TABLERO
 """
 
 
-cell0,cell1,cell2,cell3,cell4,cell5,cell6,cell7,cell8,cell9,cell10 = "","","","","","","","","","",""
-cell11,cell12,cell13,cell14,cell15,cell16,cell17,cell18,cell19,cell20 = "","","","","","","","","",""
-cell21,cell22,cell23 = "","",""
-cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10,
-         cell11, cell12, cell13, cell14, cell15, cell16, cell17, cell18, cell19, cell20,
-         cell21, cell22, cell23]
+
+
 casa1,casa2,casa3,casa4,casa9,casa10,casa11,casa12 = "--","--","--","--","--","--","--","--"
 casa5,casa6,casa7,casa8,casa13,casa14,casa15,casa16 = " |"," |"," |"," |"," |"," |"," |"," |"
 
