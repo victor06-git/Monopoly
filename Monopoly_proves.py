@@ -264,28 +264,28 @@ orden,players = ordre()
 """
 TORN JUGADOR
 """
-jugador = [Jugador_0,Jugador_1,Jugador_2,Jugador_3]
-def torn(torn_actual,jugador): #Funció  que determina el jugador que toca jugar
+
+def torn(torn_actual): #Funció  que determina el jugador que toca jugar
+    torn_actual = 0
     jugador_actual = orden[torn_actual % len(orden)]
     next_turn = (torn_actual + 1) % len(orden)
     next_jugador = orden[next_turn]
     if torn_actual == 0:
-        jugador_torn = jugador[0]
+        jugador_torn = orden[0]
     elif torn_actual == 1:
-        jugador_torn = jugador[1]
+        jugador_torn = orden[1]
     elif torn_actual == 2:
-        jugador_torn = jugador[2]
+        jugador_torn = orden[2]
     else:
-        jugador_torn = jugador[3]
+        jugador_torn = orden[3]
     return jugador_actual, next_jugador, jugador_torn
 """
 JUGADORS
             -Class Jugador
             -Jugadors definits per color
 """
-torn_actual = 0 #Variable  que indica el torn actual
 
-jugador_actual,next_jugador,jugador_torn = torn(torn_actual,jugador) #Retorna el  jugador actual i el jugador que toca a continuació
+
 
     
 
@@ -587,9 +587,7 @@ def Sort  (): #Funció casella sort
             cartes_sort.index(carta_jugador2) 
 
 def Preso (): #Funció casella presó
-    preso = tauler[6]
     if jugador_b.a_preso ==  True:
-
         jugador_b.en_preso = True
         if jugador_b.show_especial_card() == True:
             jugador_b.en_preso = False
@@ -655,23 +653,7 @@ INFORMACIÓ PARTIDA (DRETA)
                             -Els carrers es mostren per ordre en el taulell
 """
 
-def informacio_usuari():
-    info_0 = jugador_t.jugador_info()
-    info_1 = jugador_g.jugador_info()
-    info_2 = jugador_b.jugador_info()
-    info_3 = jugador_v.jugador_info()
-    print(f"""
-Banca:
-Diners: {banca()} 
-Jugador {Jugador_0}:
-{info_0}
-Jugador {Jugador_1}:
-{info_1}
-Jugador {Jugador_2}:
-{info_2}
-Jugador {Jugador_3}:
-{info_3}
-    """)
+
 
 
 """
@@ -790,7 +772,7 @@ def tablero(): #Funció imprimeix tauler
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-    opcions()
+    
 
 
 
@@ -805,11 +787,14 @@ INICI PARTIDA
 def inici_partida():
   """Inicia la partida amb els jugadors tenint 2000 euros."""
   # Definir els jugadors
+  global torn_actual,jugador_actual,next_jugador,jugador_torn
+  torn_actual = 0 #Variable  que indica el torn actual
+  jugador_actual,next_jugador,jugador_torn = torn(torn_actual) #Retorna el  jugador actual i el jugador que toca a continuació
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
   ordre() #Crida la funció ordre
   tablero() #Crida la funció imprimeix tauler
-  torn(torn_actual,jugador)
+  torn(torn_actual)
   return f"Torn jugador: {jugador_torn}"
 """
 TRUCS
@@ -836,3 +821,12 @@ def diners_banca():
 
 
 inici_partida()
+print(torn_actual)
+print(jugador_actual)
+print(jugador_torn)
+print(orden)
+torn_actual += 1
+torn(torn_actual)
+print(torn_actual)
+print(jugador_torn)
+print(orden)
