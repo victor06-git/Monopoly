@@ -117,7 +117,7 @@ def ordre(): #Funció mostra els jugadors a l'atzar
         eleccio = random.choice(players)
         orden.append(eleccio)
         players.remove(eleccio)
-    cell0 = orden[0] + orden[1] + orden[2]+ orden[3]
+    "cell0 = orden[0] + orden[1] + orden[2]+ orden[3]" 
     global jugador_ve, jugador_tg, jugador_go, jugador_bl
     #Ordre tirada jugadors
     global Jugador_0, Jugador_1, Jugador_2, Jugador_3
@@ -824,7 +824,10 @@ def tablero(): #Funció imprimeix tauler
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-    opcions()
+    opcions(jugador_actual)
+
+
+
 
 
 
@@ -887,5 +890,6 @@ def diners_banca():  # Funcio de trucs per afegir diners a la banca
     valor_banca = afegir_diners_banca
     return valor_banca
 
-
+cell0 = orden[0] + orden[1] + orden[2]+ orden[3] #
+print(orden)
 inici_partida()
