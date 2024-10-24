@@ -890,6 +890,32 @@ def diners_banca():  # Funcio de trucs per afegir diners a la banca
     valor_banca = afegir_diners_banca
     return valor_banca
 
-cell0 = orden[0] + orden[1] + orden[2]+ orden[3] #
-print(orden)
+cell0 = orden[0] + orden[1] + orden[2]+ orden[3] #Variable de la cell0
+"""
+MOVIMENT JUGADORS
+"""
+if torn_jugador_B():
+    casilla = tauler[0].replace("Lauria", "B")
+    jugador_b.move_to(1,tauler)
+    jugador_b.posicio = 1
+    cell1 = "B"
+    cell0 = orden[1] + orden[2] + orden[3]
+elif torn_jugador_V():
+    casilla = tauler[0].replace("Lauria", "V")
+    jugador_v.move_to(1,tauler)
+    jugador_v.posicio = 1
+    cell1 = "V"
+    cell0 = orden[1] + orden[2] + orden[3]
+elif torn_jugador_T():
+    casilla = tauler[0].replace("Lauria", "T")
+    jugador_t.move_to(1,tauler)
+    jugador_t.posicio = 1
+    cell1 = "T"
+    cell0 = orden[1] + orden[2] + orden[3]
+elif torn_jugador_G():
+    casilla = tauler[0].replace("Lauria", "G")
+    jugador_b.move_to(1,tauler)
+    jugador_b.posicio = 1
+    cell1 = "G"
+    cell0 = orden[1] + orden[2] + orden[3]
 inici_partida()
