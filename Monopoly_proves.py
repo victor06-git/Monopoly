@@ -317,13 +317,13 @@ def torn(torn_actual): #Funció  que determina el jugador que toca jugar
 torn_actual = 0
 jugador_actual = torn(torn_actual)
 
-def torn_jugador_B():
+def torn_jugador_B(): #Si el torn és del jugador B
     return jugador_actual == "Blau"
-def torn_jugador_V():
+def torn_jugador_V():  #Si el torn és del jugador V
     return jugador_actual == "Vermell"
-def torn_jugador_G():
+def torn_jugador_G():   #Si el torn és del jugador G
     return jugador_actual == "Groc"
-def torn_jugador_T():
+def torn_jugador_T(): #Si el torn és del jugador T
     return jugador_actual == "Taronja"
 
 def opcions(jugador_actual):
