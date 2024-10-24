@@ -806,9 +806,11 @@ def anar_casella():
     next_player = input("Escull una casella : ")
     pass
 def afegir_cases():
-    pass
+    i  = input ("Indica les cases que vols afegir")
+    comprar_i(i)
 def afegir_hotels():
-    pass
+    j = input("Indica els hotels que vols afegir")
+    comprar_j(j)
 def next_player():
     canviar_torn = input("Indica el torn al que vols pasar")
     torn(canviar_torn)
@@ -826,7 +828,9 @@ def diners_player():
         return "ERROR"
 
 def diners_banca():
-    pass
+    afegir_diners_banca = input("Indica els diners que vols afegir a la banca")
+    valor_banca = afegir_diners_banca
+    return valor_banca
 
 
 inici_partida()
