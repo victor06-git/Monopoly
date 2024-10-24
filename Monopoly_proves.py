@@ -313,7 +313,9 @@ class Jugador:#Definir class Jugador
             print("Jugador a presó, no pot tirar")
             return None
         else:
-            self.posicio = (self.posicio + passos) % len(tauler) #Passos == resultat_daus
+            self.posicio = (self.posicio + passos) % len(tauler) #Passos == resultat_dausç
+            if self.posicio == 1:
+                cell1 = "Jugador torn"#Definir que el jugador del torn es mogui fins aquella casella
             casella_actual = tauler[self.posicio]
             return casella_actual
         
