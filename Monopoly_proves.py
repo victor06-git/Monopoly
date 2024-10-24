@@ -278,7 +278,6 @@ def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny selec
                 pass
 
 def torn(torn_actual): #Funció  que determina el jugador que toca jugar
-    global jugador_actual
     if torn_actual >= 0:
        jugador_actual = orden[torn_actual % len(orden)]
        return jugador_actual
@@ -742,40 +741,7 @@ Definir turno jugadores en los condicionales
 """
 
 
-def opcions(): 
-    if torn == "B":
-        opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
-        if opcion_jugador == "comprar terreny" or 1:
-            jugador_b.compra_propietat(tauler[jugador_b.posicio])
-        elif opcion_jugador == "preus" or 2:
-            return preu_terreny(jugador_b.posicio)
-        else: 
-            pass
 
-    elif torn == "G":    
-        opcion_jugador = input("Juga \"G\", opcions(comprar terreny, preus): ")
-        if opcion_jugador == "comprar terreny" or 1:
-            jugador_g.compra_propietat(tauler[jugador_g.posicio])
-        elif opcion_jugador == "preus" or 2:
-            return preu_terreny(jugador_g.posicio)
-        else: 
-            pass
-    elif torn == "T":
-        opcion_jugador = input("Juga \"T\", opcions (comprar terreny,  preus): ")
-        if opcion_jugador == "comprar terreny" or 1:
-            jugador_t.compra_propietat(tauler[jugador_t.posicio])
-        elif opcion_jugador == "preus" or 2:
-            return preu_terreny(jugador_t.posicio)
-        else: 
-            pass
-    elif torn == "V":
-        opcion_jugador = input("Juga \"V\", opcions(comprar terreny,  preus): ")
-        if opcion_jugador == "comprar terreny" or 1:
-           jugador_v.compra_propietat(tauler[jugador_v.posicio])
-        elif opcion_jugador == "preus" or 2:
-            return preu_terreny(jugador_v.posicio)
-        else: 
-            pass
 
 def accio_usuari():
     text = (f"Juga {jugador_b}, opcions: passar, comprar terreny, preus")
@@ -838,7 +804,7 @@ def tablero(): #Funció imprimeix tauler
     print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
-    
+    opcions()
 
 
 
@@ -903,3 +869,5 @@ def diners_banca():
 
 
 inici_partida()
+
+
