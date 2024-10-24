@@ -309,7 +309,7 @@ def opcions(jugador_actual):
     }
 
     jugador = opcions_jugadors[jugador_actual]
-    opcion_jugador = input(f"Juga \"{jugador_actual}\" (passar, compra terreny, preus):  ")
+    opcion_jugador = input(f"Torn \"{jugador_actual}\", opcions --> (passar, compra terreny, preus):  ")
     if opcion_jugador == 1:
         jugador.compra_propietat()
     elif opcion_jugador == "preus":
