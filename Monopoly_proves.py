@@ -281,13 +281,22 @@ def torn(torn_actual): #Funció  que determina el jugador que toca jugar
     global jugador_actual
     if torn_actual >= 0:
        jugador_actual = orden[torn_actual % len(orden)]
-       return print(f"{jugador_actual}"),jugador_actual
+       return jugador_actual
 
 torn_actual = 0
 jugador_actual = torn(torn_actual)
 
+def torn_jugador_B():
+    return jugador_actual == "B" 
+def torn_jugador_V():
+    return jugador_actual == "V"
+def torn_jugador_T():
+    return jugador_actual == "T"
+def torn_jugador_G():
+    return jugador_actual == "G"
+
 def opcions(): 
-    if jugador_actual == "B":
+    if torn_jugador_B():
         opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
         if opcion_jugador == "comprar terreny" or 1:
             jugador_b.compra_propietat(tauler[jugador_b.posicio])
@@ -296,7 +305,7 @@ def opcions():
         else: 
             pass
 
-    elif jugador_actual == "G":    
+    elif torn_jugador_G():    
         opcion_jugador = input("Juga \"G\", opcions(comprar terreny, preus): ")
         if opcion_jugador == "comprar terreny" or 1:
             jugador_g.compra_propietat(tauler[jugador_g.posicio])
@@ -304,7 +313,7 @@ def opcions():
             return preu_terreny(jugador_g.posicio)
         else: 
             pass
-    elif jugador_actual == "T":
+    elif torn_jugador_T():
         opcion_jugador = input("Juga \"T\", opcions (comprar terreny,  preus): ")
         if opcion_jugador == "comprar terreny" or 1:
             jugador_t.compra_propietat(tauler[jugador_t.posicio])
@@ -312,7 +321,7 @@ def opcions():
             return preu_terreny(jugador_t.posicio)
         else: 
             pass
-    elif jugador_actual == "V":
+    elif torn_jugador_V():
         opcion_jugador = input("Juga \"V\", opcions(comprar terreny,  preus): ")
         if opcion_jugador == "comprar terreny" or 1:
            jugador_v.compra_propietat(tauler[jugador_v.posicio])
