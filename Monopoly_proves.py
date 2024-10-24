@@ -287,7 +287,22 @@ def torn(torn_actual): #Funció  que determina el jugador que toca jugar
        jugador_actual = Jugador_2
     else:
         jugador_actual = Jugador_3
-    return  jugador_actual
+    return jugador_actual
+
+def opcions(jugador_actual):
+    opcions_jugadors = {
+        "Vermell": jugador_v,
+        "Blau" : jugador_b,
+        "Groc" : jugador_g,
+        "Taronja" : jugador_t
+    }
+
+    jugador = opcions_jugadors[jugador_actual]
+    opcion_jugador = input(f"Juga {jugador_actual}: ")
+    if opcion_jugador == 1:
+        jugador.compra_propietat
+    elif opcion_jugador == "preus":
+        return preu_terreny(jugador.posicio)
 
 torn_actual = 0
 jugador_actual = torn(torn_actual)
