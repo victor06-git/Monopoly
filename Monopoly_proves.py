@@ -326,7 +326,11 @@ def torn_jugador_G():   #Si el torn és del jugador G
 def torn_jugador_T(): #Si el torn és del jugador T
     return jugador_actual == "Taronja"
 
-def opcions(jugador_actual):
+"""
+OPCIONS USUARI A CADA TORN
+"""
+
+def opcions(jugador_actual): 
     opcions_jugadors = {
         "Vermell": jugador_v,
         "Blau" : jugador_b,
@@ -338,46 +342,21 @@ def opcions(jugador_actual):
     print(f"Torn Jugador: \"{jugador_actual}\"")
     opcion_jugador = input(f"Torn \"{jugador_actual}\", opcions --> (passar, compra terreny, preus):  ")
     if opcion_jugador == 1 or opcion_jugador == "comprar  terreny":
-        jugador.compra_propietat()
+        if torn_jugador_B():
+            jugador_b.compra_propietat(tauler[jugador_b.posicio])
+        elif torn_jugador_G():
+            jugador_g.compra_propietat(tauler[jugador_g.posicio])
+        elif torn_jugador_T():
+            jugador_t.compra_propietat(tauler[jugador_t.posicio])
+        elif  torn_jugador_V():
+            jugador_v.compra_propietat(tauler[jugador_v.posicio])
+
     elif opcion_jugador == "preus" or opcion_jugador == 2:
         return preu_terreny(jugador.posicio)
     elif opcion_jugador == "trucs".lower():
         trucs()
     
-"""def opcions(): 
-    if jugador_actual == "B":
-        opcion_jugador = input("Juga \"B\", opcions(comprar terreny, preus): ") #L'usuari escull una opció
-        if opcion_jugador == "comprar terreny" or 1:
-            jugador_b.compra_propietat(tauler[jugador_b.posicio])
-        elif opcion_jugador == "preus" or 2:
-            return preu_terreny(jugador_b.posicio)
-        else: 
-            pass
 
-    elif jugador_actual == "G":    
-        opcion_jugador = input("Juga \"G\", opcions(comprar terreny, preus): ")
-        if opcion_jugador == "comprar terreny" or 1:
-            jugador_g.compra_propietat(tauler[jugador_g.posicio])
-        elif opcion_jugador == "preus" or 2:
-            return preu_terreny(jugador_g.posicio)
-        else: 
-            pass
-    elif jugador_actual == "T":
-        opcion_jugador = input("Juga \"T\", opcions (comprar terreny,  preus): ")
-        if opcion_jugador == "comprar terreny" or 1:
-            jugador_t.compra_propietat(tauler[jugador_t.posicio])
-        elif opcion_jugador == "preus" or 2:
-            return preu_terreny(jugador_t.posicio)
-        else: 
-            pass
-    elif jugador_actual == "V":
-        opcion_jugador = input("Juga \"V\", opcions(comprar terreny,  preus): ")
-        if opcion_jugador == "comprar terreny" or 1:
-           jugador_v.compra_propietat(tauler[jugador_v.posicio])
-        elif opcion_jugador == "preus" or 2:
-            return preu_terreny(jugador_v.posicio)
-        else: 
-            pass"""
 
 
     
