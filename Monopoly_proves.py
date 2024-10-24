@@ -106,7 +106,7 @@ def banca():#Funció diners banca
 ORDRE TIRADA
                 -Aleatoriament selecciona al principi de cada partida
                 -Condicional para saber que valores entre el 0 i el 3 tienen los jugadores
-                -
+                -Orden lista
 """
 
 def ordre(): #Funció mostra els jugadors a l'atzar
@@ -275,6 +275,33 @@ def preu_terreny(casilla): #Definir el preu que ha de pagar per el terreny selec
                 return f"El preu del terreny és de:{diners_propietats[3]}"
             else:
                 pass
+        if jugador_g.posicio == casilla:
+            if casilla == [1,2,4,5]:
+                return f"El preu del terreny és de:{diners_propietats[0]}"
+            elif casilla == [7,8,10,11]:
+                return f"El preu del terreny és de:{diners_propietats[1]}"
+            elif casilla == [13,14,16,17]:
+                return f"El preu del terreny és de:{diners_propietats[2]}"
+            elif casilla == [19,20,22,23]:
+                return f"El preu del terreny és de:{diners_propietats[3]}"
+        if jugador_t.posicio == casilla:
+            if casilla == [1,2,4,5]:
+                return f"El preu del terreny és de:{diners_propietats[0]}"
+            elif casilla == [7,8,10,11]:
+                return f"El preu del terreny és de:{diners_propietats[1]}"
+            elif casilla == [13,14,16,17]:
+                return f"El preu del terreny és de:{diners_propietats[2]}"
+            elif casilla == [19,20,22,23]:
+                return f"El preu del terreny és de:{diners_propietats[3]}"
+        if jugador_v.posicio == casilla:
+            if casilla == [1,2,4,5]:
+                return f"El preu del terreny és de:{diners_propietats[0]}"
+            elif casilla == [7,8,10,11]:
+                return f"El preu del terreny és de:{diners_propietats[1]}"
+            elif casilla == [13,14,16,17]:
+                return f"El preu del terreny és de:{diners_propietats[2]}"
+            elif casilla == [19,20,22,23]:
+                return f"El preu del terreny és de:{diners_propietats[3]}"
 
 def torn(torn_actual): #Funció  que determina el jugador que toca jugar
     if torn_actual  == 0:
