@@ -1601,9 +1601,8 @@ def Sort  (): #Funció casella sort
             elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Blau perd diners per reparacions a les propietats
                 if len(jugador_b.propietats) != 0 :
                     jugador_b.diners -=25
-                    if j == 1 :
+                    if hotels == 1 :
                         jugador_b.diners -= 100 
-                cell15= "B"
             elif carta_jugador2 == "Ets escollit alcalde": # Jugador Blau guanya diners per ser escollit alcalde
                 jugador_b.diners += 150
                 jugador_g.diners -= 50
@@ -1630,7 +1629,7 @@ def Sort  (): #Funció casella sort
             elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Groc perd diners per reparacions a les propietats
                 if len(jugador_g.propietats) != 0 :
                     jugador_g.diners -=25
-                    if j == 1 :
+                    if hotels == 1 :
                         jugador_g.diners -= 100 
                 
 
@@ -1660,7 +1659,7 @@ def Sort  (): #Funció casella sort
             elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Taronja perd diners per reparacions a les propietats
                 if len(jugador_t.propietats) != 0 :
                     jugador_t.diners -= 25
-                    if j == 1 :
+                    if hotels == 1 :
                         jugador_t.diners -= 100 
                
             elif carta_jugador2 == "Ets escollit alcalde": # Jugador Taronja guanya diners per ser escollit alcalde
@@ -1692,7 +1691,7 @@ def Sort  (): #Funció casella sort
             elif carta_jugador2 == "Fer reparacions a les propietats": # Jugador Vermell perd diners per reparacions a les propietats
                 if len(jugador_v.propietats) != 0 :
                     jugador_v.diners -= 25
-                    if j == 1 :
+                    if hotels == 1 :
                         jugador_v.diners -= 100 
                 
             elif carta_jugador2 == "Ets escollit alcalde": # Jugador Vermell guanya diners per ser escollit alcalde
@@ -1772,49 +1771,32 @@ cases = 0
 hotels = 0
 
 # Función para intentar comprar un hotel
-def comprar_j(cantidad):
+def comprar_hotels(cantidad):
     global cases, hotels
     if hotels + cantidad > 2:
         print("No se pueden comprar más de 2 hoteles.")
     else:
         for _ in range(cantidad):
-            if i >= 2:
-                i -= 2  # Restar 2 casas por cada hotel comprado
-                j += 1
-                print(f"Compraste 1 hotel. Ahora tienes {i} casas y {j} hotel(es).")
+            if cases >= 2:
+                cases -= 2  # Restar 2 casas por cada hotel comprado
+                hotels += 1
+                print(f"Compraste 1 hotel. Ahora tienes {cases} casas y {hotels} hotel(es).")
             else:
                 print("No tienes suficientes casas para comprar un hotel.")
-                break
+                
 
 # Función para intentar comprar casas
-def comprar_i(cantidad):
-    global i, j
-    if j == 2:
+def comprar_cases(cantidad):
+    global cases, hotels
+    if hotels == 2:
         print("No se pueden comprar casas porque ya tienes 2 hoteles.")
-    elif j == 1 and i + cantidad > 2:
+    elif hotels == 1 and i + cantidad > 2:
         print("No se pueden tener más de 2 casas con 1 hotel.")
-    elif j == 0 and i + cantidad > 4:
+    elif hotels == 0 and cases + cantidad > 4:
         print("No se pueden comprar más de 4 casas.")
     else:
-        i += cantidad
-        print(f"Compraste {cantidad} casa(s). Ahora tienes {i} casas y {j} hotel(es).")
-
-
-
-
-"""
-INFORMACIÓ PARTIDA (CENTRE)
-                            -Mostra les accions que passen a la partida
-"""
-def accions_partida():
-    pass
-
-
-"""
-INFORMACIÓ PARTIDA (DRETA)
-                            -Els jugadors es mostren per ordre de tirada
-                            -Els carrers es mostren per ordre en el taulell
-"""
+        cases += cantidad
+        print(f"Compraste {cantidad} casa(s). Ahora tienes {cases} casas y {hotels} hotel(es).")
 
 
 
@@ -1888,15 +1870,9 @@ TABLERO
         -Variables casellas (cell(número))
         -Variables cases i hotels (casa(número))
 """
-
-
-
-
 casa1,casa2,casa3,casa4,casa9,casa10,casa11,casa12 = "--","--","--","--","--","--","--","--"
 casa5,casa6,casa7,casa8,casa13,casa14,casa15,casa16 = " |"," |"," |"," |"," |"," |"," |"," |"
 
-
-    
 
 
 # Definición de variables
