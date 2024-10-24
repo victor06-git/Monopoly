@@ -820,17 +820,3 @@ def diners_banca():
 
 
 inici_partida()
-print(torn_actual)
-
-torn(torn_actual)
-print(orden)
-torn_actual += 1
-print(torn_actual)
-torn(torn_actual)
-print(orden)
-torn_actual +=1
-torn(torn_actual)
-torn_actual += 1
-torn(torn_actual)
-torn_actual += 1
-torn(torn_actual)
