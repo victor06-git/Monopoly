@@ -359,21 +359,6 @@ def opcions(jugador_actual):
 
 
 
-    
-
-
-"""
-Definir turno jugadores en los condicionales
-"""
-
-
-
-
-""" jugador_actual = orden[torn_actual]
-    next_turn = (torn_actual + 1) % len(orden)
-    next_jugador = orden[next_turn]
-    return jugador_actual, next_jugador"""  
-
 """
 JUGADORS
             -Class Jugador
@@ -393,10 +378,7 @@ class Jugador:#Definir class Jugador
         self.diners = 2000 #Diners amb els que comença cada partida els jugadors
         self.a_preso = False #False per definir que el jugador no es troba a presó
         self.torns_a_preso = 0 #Número torns a preso
-       
     
-     
-
     def en_preso(self):
         return self.a_preso()
     
