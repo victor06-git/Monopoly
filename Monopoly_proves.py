@@ -418,6 +418,7 @@ class Jugador:#Definir class Jugador
         self.torns_a_preso = 0 #Número torns a preso
     
     def daus(self):
+        suma_dados()
         llançar_daus()
         self.posicio = (self.posicio + suma_daus) % len(cells)
         return self.posicio
@@ -1120,7 +1121,7 @@ elif  torn_jugador_T():
 else:
     print("None detected") 
 
-
+opcions(torn_actual)
 
 
 
