@@ -410,7 +410,7 @@ class Jugador:#Definir class Jugador
     def __init__(self,name,color):
         self.name = name
         self.color = color
-        self.posicio = 0 #Comença a la casella "sortida"
+        self.posicio = None #Comença a la casella "sortida"
         self.propietats = [] #Lista de les propietats que té l'usuari
         self.carta_especial = [] #Lista de les cartes especials (Sortir de la presó)
         self.diners = 2000 #Diners amb els que comença cada partida els jugadors
@@ -420,7 +420,7 @@ class Jugador:#Definir class Jugador
     def daus(self):
         llançar_daus()
         self.posicio = (self.posicio + suma_daus) % len(cells)
-
+        return self.posicio
     def en_preso(self):
         return self.a_preso()
     
@@ -1083,7 +1083,7 @@ INICI PARTIDA
                 -Mostra sempre a cada casella el primer jugador 
                 -Barrejar les cartes de caixa i sort
 """
-suma_daus, resultat_daus = llançar_daus()
+
 
 def inici_partida():
     jugador_t.posicio = 0
