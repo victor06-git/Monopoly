@@ -18,10 +18,3 @@ Listas CASILLAS/CARTAS
 tauler = ["Sortida","Lauria", "Rosselló", "Marina","Sort", "Consell de cent","Presó","Muntaner","Aribau","Caixa", "Sant Joan", "Aragó","Parking","Urquinaona", "Fontana","Sort", "Les Rambles", "Plaça Catalunya","Anar Presó","Portal de l'Àngel", "Via Augusta","Caixa", "Balmes", "Passeig de Gràcia"]
 cartes_caixa = ["Sortir de la presó","Anar a la presó","Error de la banca","Despeses mèdiques","Despeses escolars","Reparacions al carrer","Concurs de bellesa"]
 cartes_sort = ["Sortir de la presó","Anar a lla presó","Anar a la sortida","Anar tres espais endarrera","Fer reparacions a les propietats","Ets escollit alcalde"]
-cell0,cell1,cell2,cell3,cell4,cell5,cell6,cell7,cell8,cell9,cell10 = "","","","","","","","","","",""
-cell11,cell12,cell13,cell14,cell15,cell16,cell17,cell18,cell19,cell20 = "","","","","","","","","",""
-cell21,cell22,cell23 = "","",""
-
-cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10,
-         cell11, cell12, cell13, cell14, cell15, cell16, cell17, cell18, cell19, cell20,
-         cell21, cell22, cell23]
