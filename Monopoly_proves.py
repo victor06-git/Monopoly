@@ -406,7 +406,7 @@ JUGADORS
 
 
 class Jugador:#Definir class Jugador
-    
+
     def __init__(self,name,color):
         self.name = name
         self.color = color
@@ -416,54 +416,75 @@ class Jugador:#Definir class Jugador
         self.diners = 2000 #Diners amb els que comença cada partida els jugadors
         self.a_preso = False #False per definir que el jugador no es troba a presó
         self.torns_a_preso = 0 #Número torns a preso
-        self.cells = cells
+    
+    def daus(self):
+        llançar_daus()
+        self.posicio = (self.posicio + suma_daus) % len(cells)
+
     def en_preso(self):
         return self.a_preso()
     
     def move(self):
         global suma_daus
-        if self.a_preso == True:
-            print("Jugador a presó, no pot jugar")
-            return
+        """if self.a_preso == True:
+            print("Jugador a presó, no pot jugar")"""
         
-        casella_actual = self.posicio
-        self.cells[casella_actual] = ""
+        cells[self.posicio] = ""
         
-        self.posicio = (self.posicio + suma_daus) % len(self.cells)
-        casella_nova = self.posicio
+        self.posicio2 = (self.posicio + suma_daus) % len(cells)
+        
 
-        if self.cells[casella_nova] == "":
-            self.cells[casella_nova] = self.assign_fitxa()
+        if cells[self.posicio2] == "":
+            if torn_jugador_B():
+                cells[self.posicio2] = "B"
+            elif torn_jugador_G():
+                cells[self.posicio2] = "G"
+            elif torn_jugador_T():
+                cells[self.posicio2] = "T"
+            elif torn_jugador_V():
+                cells[self.posicio2] = "V"
+            else:
+                return ""
         else:
-            self.cells[casella_nova] += self.assign_fitxa()
+            if torn_jugador_V():
+                cells[self.posicio2] += "V"
+            elif torn_jugador_B():
+                cells[self.posicio2] += "B"
+            elif  torn_jugador_G():
+                cells[self.posicio2]  += "G"
+            elif  torn_jugador_T():
+                cells[self.posicio2]   += "T"
+            else:
+                return ""
+                
 
-    def assign_fitxa(self):
-        if torn_jugador_B():
-            return "B"
-        elif  torn_jugador_V():
-            return "V"
-        elif  torn_jugador_G():
-            return "G"
-        elif  torn_jugador_T():
-            return "T"
-        else:
-            return ""
+    
         
     def move_to(self, casella):
-        if 0 <= casella < len(self.cells):
-            casella_actual = self.posicio
-            self.cells[casella_actual]  = ""
+        if 0 <= casella < len(cells):
+            cells[self.posicio]  = ""
             
-            self.posicio = casella
-            casella_nova  =  self.posicio
-            
-            if self.cells[casella_nova] == "":
-                self.cells[casella_nova] = self.assign_fitxa()
+                                  
+            if cells[casella] == "":
+                if torn_jugador_B():
+                    cells[casella] = "B"
+                elif torn_jugador_G():
+                    cells[casella] = "G"
+                elif torn_jugador_T():
+                    cells[casella] = "T"
+                elif torn_jugador_V():
+                    cells[casella] = "V"
             else:
-                self.cells[casella_nova] += self.assign_fitxa()
-
-        else:
-            pass
+                if torn_jugador_B():
+                    cells[casella] += "B"
+                elif torn_jugador_G():
+                    cells[casella] += "G"
+                elif torn_jugador_T():
+                    cells[casella] += "T"
+                elif torn_jugador_V():
+                    cells[casella] += "V"
+                else:
+                    return ""
 
     def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
         self.propietats.append(name_propietat)
@@ -1065,25 +1086,42 @@ INICI PARTIDA
 suma_daus, resultat_daus = llançar_daus()
 
 def inici_partida():
-  global cell0
-  """Inicia la partida amb els jugadors tenint 2000 euros."""
-  cells[0] = orden[0] + orden[1] + orden[2]+ orden[3]
-  # Definir els jugadors
-  random.shuffle(cartes_caixa) #Barreja les cartes de caixa
-  random.shuffle(cartes_sort) #Barreja les cartes de sort
-  ordre() #Crida la funció ordre
-  tablero() #Crida la funció imprimeix tauler (imprimeix tauler)
-  torn(torn_actual)
-  llançar_daus()
-print(suma_daus)
-
-
- 
-
-
+    jugador_t.posicio = 0
+    jugador_g.posicio = 0
+    jugador_v.posicio = 0
+    jugador_b.posicio = 0    
+    """Inicia la partida amb els jugadors tenint 2000 euros."""
+    cells[0] = orden[0] + orden[1] + orden[2]+ orden[3]
+    # Definir els jugadors
+  
+    random.shuffle(cartes_caixa) #Barreja les cartes de caixa
+    random.shuffle(cartes_sort) #Barreja les cartes de sort
+    ordre() #Crida la funció ordre
+    tablero() #Crida la funció imprimeix tauler (imprimeix tauler)
+    torn(torn_actual)
+  
+  
 
 
 inici_partida()
-jugador_b.move()
 
-opcions(jugador_actual)
+if torn_jugador_B():
+    jugador_b.daus()
+    jugador_b.move()
+elif torn_jugador_V():
+    jugador_v.daus()
+    jugador_v.move()
+elif  torn_jugador_G():
+    jugador_g.daus()
+    jugador_g.move()
+elif  torn_jugador_T():
+    jugador_t.daus()
+    jugador_t.move()
+else:
+    print("None detected") 
+
+
+
+
+
+
