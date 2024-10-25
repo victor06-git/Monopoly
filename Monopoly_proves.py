@@ -345,13 +345,13 @@ def opcions(jugador_actual):
         opcion_jugador = input(f"Torn \"{jugador_actual}\", opcions --> (passar, compra terreny, preus):  ")
         if opcion_jugador == 1 or opcion_jugador == "comprar  terreny":
             if torn_jugador_B():
-                jugador_b.compra_propietat(tauler[jugador_b.posicio])
+                jugador_b.compra_propietat(cells[jugador_b.posicio])
             elif torn_jugador_G():
-                jugador_g.compra_propietat(tauler[jugador_g.posicio])
+                jugador_g.compra_propietat(cells[jugador_g.posicio])
             elif torn_jugador_T():
-                jugador_t.compra_propietat(tauler[jugador_t.posicio])
+                jugador_t.compra_propietat(cells[jugador_t.posicio])
             elif  torn_jugador_V():
-                jugador_v.compra_propietat(tauler[jugador_v.posicio])
+                jugador_v.compra_propietat(cells[jugador_v.posicio])
 
         elif opcion_jugador == "preus" or opcion_jugador == 2:
             return preu_terreny(jugador.posicio)
@@ -359,24 +359,25 @@ def opcions(jugador_actual):
             trucs()
         elif opcion_jugador == "passar".lower() or opcion_jugador == 0:
             # Pasar al siguiente jugador
-            indice_jugador_actual = (indice_jugador_actual + 1) % len(opcions_jugadors)  # Ciclar al siguiente índice
+            """indice_jugador_actual = (indice_jugador_actual + 1) % len(opcions_jugadors)  # Ciclar al siguiente índice
             jugador_actual = list(opcions_jugadors.keys())[indice_jugador_actual]  # Obtener el siguiente jugador
-            opcions(jugador_actual)
+           """
+            pass
             return jugador_actual, indice_jugador_actual  # Retornar el nuevo jugador y su índice
 
     
 
     elif jugador.propietats >= 1:
-        opcion_jugador = print(f"Juga {jugador_actual}, opcions: passar, comprar casa, comprar hotel, preus: ")
+        opcion_jugador = input(f"Juga {jugador_actual}, opcions: passar, comprar casa, comprar hotel, preus: ")
         if opcion_jugador == 1 or opcion_jugador == "comprar  terreny":
             if torn_jugador_B():
-                jugador_b.compra_propietat(tauler[jugador_b.posicio])
+                jugador_b.compra_propietat(cells[jugador_b.posicio])
             elif torn_jugador_G():
-                jugador_g.compra_propietat(tauler[jugador_g.posicio])
+                jugador_g.compra_propietat(cells[jugador_g.posicio])
             elif torn_jugador_T():
-                jugador_t.compra_propietat(tauler[jugador_t.posicio])
+                jugador_t.compra_propietat(cells[jugador_t.posicio])
             elif  torn_jugador_V():
-                jugador_v.compra_propietat(tauler[jugador_v.posicio])
+                jugador_v.compra_propietat(cells[jugador_v.posicio])
 
         elif opcion_jugador == "preus" or opcion_jugador == 2:
             return preu_terreny(jugador.posicio)
@@ -384,9 +385,10 @@ def opcions(jugador_actual):
             trucs()
         elif opcion_jugador == "passar".lower() or opcion_jugador == 0:
             # Pasar al siguiente jugador
-            indice_jugador_actual = (indice_jugador_actual + 1) % len(opcions_jugadors)  # Ciclar al siguiente índice
+            """indice_jugador_actual = (indice_jugador_actual + 1) % len(opcions_jugadors)  # Ciclar al siguiente índice
             jugador_actual = list(opcions_jugadors.keys())[indice_jugador_actual]  # Obtener el siguiente jugador
-            opcions(jugador_actual)
+            """
+            pass
             return jugador_actual, indice_jugador_actual  # Retornar el nuevo jugador y su índice
 
 
