@@ -389,13 +389,13 @@ def opcions(jugador_actual):
             opcions(jugador_actual)
             return jugador_actual, indice_jugador_actual  # Retornar el nuevo jugador y su índice
 
-cell0,cell1,cell2,cell3,cell4,cell5,cell6,cell7,cell8,cell9,cell10 = "","","","","","","","","","",""
-cell11,cell12,cell13,cell14,cell15,cell16,cell17,cell18,cell19,cell20 = "","","","","","","","","",""
-cell21,cell22,cell23 = "","",""
 
-cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10,
-         cell11, cell12, cell13, cell14, cell15, cell16, cell17, cell18, cell19, cell20,
-         cell21, cell22, cell23]
+"""
+CASELLAS EN LLISTA
+"""
+cells = ["", "", "", "", "", "", "", "", "", "", "",
+         "", "", "", "", "", "", "", "", "", "",
+         "", "", ""]
 
 """
 JUGADORS
@@ -416,7 +416,7 @@ class Jugador:#Definir class Jugador
         self.diners = 2000 #Diners amb els que comença cada partida els jugadors
         self.a_preso = False #False per definir que el jugador no es troba a presó
         self.torns_a_preso = 0 #Número torns a preso
-        self.cells = {f'cell{i}': "" for i in range(24)}
+        self.cells = cells
     def en_preso(self):
         return self.a_preso()
     
@@ -425,12 +425,17 @@ class Jugador:#Definir class Jugador
         if self.a_preso == True:
             print("Jugador a presó, no pot jugar")
             return
-        self.posicio = (self.posicio + suma_daus) % len(cells)
-        casella_actual = f'cell{self.posicio}'
-        if self.cells[casella_actual] == "":
-            self.cells[casella_actual] = self.assign_fitxa()
+        
+        casella_actual = self.posicio
+        self.cells[casella_actual] = ""
+        
+        self.posicio = (self.posicio + suma_daus) % len(self.cells)
+        casella_nova = self.posicio
+
+        if self.cells[casella_nova] == "":
+            self.cells[casella_nova] = self.assign_fitxa()
         else:
-            self.cells[casella_actual] += self.assign_fitxa()
+            self.cells[casella_nova] += self.assign_fitxa()
 
     def assign_fitxa(self):
         if torn_jugador_B():
@@ -441,16 +446,24 @@ class Jugador:#Definir class Jugador
             return "G"
         elif  torn_jugador_T():
             return "T"
+        else:
+            return ""
+        
     def move_to(self, casella):
-        if 0 <= casella  < len(self.cells):
+        if 0 <= casella < len(self.cells):
+            casella_actual = self.posicio
+            self.cells[casella_actual]  = ""
+            
             self.posicio = casella
-            casella_actual = f'cell{self.posicio}'
-            if self.cells[casella_actual] == "":
-                self.cells[casella_actual] = self.assign_fitxa()
+            casella_nova  =  self.posicio
+            
+            if self.cells[casella_nova] == "":
+                self.cells[casella_nova] = self.assign_fitxa()
             else:
-                self.cells[casella_actual] += self.assign_fitxa()
+                self.cells[casella_nova] += self.assign_fitxa()
 
-        pass
+        else:
+            pass
 
     def compra_propietat(self,name_propietat): #Definir les propietats que té el jugador
         self.propietats.append(name_propietat)
@@ -955,24 +968,24 @@ def tablero(): #Funció imprimeix tauler
 
     print(f"+--------+----{casa9:<2}--+----{casa10:<2}--+--------+----{casa11:<2}--+----{casa12:<2}--+--------+ Banca:") 
     print(f"|Parking |Urqinoa |Fontan  |Sort    |Rambles |Pl.Cat  |Anr pró | Diners: {banca()}")                                           
-    print(f"|{cell12:<8}|{cell13:<8}|{cell14:<8}|{cell15:<8}|{cell16:<8}|{cell17:<8}|{cell18:<8}|")
+    print(f"|{cells[12]:<8}|{cells[13]:<8}|{cells[14]:<8}|{cells[15]:<8}|{cells[16]:<8}|{cells[17]:<8}|{cells[18]:<8}|")
     print(f"+--------+--------+--------+--------+--------+--------+--------+ Jugador {Jugador_0}:")
     print(f"|Aragó  {casa8:<2}{texto13:<8}                                    | Angel {casa13:<2} {info_0}")
-    print(f"|{cell11:<8}|{texto12:<8}                                    |{cell19:<8}| {info_4}")
+    print(f"|{cells[11]:<8}|{texto12:<8}                                    |{cells[19]:<8}| {info_4}")
     print(f"+--------+{texto11:<8}                                    +--------+ {info_8}")
     print(f"|S.Joan {casa7:<2}{texto10:<8}                                    |Augusta{casa14:<2} Jugador {Jugador_1}:")
-    print(f"|{cell10:<8}|{texto9:<8}                                    |{cell20:<8}|  {info_1}")
+    print(f"|{cells[10]:<8}|{texto9:<8}                                    |{cells[20]:<8}|  {info_1}")
     print(f"+--------+{texto8:<8}                                    +--------+ {info_5}")
     print(f"|Caixa   |{texto7:<8}                                    |Caixa   | {info_9}")
-    print(f"|{cell9:<8}|{texto6:<8}                                    |{cell21:<8}| Jugador {Jugador_2}")
+    print(f"|{cells[9]:<8}|{texto6:<8}                                    |{cells[21]:<8}| Jugador {Jugador_2}")
     print(f"+--------+{texto5:<8}                                    +--------+ {info_2}")
     print(f"|Aribau {casa6:<2}{texto4:<8}                                    |Balmes {casa15:<2} {info_6}")
-    print(f"|{cell8:<8}|{texto3:<8}                                    |{cell22:<8}| {info_10}")
+    print(f"|{cells[8]:<8}|{texto3:<8}                                    |{cells[22]:<8}| {info_10}")
     print(f"+--------+{texto2:<8}                                    +--------+ Jugador {Jugador_3}")
     print(f"|Muntan {casa5:<2}{texto1:<8}                                    |Gracia {casa16:<2} {info_3}")
-    print(f"|{cell7:<8}|{texto0:>8}                                    |{cell23:<8}| {info_7}")
+    print(f"|{cells[7]:<8}|{texto0:>8}                                    |{cells[23]:<8}| {info_7}")
     print(f"+--------+----{casa4:<2}--+----{casa3:<2}--+--------+----{casa2:<2}--+----{casa1:<2}--+--------+ {info_11}")
-    print(f"|{cell6:<8}|{cell5:<8}|{cell4:<8}|{cell3:<8}|{cell2:<8}|{cell1:<8}|{cell0:<8}|")
+    print(f"|{cells[6]:<8}|{cells[5]:<8}|{cells[4]:<8}|{cells[3]:<8}|{cells[2]:<8}|{cells[1]:<8}|{cells[0]:<8}|")
     print(f"|Presó   |Consell |Marina  |Sort    |Rosell  |Lauria  |Sortida |")
     print(f"+--------+--------+--------+--------+--------+--------+--------+")
     
@@ -1054,7 +1067,7 @@ suma_daus, resultat_daus = llançar_daus()
 def inici_partida():
   global cell0
   """Inicia la partida amb els jugadors tenint 2000 euros."""
-  cell0 = orden[0] + orden[1] + orden[2]+ orden[3]
+  cells[0] = orden[0] + orden[1] + orden[2]+ orden[3]
   # Definir els jugadors
   random.shuffle(cartes_caixa) #Barreja les cartes de caixa
   random.shuffle(cartes_sort) #Barreja les cartes de sort
@@ -1071,13 +1084,6 @@ print(suma_daus)
 
 
 inici_partida()
-if torn_jugador_B():
-    jugador_b.move()
-elif torn_jugador_G():
-      jugador_g.move()
-elif torn_jugador_T():
-      jugador_t.move()
-elif torn_jugador_V():
-      jugador_v.move()
-jugador_b.move_to(8)
+jugador_b.move()
+
 opcions(jugador_actual)
