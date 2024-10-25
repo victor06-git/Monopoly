@@ -326,12 +326,18 @@ def torn_jugador_G():   #Si el torn és del jugador G
 def torn_jugador_T(): #Si el torn és del jugador T
     return jugador_actual == "Taronja"
 
+
+def cambiar_turno():
+    global torn_actual
+    torn_actual = (torn_actual + 1) % 4  # Hay 4 jugadores
+    return torn(torn_actual)  # Devuelve el nuevo jugador
+    
 """
 OPCIONS USUARI A CADA TORN
 """
-indice_jugador_actual = 0
+
 def opcions(jugador_actual): 
-    global indice_jugador_actual
+    
     opcions_jugadors = {
         "Vermell": jugador_v,
         "Blau" : jugador_b,
@@ -359,11 +365,8 @@ def opcions(jugador_actual):
             trucs()
         elif opcion_jugador == "passar".lower() or opcion_jugador == 0:
             # Pasar al siguiente jugador
-            """indice_jugador_actual = (indice_jugador_actual + 1) % len(opcions_jugadors)  # Ciclar al siguiente índice
-            jugador_actual = list(opcions_jugadors.keys())[indice_jugador_actual]  # Obtener el siguiente jugador
-           """
-            pass
-            return jugador_actual, indice_jugador_actual  # Retornar el nuevo jugador y su índice
+            cambiar_turno()
+            return jugador_actual  # Retornar el nuevo jugador y su índice
 
     
 
@@ -385,11 +388,9 @@ def opcions(jugador_actual):
             trucs()
         elif opcion_jugador == "passar".lower() or opcion_jugador == 0:
             # Pasar al siguiente jugador
-            """indice_jugador_actual = (indice_jugador_actual + 1) % len(opcions_jugadors)  # Ciclar al siguiente índice
-            jugador_actual = list(opcions_jugadors.keys())[indice_jugador_actual]  # Obtener el siguiente jugador
-            """
-            pass
-            return jugador_actual, indice_jugador_actual  # Retornar el nuevo jugador y su índice
+            cambiar_turno()
+            
+            return jugador_actual  # Retornar el nuevo jugador y su índice
 
 
 """
